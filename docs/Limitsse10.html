@@ -1,0 +1,108 @@
+<!DOCTYPE html> 
+<html lang="en-US" xml:lang="en-US" > 
+<head><title>Subsequences</title> 
+<meta  charset="utf-8" /> 
+<meta name="generator" content="TeX4ht (https://tug.org/tex4ht/)" /> 
+<meta name="viewport" content="width=device-width,initial-scale=1" /> 
+<link rel="stylesheet" type="text/css" href="Limits.css" /> 
+<meta name="src" content="Limits.tex" /> 
+<script>window.MathJax = { tex: { tags: "ams", }, }; </script> 
+ <script type="text/javascript" async="async" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>  
+ 
+<script type="text/javascript" 
+src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" 
+></script> 
+</head><body 
+>
+   <!--l. 2--><div class="crosslinks"><p class="noindent">[<a 
+href="Limitsse11.html" >next</a>] [<a 
+href="Limitsse9.html" >prev</a>] [<a 
+href="Limitsse9.html#tailLimitsse9.html" >prev-tail</a>] [<a 
+href="#tailLimitsse10.html">tail</a>] [<a 
+href="Limitsch2.html#Limitsse10.html" >up</a>] </p></div>
+   <h3 class="sectionHead"><span class="titlemark">2.4   </span> <a 
+href="Limits.html#QQ2-15-24" id="x15-240002.4">Subsequences</a></h3>
+   <div class="sectionTOCS">
+   </div>
+   <div class="newtheorem">
+<!--l. 4--><p class="noindent" ><span class="head">
+<a 
+ id="x15-24001r1"></a>
+<span 
+class="cmbx-12">Definition 2.4.1 </span>(Subsequence)<span 
+class="cmbx-12">.</span>  </span>Let \(\{a_n\}_{n=1}^{\infty }\) be a sequence of real numbers. A
+subsequence of \(\{a_n\}_{n=1}^{\infty }\) is in the form of \(\{a_{n_k}\}_{k=1}^{\infty }\), where \(n_k \in \mathbb {N}\), and \begin {align*}  n_1&lt;n_2&lt;n_3&lt; ...  \end {align*}
+</p>
+   </div>
+<!--l. 10--><p class="indent" >
+</p><!--l. 12--><p class="noindent" >The Following proposition and corollary are important for showing non-existence
+of the limit for some sequences.
+</p>
+   <div class="newtheorem">
+<!--l. 14--><p class="noindent" ><span class="head">
+<a 
+ id="x15-24002r5"></a>
+<span 
+class="cmbx-12">Proposition 5.</span>  </span> <span 
+class="cmti-12">If</span> \(\{a_n\}_{n=1}^{\infty }\) <span 
+class="cmti-12">is a sequence of real numbers such that</span> \(\lim \limits _{n \to \infty }a_n =L\)<span 
+class="cmti-12">, where</span> \(L \in \mathbb {R}\)<span 
+class="cmti-12">, then any</span>
+<span 
+class="cmti-12">of its subsequences</span> \(\{a_{n_k}\}_{k=1}^{\infty }\) <span 
+class="cmti-12">would also have </span>\begin {align*}  \lim _{k\to \infty } a_{n_k} = L  \end {align*}
+</p>
+   </div>
+<!--l. 20--><p class="indent" >
+</p>
+   <div class="newtheorem">
+<!--l. 21--><p class="noindent" ><span class="head">
+<a 
+ id="x15-24003r14"></a>
+
+<span 
+class="cmbx-12">Corollary 14.</span>  </span><span 
+class="cmti-12">Given a sequence</span> \(\{a_n\}_{n=1}^{\infty }\) <span 
+class="cmti-12">of real numbers, if any of the following holds:</span>
+</p>
+      <ul class="itemize1">
+      <li class="itemize">
+      <!--l. 24--><p class="noindent" ><span 
+class="cmti-12">There exist two subsequences</span> \(\{a_{n_k}\}_{k=1}^{\infty }\) <span 
+class="cmti-12">and</span> \(\{a_{m_j}\}_{j=1}^{\infty }\) <span 
+class="cmti-12">with </span><span 
+class="cmbxti-10x-x-120">different </span><span 
+class="cmti-12">limits</span>
+      </p></li>
+      <li class="itemize">
+      <!--l. 25--><p class="noindent" ><span 
+class="cmti-12">There exists a subsequence</span> \(\{a_{n_k}\}_{k=1}^{\infty }\) <span 
+class="cmti-12">whose limit does not exist</span></p></li></ul>
+<!--l. 27--><p class="noindent" ><span 
+class="cmti-12">Then, the limit of</span> \(\{a_n\}_{n=1}^{\infty }\) <span 
+class="cmti-12">does not exist.</span>
+</p>
+   </div>
+<!--l. 28--><p class="indent" >    Now, we prove Proposition <a 
+href="#x15-24002r5">5<!--tex4ht:ref: seq_subseq_prop --></a>.
+</p>
+   <div class="proof">
+<!--l. 32--><p class="indent" >   <span class="head">
+<span 
+class="cmti-12">Proof.</span> </span>Because, \(a_n \to L\), and the fact that \(n_k \geq k\), we have \begin {align*}  \forall \epsilon &gt;0, \exists N&gt;0 \text { s.t } \forall n &gt;N, |a_n - L| &lt; \epsilon \\ \because n_k \geq k, \forall k &gt; N, n_k &gt; N\\ \implies |a_{n_k} - L| &lt;\epsilon  \end {align*}
+</p><!--l. 38--><p class="indent" >   Hence \(a_{n_k} \to L\). The Corollary is the contrapositive of the proposition, hence directly
+follows.
+                                                                        □
+</p>
+   </div>
+
+   <!--l. 2--><div class="crosslinks"><p class="noindent">[<a 
+href="Limitsse11.html" >next</a>] [<a 
+href="Limitsse9.html" >prev</a>] [<a 
+href="Limitsse9.html#tailLimitsse9.html" >prev-tail</a>] [<a 
+href="Limitsse10.html" >front</a>] [<a 
+href="Limitsch2.html#Limitsse10.html" >up</a>] </p></div>
+<!--l. 2--><p class="indent" >   <a 
+ id="tailLimitsse10.html"></a> </p> 
+</body> 
+</html>

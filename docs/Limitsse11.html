@@ -1,0 +1,97 @@
+<!DOCTYPE html> 
+<html lang="en-US" xml:lang="en-US" > 
+<head><title>Appendix</title> 
+<meta  charset="utf-8" /> 
+<meta name="generator" content="TeX4ht (https://tug.org/tex4ht/)" /> 
+<meta name="viewport" content="width=device-width,initial-scale=1" /> 
+<link rel="stylesheet" type="text/css" href="Limits.css" /> 
+<meta name="src" content="Limits.tex" /> 
+<script>window.MathJax = { tex: { tags: "ams", }, }; </script> 
+ <script type="text/javascript" async="async" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>  
+ 
+<script type="text/javascript" 
+src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" 
+></script> 
+</head><body 
+>
+   <!--l. 2--><div class="crosslinks"><p class="noindent">[<a 
+href="Limitsse10.html" >prev</a>] [<a 
+href="Limitsse10.html#tailLimitsse10.html" >prev-tail</a>] [<a 
+href="#tailLimitsse11.html">tail</a>] [<a 
+href="Limitsch2.html#Limitsse11.html" >up</a>] </p></div>
+   <h3 class="sectionHead"><span class="titlemark">2.5   </span> <a 
+href="Limits.html#QQ2-16-25" id="x16-250002.5">Appendix</a></h3>
+   <div class="sectionTOCS">
+   </div>
+<!--l. 8--><p class="noindent" >_________________________________________________________________________
+</p>
+   <div class="newtheorem">
+<!--l. 9--><p class="noindent" ><span class="head">
+<a 
+ id="x16-25001r2"></a>
+<span 
+class="cmbx-12">Lemma 2 </span>(<span 
+class="cmbx-12">General difference of power</span>)<span 
+class="cmbx-12">.</span>  </span> <span 
+class="cmti-12">for any</span> \(x,y \geq 0\) <span 
+class="cmti-12">and</span> \(n \in \mathbb {N}\) \begin {align*}  x-y = (x^{\frac {1}{n}}-y^{\frac {1}{n}})\sum _{j=0}^{n-1}x^{\frac {j}{n}}y^{\frac {n - j -1}{n}}  \end {align*}
+</p>
+   <div class="proof">
+<!--l. 16--><p class="indent" >   <span class="head">
+<span 
+class="cmti-12">Proof.</span> </span>For \(x = y =0\), the result is trivial. For \(y=0\): \begin {align*}  x - 0 =(x^{\frac {1}{n}} -0)(x^{\frac {n-1}{n}}+0+...+0) = x  \end {align*}
+</p><!--l. 20--><p class="indent" >   The same reasoning holds for the case where \(y=0\). For the case where \(x,y &gt; 0\). We need
+observe that: \begin {align*}  x-y =y\left (\frac {x}{y}-1\right ) = y\left [\left (\frac {x^{\frac {1}{n}}}{y^{\frac {1}{n}}}\right )^{n}-1\right ]  \end {align*}
+</p><!--l. 24--><p class="indent" >   This expression is similar to the result of a geometric series:
+</p><!--l. 33--><p class="indent" >   \begin {align*}  S_n =1+ \left (\frac {x^{\frac {1}{n}}}{y^{\frac {1}{n}}}\right )^{1} + \left (\frac {x^{\frac {1}{n}}}{y^{\frac {1}{n}}}\right )^{2}+ ...+ \left (\frac {x^{\frac {1}{n}}}{y^{\frac {1}{n}}}\right )^{n-1} \\ S_n\left (\frac {x^{\frac {1}{n}}}{y^{\frac {1}{n}}}\right ) = \left (\frac {x^{\frac {1}{n}}}{y^{\frac {1}{n}}}\right )^{1} + \left (\frac {x^{\frac {1}{n}}}{y^{\frac {1}{n}}}\right )^{2}+ ...+ \left (\frac {x^{\frac {1}{n}}}{y^{\frac {1}{n}}}\right )^{n}\\ \implies S_n\left (\frac {x^{\frac {1}{n}}}{y^{\frac {1}{n}}}\right ) - S_n = \left (\frac {x^{\frac {1}{n}}}{y^{\frac {1}{n}}}\right )^{n} -1\\ \implies S_n= \dfrac {\left (\frac {x^{\frac {1}{n}}}{y^{\frac {1}{n}}}\right )^{n} -1}{\left (\frac {x^{\frac {1}{n}}}{y^{\frac {1}{n}}}\right ) -1}  \end {align*}
+</p><!--l. 35--><p class="indent" >   Hence,
+</p><!--l. 44--><p class="indent" >   \begin {align*}  x-y =y\left (\frac {x}{y}-1\right ) = y\left [\left (\frac {x^{\frac {1}{n}}}{y^{\frac {1}{n}}}\right )^{n}-1\right ] = y\times S_n \left [ \left (\frac {x^{\frac {1}{n}}}{y^{\frac {1}{n}}}\right ) -1 \right ] \\ \implies x-y = y\left [ \left (\frac {x^{\frac {1}{n}}}{y^{\frac {1}{n}}}\right ) -1 \right ]\left [ 1+ \left (\frac {x^{\frac {1}{n}}}{y^{\frac {1}{n}}}\right )^{1} + \left (\frac {x^{\frac {1}{n}}}{y^{\frac {1}{n}}}\right )^{2}+ ...+ \left (\frac {x^{\frac {1}{n}}}{y^{\frac {1}{n}}}\right )^{n-1} \right ] \\ \implies x-y = y^{\frac {n-1}{n}}\left [x^{\frac {1}{n}} - y^{\frac {1}{n}} \right ]\left [ y^{\frac {n-1}{n}} + x^{\frac {1}{n}y^{\frac {n-1 -1}{n}}}+... + x^{\frac {n-1}{n}}\right ] \times \frac {1}{y^{\frac {n-1}{n}}}\\ \implies x-y = \left [x^{\frac {1}{n}} - y^{\frac {1}{n}} \right ]\left [ y^{\frac {n-1}{n}} + x^{\frac {1}{n}y^{\frac {n-1 -1}{n}}}+... + x^{\frac {n-1}{n}}\right ]  \end {align*}
+</p><!--l. 46--><p class="indent" >   Now, this is equivalent to: \begin {align*}  x-y = (x^{\frac {1}{n}}-y^{\frac {1}{n}})\sum _{j=0}^{n-1}x^{\frac {j}{n}}y^{\frac {n - j -1}{n}}  \end {align*}
+</p><!--l. 50--><p class="indent" >   Hence, for any \(x,y \geq 0\) the above holds true                                            □
+</p>
+   </div>
+   </div>
+<!--l. 53--><p class="indent" >    __________________________________________________________________________________________________
+
+</p>
+   <div class="newtheorem">
+<!--l. 66--><p class="noindent" ><span class="head">
+<a 
+ id="x16-25002r3"></a>
+<span 
+class="cmbx-12">Lemma 3.</span>  </span><span 
+class="cmti-12">For any</span> \(a \in (-1,1)\) <span 
+class="cmti-12">and</span> \(k,n \in \mathbb {N}\) <span 
+class="cmti-12">we have: </span>\begin {align*}  \lim \limits _{n \to \infty } n^ka^n =0  \end {align*}
+</p>
+   </div>
+<!--l. 71--><p class="indent" >
+</p>
+   <div class="proof">
+<!--l. 73--><p class="indent" >   <span class="head">
+<span 
+class="cmti-12">Proof.</span> </span>when \(a=0\), the result is trivial. consider \(0&lt;a&lt;1\). Write: \begin {align*}  a = \dfrac {1}{\frac {1}{a}} = \frac {1}{1+b}  \end {align*}
+</p><!--l. 77--><p class="indent" >   Where \(\dfrac {1}{a} &gt; 1\) and \(b = \dfrac {1}{a} - 1 &gt; 0\). Using the binomial theorem:
+</p><!--l. 84--><p class="indent" >   \begin {align*}  a^n &amp;= \dfrac {1}{(1+b)^n} = \dfrac {1}{1 + nb + C^n_2 b^2+...+C^n_{n-1}b^{n-1} +b^n} \\ n^ka^n &amp;= \dfrac {n^k}{1 + nb + C^n_2 b^2+...+C^n_{n-1}b^{n-1} +b^n}  \end {align*}
+</p><!--l. 86--><p class="indent" >   WLOG assume \(n&gt;k\) hence we have: \begin {align*}  n^ka^n &amp;= \dfrac {n^k}{1 + nb + C^n_2 b^2+...+C^n_{k+1}b^{k+1}+...+C^n_{n-1}b^{n-1} +b^n}  \end {align*}
+</p><!--l. 90--><p class="indent" >   Observe that: \begin {align*}  C^n_{k+1} &amp;= \dfrac {n!}{(n-k -1)!(k+1)!} = \dfrac {n(n-1)(n-2)...(n-k)}{(k+1)!}\\ \implies \dfrac {n^k}{C^n_{k+1}} &amp;= \dfrac {(k+1)!}{n(1-\frac {1}{n})(1-\frac {2}{n})...(1-\frac {k}{n})}  \end {align*}
+</p><!--l. 95--><p class="indent" >   Now because: \begin {align*}  C^n_{k+1}b^{k+1} \leq 1 + nb + C^n_2 b^2+...+C^n_{k+1}b^{k+1}+...+C^n_{n-1}b^{n-1} +b^n  \end {align*}
+</p><!--l. 99--><p class="indent" >   We have:  \begin {align*}  n^ka^n = \dfrac {n^k}{1 + nb + C^n_2 b^2+...+C^n_{n-1}b^{n-1} +b^n} \leq \dfrac {n^k}{C^n_{k+1}} = \dfrac {(k+1)!}{n(1-\frac {1}{n})(1-\frac {2}{n})...(1-\frac {k}{n})}\\ \lim \limits _{n \to \infty }\dfrac {(k+1)!}{n(1-\frac {1}{n})(1-\frac {2}{n})...(1-\frac {k}{n})} = \dfrac {\lim \limits _{n\to \infty }\frac {(k+1)!}{n}}{\lim \limits _{n\to \infty }(1-\frac {1}{n})\lim \limits _{n\to \infty }(1-\frac {2}{n})...\lim \limits _{n\to \infty }(1-\frac {k}{n})}  \end {align*}
+</p><!--l. 107--><p class="indent" >   Because \(\lim \limits _{n\to \infty }\dfrac {k}{n} =0\) for any constant \(k \in \mathbb {N}\): \begin {align*}  \dfrac {\lim \limits _{n\to \infty }\frac {(k+1)!}{n}}{\lim \limits _{n\to \infty }(1-\frac {1}{n})\lim \limits _{n\to \infty }(1-\frac {2}{n})...\lim \limits _{n\to \infty }(1-\frac {k}{n})} = \dfrac {(k+1)! \times 0}{(1-0)(1-0)...(1-0)} =0  \end {align*}
+</p><!--l. 111--><p class="indent" >   Hence, we can indeed bound \(n^ka^n\) above and below. \(n^ka^n\) has a trivial lower
+bound of \(0\), as here we consider \(0&lt;a&lt;1\): \begin {gather*}  0\leq n^ka^n \leq \dfrac {n^k}{C^n_{k+1}} \\ \lim \limits _{n \to \infty }0 =0 ,\lim \limits _{n \to \infty }\dfrac {n^k}{C^n_{k+1}} =0\\ \implies \lim \limits _{n \to \infty } n^ka^n =0 \text { by squeeze theorem for } a \in (0,1)  \end {gather*} For the negative case where \(a \in (-1,0)\) consider:
+\begin {align*}  -|n^ka^n| \leq n^ka^n \leq |n^ka^n| = n^k|a^n| =n^k|a|^n  \end {align*}
+</p><!--l. 121--><p class="indent" >   Because we have already proved that for \(a \in (0,1)\), \(\lim \limits _{n \to \infty }n^ka^n =0\): \begin {align*}  \lim \limits _{n \to \infty } n^k|a|^n &amp;=0 \\ \implies \lim \limits _{n \to \infty }-|n^ka^n| &amp;=0 \\ \text {by the squeeze theorem, } \lim \limits _{n \to \infty } n^ka^n &amp;=0 \qquad \text {for } \quad a \in (-1,0)  \end {align*}
+</p><!--l. 127--><p class="indent" >   Hence, for any \(a \in (-1,1)\) and \(k \in \mathbb {N}\) we have: \begin {align*}  \lim \limits _{n \to \infty } n^ka^n =0  \end {align*}
+                                                                        □
+</p>
+   </div>
+   <!--l. 41--><div class="crosslinks"><p class="noindent">[<a 
+href="Limitsse10.html" >prev</a>] [<a 
+href="Limitsse10.html#tailLimitsse10.html" >prev-tail</a>] [<a 
+href="Limitsse11.html" >front</a>] [<a 
+href="Limitsch2.html#Limitsse11.html" >up</a>] </p></div>
+<!--l. 41--><p class="indent" >   <a 
+ id="tailLimitsse11.html"></a> </p> 
+</body> 
+</html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html> 
+<html lang="en-US" xml:lang="en-US" > 
+<head><title>Comparison Rules</title> 
+<meta  charset="utf-8" /> 
+<meta name="generator" content="TeX4ht (https://tug.org/tex4ht/)" /> 
+<meta name="viewport" content="width=device-width,initial-scale=1" /> 
+<link rel="stylesheet" type="text/css" href="Limits.css" /> 
+<meta name="src" content="Limits.tex" /> 
+<script>window.MathJax = { tex: { tags: "ams", }, }; </script> 
+ <script type="text/javascript" async="async" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>  
+ 
+<script type="text/javascript" 
+src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" 
+></script> 
+</head><body 
+>
+   <!--l. 2--><div class="crosslinks"><p class="noindent">[<a 
+href="Limitsse10.html" >next</a>] [<a 
+href="Limitsse8.html" >prev</a>] [<a 
+href="Limitsse8.html#tailLimitsse8.html" >prev-tail</a>] [<a 
+href="#tailLimitsse9.html">tail</a>] [<a 
+href="Limitsch2.html#Limitsse9.html" >up</a>] </p></div>
+   <h3 class="sectionHead"><span class="titlemark">2.3   </span> <a 
+href="Limits.html#QQ2-14-18" id="x14-180002.3">Comparison Rules</a></h3>
+   <div class="sectionTOCS">
+   </div>
+   <div class="newtheorem">
+<!--l. 4--><p class="noindent" ><span class="head">
+<a 
+ id="x14-18001r2"></a>
+<span 
+class="cmbx-12">Proposition 2.</span>  </span><span 
+class="cmti-12">Comparison Rules. Suppose</span> \(\lim _{n \to \infty } a_n \) <span 
+class="cmti-12">and</span> \(\lim _{n \to \infty } b_n\) <span 
+class="cmti-12">exist, then the following</span>
+<span 
+class="cmti-12">implications hold:</span>
+      </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+  <span 
+class="cmti-12">(a)</span> </dt><dd 
+class="enumerate-enumitem"><span 
+class="cmti-12">If</span> \(\lim _{n \to \infty } a_n &lt; \lim _{n \to \infty } b_n \)<span 
+class="cmti-12">, then</span> \(\exists N &gt;0\) <span 
+class="cmti-12">such that</span> \(a_n &lt;b_n\) <span 
+class="cmti-12">for all</span> \(n&gt;N\)<span 
+class="cmti-12">.</span>
+      </dd><dt class="enumerate-enumitem">
+  <span 
+class="cmti-12">(b)</span> </dt><dd 
+class="enumerate-enumitem"><span 
+class="cmti-12">If there exist infinitely many</span> \(n\)<span 
+class="cmti-12">’s such that</span> \(a_n\geq b_n\)<span 
+class="cmti-12">, then</span> \(\lim _{n \to \infty }a_n \geq \lim _{n \to \infty }b_n\)</dd></dl>
+   </div>
+<!--l. 11--><p class="indent" >
+</p>
+   <h4 class="subsectionHead"><a 
+href="#x14-19000" id="x14-19000">Proof of Comparison Rules</a></h4>
+<!--l. 13--><p class="noindent" >We first prove (a). Let \(\lim _{n \to \infty } a_n = L\) and \(\lim _{n \to \infty } b_n = M\). Given that sequences \(a_n, b_n\) have a finite limit and \(L&lt;M\). The
+key idea is to bound \(a_n\) and \(b_n\) in two disjoint intervals: \((L-\epsilon , L + \epsilon )\) and \((M-\epsilon , M+\epsilon )\). Picking \(\epsilon = \frac {M-L}{2} &gt;0\), we start the
+formal proof
+</p>
+   <div class="proof">
+<!--l. 15--><p class="indent" >   <span class="head">
+
+<span 
+class="cmti-12">Proof.</span> </span>\begin {align*}  \because a_n \to L, \forall \epsilon &gt;0, \exists N_1&gt;0 \text { s.t } \forall n &gt; N_1\\ |a_n-L| &lt; \epsilon \\ \implies L- \epsilon &lt;a_n&lt;L+\epsilon  \end {align*}
+</p><!--l. 20--><p class="indent" >   Similarly, \begin {align*}  \because b_n \to L, \forall \epsilon &gt;0, \exists N_2&gt;0 \text { s.t } \forall n &gt; N_2\\ |b_n-M| &lt;\epsilon \\ \implies M -\epsilon &lt;b_n&lt;M+\epsilon  \end {align*}
+</p><!--l. 26--><p class="indent" >   Note that \(M-\frac {M-L}{2}=L+\frac {M-L}{2} = \frac {M+L}{2}\). Combining both results, for \(n &gt; \max \{N_1,N_2\}\), \begin {align*}  a_n &lt; \frac {M+L}{2} &lt; b_n  \end {align*}
+</p><!--l. 30--><p class="indent" >   Hence, (a) is proven. Now, (b) is simply just the contrapositive statement of
+(a), we have to show that (b) is indeed the contrapositive of (a). \begin {align*}  \neg (\exists N&gt;0 \text { s.t } a_n &lt; b_n \forall n&gt;N)\\ \iff \forall N&gt;0, \exists n &gt;N \text { s.t } a_n \geq b_n  \end {align*}
+</p><!--l. 35--><p class="indent" >   The statement is equivalent to there being infinitely many \(n\) such that \(a_n\geq b_n\).
+Naturally, the statement \(\lim _{n \to \infty }a_n \geq \lim _{n \to \infty }b_n\) is the negation of the statement \(\lim _{n \to \infty } a_n &lt; \lim _{n \to \infty } b_n \). Hence (b) is indeed a
+contrapositive.
+                                                                        □
+</p>
+   </div>
+<!--l. 42--><p class="noindent" >
+</p>
+   <h4 class="subsectionHead"><a 
+href="#x14-20000" id="x14-20000">Ratio Test</a></h4>
+   <div class="newtheorem">
+<!--l. 44--><p class="noindent" ><span class="head">
+<a 
+ id="x14-20001r6"></a>
+<span 
+class="cmbx-12">Theorem 6 </span>(Ratio Test for sequences)<span 
+class="cmbx-12">.</span>  </span> <span 
+class="cmti-12">Suppose</span> \(\{a_n\}\) <span 
+class="cmti-12">is a sequence of positive</span>
+<span 
+class="cmti-12">numbers such that </span>\begin {align*}  \lim _{n\to \infty } \frac {a_{n+1}}{a_n} = L  \end {align*}
+</p><!--l. 50--><p class="indent" >   <span 
+class="cmti-12">Where</span> \(0\leq L &lt; 1\)<span 
+class="cmti-12">, then</span> \(\lim _{n \to \infty }a_n =0\)
+</p>
+   </div>
+<!--l. 51--><p class="indent" >
+</p>
+   <div class="proof">
+<!--l. 53--><p class="indent" >   <span class="head">
+<span 
+class="cmti-12">Proof.</span> </span>Here, we need to use comparison proposition (a) to prove this theorem.
+Because \(0 \leq L&lt;\frac {L+1}{2}&lt;1\), \begin {align*}  \lim _{n\to \infty }\frac {a_{n+1}}{a_n} = L &lt; \frac {L+1}{2}\\ \implies \exists N &gt; 0 \text { s.t } \frac {a_{n+1}}{a_n} &lt; \frac {L+1}{2} \forall n&gt;N  \end {align*}
+
+</p><!--l. 58--><p class="indent" >   Note that for \(n&gt;N\), \begin {align*}  a_n = \frac {a_n}{a_{n-1}}\cdot \frac {a_{n-1}}{a_{n-2}}\cdot ... \frac {a_{N+2}}{a_{N+1}}\cdot a_{N+1}  \end {align*}
+</p><!--l. 62--><p class="indent" >   Each fraction above is less than \(\frac {L+1}{2}\), and counting carefully, we have
+\begin {align*}  a_n &lt; \left (\frac {L+1}{2}\right )^{n-N-1}a_{N+1} = \left (\frac {L+1}{2}\right )^n\left (\frac {L+1}{2}\right )^{-(N+1)}a_{N+1}  \end {align*}
+</p><!--l. 66--><p class="indent" >   Because, \(\left (\frac {L+1}{2}\right )^n \to 0\) and \(0\leq a_n\), by the squeeze theorem, \(a_n \to 0\)
+                                                                        □
+</p>
+   </div>
+<!--l. 76--><p class="noindent" >
+</p>
+   <h4 class="subsectionHead"><a 
+href="#x14-21000" id="x14-21000">Root Test</a></h4>
+   <div class="newtheorem">
+<!--l. 78--><p class="noindent" ><span class="head">
+<a 
+ id="x14-21001r7"></a>
+<span 
+class="cmbx-12">Theorem 7 </span>(Root Test for sequences)<span 
+class="cmbx-12">.</span>  </span> <span 
+class="cmti-12">Suppose</span> \(\{a_n\}\) <span 
+class="cmti-12">is a sequence of real numbers</span>
+<span 
+class="cmti-12">such that </span>\begin {align*}  \lim _{n \to \infty } \sqrt [n]{|a_n|} = L  \end {align*}
+</p><!--l. 84--><p class="indent" >   <span 
+class="cmti-12">Where</span> \(0\leq L &lt; 1\)<span 
+class="cmti-12">, then</span> \(\lim \limits _{n \to \infty }a_n =0\)<span 
+class="cmti-12">.</span>
+</p>
+   </div>
+<!--l. 85--><p class="indent" >
+</p>
+   <div class="proof">
+<!--l. 87--><p class="indent" >   <span class="head">
+<span 
+class="cmti-12">Proof.</span> </span>Again, using the fact \begin {align*}  0\leq L &lt; \frac {L+1}{2} &lt; 1  \end {align*}
+</p><!--l. 91--><p class="indent" >   and comparison of limits proposition (a), \begin {align*}  \because \lim _{n \to \infty } \sqrt [n]{|a_n|} = L &lt; \frac {L+1}{2}\\ \exists N&gt;0 \text { s.t. } \forall n &gt;N \quad \sqrt [n]{|a_n|} &lt; \frac {L+1}{2} \\ \implies |a_n| &lt; \left ( \frac {L+1}{2}\right )^n  \end {align*}
+</p><!--l. 97--><p class="indent" >   Naturally, \(0 \leq |a_n|\), and by the fact that \(\left ( \frac {L+1}{2}\right )^n \to 0\), the squeeze theorem applies and \(|a_n| \to 0\), and \(a_n \to 0\)
+well: \begin {align*}  \because -|a_n| \leq a_n \leq |a_n|  \end {align*}
+</p><!--l. 101--><p class="indent" >   If \(|a_n|\) converges to 0, \(-|a_n|\) also converges to 0, hence by the squeeze theorem,
+\(a_n \to 0\)
+                                                                        □
+
+</p>
+   </div>
+<!--l. 105--><p class="noindent" >
+</p>
+   <h4 class="subsectionHead"><a 
+href="#x14-22000" id="x14-22000">Propositions</a></h4>
+   <div class="newtheorem">
+<!--l. 107--><p class="noindent" ><span class="head">
+<a 
+ id="x14-22001r3"></a>
+<span 
+class="cmbx-12">Proposition 3.</span>  </span><span 
+class="cmti-12">Any polynomial</span> \(p(n)\) <span 
+class="cmti-12">with a positive leading term, is positive</span>
+<span 
+class="cmti-12">for sufficiently large</span> \(n\)
+</p>
+   </div>
+<!--l. 109--><p class="indent" >
+</p>
+   <div class="proof">
+<!--l. 112--><p class="indent" >   <span class="head">
+<span 
+class="cmti-12">Proof.</span> </span>Let the polynomial be of degree \(k\). Then we have \begin {align*}  p(n) = a_kn^k + a_{k-1}n^{k-1}+...+a_1n + a_0  \end {align*}
+</p><!--l. 116--><p class="indent" >   With \(a_k &gt;0\). Dividing by \(n^k\), we have: \begin {align*}  \frac {p(n)}{n^k} = a_k + \frac {a_{k-1}}{n} + ... + \frac {a_1}{n^{k-1}} + \frac {a_0}{n^k} \\ \implies \lim _{n \to \infty }\frac {p(n)}{n^k} = a_k &gt; 0\\ \implies \exists N &gt; 0 \text { s.t } \frac {p(n)}{n^k} &gt; 0 \quad \forall n &gt;N  \end {align*}
+</p><!--l. 122--><p class="indent" >   From this we get the result that \(p(n)&gt;0\) for all \(n\) greater than some \(N\).
+                                                                        □
+</p>
+   </div>
+   <div class="newtheorem">
+<!--l. 125--><p class="noindent" ><span class="head">
+<a 
+ id="x14-22002r4"></a>
+<span 
+class="cmbx-12">Proposition 4.</span>  </span><span 
+class="cmti-12">Given two sequences</span> \(\{x_n\}\) <span 
+class="cmti-12">and</span> \(\{y_n\}\) <span 
+class="cmti-12">of positive terms, and there exists</span>
+<span 
+class="cmti-12">some</span> \(N \in \mathbb {N}\) <span 
+class="cmti-12">such that whenever</span> \(n\geq N\)<span 
+class="cmti-12">, we have </span>\begin {align*}  \frac {x_{n+1}}{x_n} \leq \frac {y_{n+1}}{y_n}  \end {align*}
+
+</p><!--l. 130--><p class="indent" >   <span 
+class="cmti-12">Then, if</span> \(\lim \limits _{n \to \infty } y_n =0\)<span 
+class="cmti-12">, we also have</span> \(x_n \to 0\)<span 
+class="cmti-12">.</span>
+</p>
+   </div>
+<!--l. 131--><p class="indent" >
+</p>
+   <div class="proof">
+<!--l. 133--><p class="indent" >   <span class="head">
+<span 
+class="cmti-12">Proof.</span> </span>If we have \(\frac {x_{n+1}}{x_n} \leq \frac {y_{n+1}}{y_n}\) for an infinite number of terms, then we have: \begin {align*}  \lim _{n \to \infty }\frac {x_{n+1}}{x_n} \leq \lim _{n \to \infty }\frac {y_{n+1}}{y_n}  \end {align*}
+</p><!--l. 137--><p class="indent" >   By the comparison rules, assuming that these limits exist. For simplicity,
+\begin {align*}  L := \lim _{n \to \infty }\frac {x_{n+1}}{x_n}, M := \lim _{n \to \infty }\frac {y_{n+1}}{y_n}\\ L \leq M  \end {align*}
+</p><!--l. 142--><p class="indent" >   Then, setting \(0\leq M &lt;1\), by the ratio test, \(y_n \to 0\), because \(\{x_n\}\) is positive, we have, \(0 \leq L &lt;1 \) as well,
+which again by the ratio test, implies \(x_n \to 0\)
+                                                                        □
+</p>
+   </div>
+<!--l. 147--><p class="noindent" >
+</p>
+   <h4 class="subsectionHead"><a 
+href="#x14-23000" id="x14-23000">Exercises</a></h4>
+<a 
+ id="x14-23001r29"></a>
+   <div  
+class="centerline">                                      <span 
+class="cmbx-12x-x-120">Exercise</span><span 
+class="cmbx-12x-x-120"> 29</span>                            </div><a 
+ id="x14-23002"></a>
+Prove that \(\lim \limits _{n\to \infty } \dfrac {a^n}{n!} =0\), where \(a\in \mathbb {R}\), in two different ways:
+      <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+  (a) </dt><dd 
+class="enumerate-enumitem">Using only Squeeze theorem. Hint: prove that there exists a constant \(C &gt;0\) such
+      that: \begin {align*}  \left |\frac {a^n}{n!}\right | \leq \frac {C}{n}  \end {align*}
+      <!--l. 156--><p class="noindent" >for sufficiently large \(n\).
+      </p></dd><dt class="enumerate-enumitem">
+ (b) </dt><dd 
+class="enumerate-enumitem">Using the Ratio Test for Sequences.</dd></dl>
+
+   <div  
+class="centerline">                                <span 
+class="cmbx-12">Answer of exercise</span><span 
+class="cmbx-12"> 29</span>                            </div><span 
+class="cmbx-12">(a)</span>
+Note that, for simplicity considering, \(n&gt;|a|\), \(a \in \mathbb {Z}\) and \(|a|&gt;1\) \begin {align*}  \left |\frac {a^n}{n!}\right | = \left |\frac {a}{n}\right |\cdot \left |\frac {a}{n-1}\right | ... \left |\frac {a}{n-(n-|a|)}\right | ... \left |\frac {a}{1}\right |  \end {align*}
+<!--l. 166--><p class="indent" >   We can partition the terms in the expression above into 3 categories:
+      </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+  (i) </dt><dd 
+class="enumerate-enumitem">terms with denominators greater than \(a\).
+      </dd><dt class="enumerate-enumitem">
+ (ii) </dt><dd 
+class="enumerate-enumitem">term with denominator equal to \(a\).
+      </dd><dt class="enumerate-enumitem">
+ (iii) </dt><dd 
+class="enumerate-enumitem">expressions with denominator less than \(a\).</dd></dl>
+<!--l. 172--><p class="noindent" >Assuming \(n&gt;a\), counting carefully, we would have have \(n-a\) terms of type (i), \(1\) term of type
+(ii), and \(n-(n-a)-1=a-1\) terms of type (iii). Now, we can consider the behaviour of the type (i)
+terms as the number of type (i) terms dominates as \(n\to \infty \). Now, we have:
+\begin {align*}  \left |\frac {a^n}{n!}\right | = \left |\frac {a}{n}\right |\cdot \left |\frac {a}{n-1}\right | \cdot ... \cdot 1 \cdot \left | \frac {|a|^{|a|-1}}{(|a|-1)!}\right |  \end {align*}
+</p><!--l. 177--><p class="indent" >   For, \(a \in \mathbb {R}-\mathbb {Z}\) and \(|a|&gt;1\), we would have \(n - \lfloor |a| \rfloor \) terms of type (i), and \(\left \lfloor |a| \right \rfloor \) terms of type (iii), and no
+terms of type (ii) \begin {align*}  \left |\frac {a^n}{n!}\right | = \left |\frac {a}{n}\right |\cdot \left |\frac {a}{n-1}\right | \cdot ... \cdot \left | \frac {|a|^{\lfloor |a| \rfloor }}{(\lfloor |a| \rfloor )!}\right |  \end {align*}
+</p><!--l. 181--><p class="indent" >   Hence, for any \(|a|&gt;1\) and \(a \in \mathbb {R}\), and WLOG, \(n&gt;|a|\) the following inequality holds true:
+\begin {align*}  \left |\frac {a^n}{n!}\right | &lt; \left | \frac {a}{n} \right |\cdot \left | \frac {a}{a} \right |^{n -\lfloor |a| \rfloor -1} \cdot \left | \frac {|a|^{\lfloor |a| \rfloor }}{(\lfloor |a| \rfloor )!}\right |  \end {align*}
+</p><!--l. 185--><p class="indent" >   This is because \(a&lt; n-k\) for all terms of type (i), with this, we have: \begin {align*}  \left |\frac {a^n}{n!}\right | &lt; \left | \frac {a}{n} \right |\cdot 1^{n -\lfloor |a| \rfloor -1} \cdot \left | \frac {|a|^{\lfloor |a| \rfloor }}{(\lfloor |a| \rfloor )!}\right | = \frac {C}{n}  \end {align*}
+</p><!--l. 189--><p class="indent" >   Where \(C = |a| \cdot \left | \frac {|a|^{\lfloor |a| \rfloor }}{(\lfloor |a| \rfloor )!}\right |\), hence the sequence is bounded by \(\frac {C}{n}\) when \(|a|&gt;1\). For the case where \(|a|\leq 1\), for
+any \(n \in \mathbb {N}\) \begin {align*}  \left |\frac {a^n}{n!}\right | \leq \frac {1^n}{n!} \leq \frac {1}{n}  \end {align*}
+</p><!--l. 193--><p class="indent" >   Hence, in this case as well the sequence is bounded as well, with \(C=1\) as a
+potential value of the constant. Combining both cases, and the trivial condition
+of \(0\leq |a|\) we have: \begin {align*}  0 \leq \left |\frac {a^n}{n!}\right | \leq \frac {C}{n}  \end {align*}
+</p><!--l. 198--><p class="indent" >   Because \(\frac {C}{n} \to 0\), by the squeeze theorem, \(\left |\frac {a^n}{n!}\right | \to 0\). Then, we can also conclude \(\frac {a^n}{n!} \to 0\).<br 
+class="newline" /><span 
+class="cmbx-12">(b) </span>Defining the sequence \(b_n = \frac {a^n}{n!}\) for simplicity, then computing the ratio of
+consecutive terms, we have: \begin {align*}  \frac {b_{n+1}}{b_n} = \frac {a^{n+1}}{(n+1)!}\cdot \frac {n!}{a^n}= \frac {a}{(n+1)}\\ \lim _{n\to \infty } \frac {b_{n+1}}{b_n} = \lim _{n\to \infty } \frac {a}{(n+1)} = L =0  \end {align*}
+</p><!--l. 205--><p class="indent" >   Because \(0\leq L &lt;1\), the sequence \(b_n\) converges to \(0\), by the sequence ratio test.
+<a 
+ id="x14-23008r30"></a>
+</p>
+   <div  
+class="centerline">                                      <span 
+class="cmbx-12x-x-120">Exercise</span><span 
+class="cmbx-12x-x-120"> 30</span>                            </div><a 
+ id="x14-23009"></a>
+Show that if \(a_n\) is a sequence of positive numbers such that \(a_n \to L\) where \(L &gt;0\), then
+\(a_n^{\frac {1}{n}} \to 1\).
+   <div  
+class="centerline">                                <span 
+class="cmbx-12">Answer of exercise</span><span 
+class="cmbx-12"> 30</span>                            </div>For
+this, we can use the comparison rules again, noting that: \begin {align*}  \frac {L}{2}&lt;L &lt; \frac {3L}{2} \\ \because a_n \to L, \exists N &gt;0 \text { s.t } \forall n &gt; N\\ 0&lt;\frac {L}{2}&lt;a_n &lt; \frac {3L}{2} \\ \implies \left (\frac {L}{2} \right )^\frac {1}{n} &lt; a_n^{\frac {1}{n}} &lt; \left (\frac {3L}{2} \right )^\frac {1}{n}  \end {align*}
+<!--l. 220--><p class="indent" >   Hence, by the squeeze theorem, \(a_n^{\frac {1}{n}} \to 1\), as any \(a \in \mathbb {R}, a&gt;0\) \(a^{\frac {1}{n}} \to 1\).
+
+<a 
+ id="x14-23010r31"></a>
+</p>
+   <div  
+class="centerline">                                      <span 
+class="cmbx-12x-x-120">Exercise</span><span 
+class="cmbx-12x-x-120"> 31</span>                            </div><a 
+ id="x14-23011"></a>
+Let \(a_n = \dfrac {(2n)!}{(n!)^24^n}\). Compute the following limit: \begin {align*}  \lim _{n \to \infty } n \left [ \frac {a_{n+1}}{a_n} - \sqrt [3]{\frac {n}{n+1} } \right ]  \end {align*}
+<!--l. 229--><p class="indent" >   Hence, show that \(a_n \to 0\).
+</p>
+   <div  
+class="centerline">                                <span 
+class="cmbx-12">Answer of exercise</span><span 
+class="cmbx-12"> 31</span>                            </div>First,
+doing minor computation: \begin {align*}  \frac {a_{n+1}}{a_n}= \frac {n+1/2}{n+1}\\ \implies \lim _{n \to \infty } n \left [ \frac {a_{n+1}}{a_n} - \sqrt [3]{\frac {n}{n+1} } \right ] = \lim _{n \to \infty }n\left [ \frac {n+1/2}{n+1} + \sqrt [3]{\frac {n}{n+1} }\right ]  \end {align*}
+<!--l. 238--><p class="indent" >   After, extensive manipulation, we get: \begin {align*}  \lim _{n \to \infty } n \left [ \frac {a_{n+1}}{a_n} - \sqrt [3]{\frac {n}{n+1} } \right ] = -\frac {1}{6}  \end {align*}
+</p><!--l. 242--><p class="indent" >   This implies \(\exists N \in \mathbb {N}\) such that \(\forall n &gt; N\): \begin {align*}  n \left [ \frac {a_{n+1}}{a_n} - \sqrt [3]{\frac {n}{n+1} } \right ] &lt;0 \\ \implies \frac {a_{n+1}}{a_n} &lt; \sqrt [3]{\frac {n}{n+1}} \\ \because \lim _{n \to \infty } \sqrt [3]{\frac {n}{n+1}} = 1 \implies \lim _{n \to \infty } \frac {a_{n+1}}{a_n} &lt;  \end {align*}
+<a 
+ id="x14-23012r32"></a>
+</p>
+   <div  
+class="centerline">                                      <span 
+class="cmbx-12x-x-120">Exercise</span><span 
+class="cmbx-12x-x-120"> 32</span>                            </div><a 
+ id="x14-23013"></a>
+pitfalls of comparison Suppose \( \lim _{n\to \infty } a_n\) exists and equals \(L \in \mathbb {R}\). Which of the following are
+true?
+      <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+  (a) </dt><dd 
+class="enumerate-enumitem">If \(a_n &gt;1\) for some \(n \in \mathbb {N}\), then \(L&gt;1\). <span 
+class="cmbx-12">(False)</span>
+      </dd><dt class="enumerate-enumitem">
+ (b) </dt><dd 
+class="enumerate-enumitem">If \(a_n&gt;1\) for all \(n \in \mathbb {N}\), then \(L&gt;1\). <span 
+class="cmbx-12">(False)</span>
+      </dd><dt class="enumerate-enumitem">
+  (c) </dt><dd 
+class="enumerate-enumitem">If \(a_n&gt;1\) for some \(n \in \mathbb {N}\), then \(L\geq 1\). <span 
+class="cmbx-12">(False)</span>
+      </dd><dt class="enumerate-enumitem">
+ (d) </dt><dd 
+class="enumerate-enumitem">If \(a_n&gt;1\) for all \(n \in \mathbb {N}\), then \(L\geq 1\). <span 
+class="cmbx-12">(True)</span>
+      </dd><dt class="enumerate-enumitem">
+  (e) </dt><dd 
+class="enumerate-enumitem">If \(a_n \geq 1\) for some \(n \in \mathbb {N}\), then \(L&gt;1\). <span 
+class="cmbx-12">(False)</span>
+      </dd><dt class="enumerate-enumitem">
+  (f) </dt><dd 
+class="enumerate-enumitem">If \(a_n \geq 1\) for all \(n \in \mathbb {N}\), then \(L&gt;1\). <span 
+class="cmbx-12">(False)</span>
+      </dd><dt class="enumerate-enumitem">
+  (g) </dt><dd 
+class="enumerate-enumitem">If \(a_n \geq 1\) for some \(n \in \mathbb {N}\), then \(L\geq 1\). <span 
+class="cmbx-12">(False)</span>
+      </dd><dt class="enumerate-enumitem">
+ (h) </dt><dd 
+class="enumerate-enumitem">If \(a_n \geq 1\) for all \(n \in \mathbb {N}\), then \(L \geq 1\). <span 
+class="cmbx-12">(True)</span></dd></dl>
+
+   <!--l. 2--><div class="crosslinks"><p class="noindent">[<a 
+href="Limitsse10.html" >next</a>] [<a 
+href="Limitsse8.html" >prev</a>] [<a 
+href="Limitsse8.html#tailLimitsse8.html" >prev-tail</a>] [<a 
+href="Limitsse9.html" >front</a>] [<a 
+href="Limitsch2.html#Limitsse9.html" >up</a>] </p></div>
+<!--l. 2--><p class="indent" >   <a 
+ id="tailLimitsse9.html"></a>  </p> 
+</body> 
+</html>

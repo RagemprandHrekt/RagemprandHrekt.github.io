@@ -1,0 +1,217 @@
+<!DOCTYPE html> 
+<html lang="en-US" xml:lang="en-US" > 
+<head><title>Limits of Sequences</title> 
+<meta  charset="utf-8" /> 
+<meta name="generator" content="TeX4ht (https://tug.org/tex4ht/)" /> 
+<meta name="viewport" content="width=device-width,initial-scale=1" /> 
+<link rel="stylesheet" type="text/css" href="Limits.css" /> 
+<meta name="src" content="Limits.tex" /> 
+<script>window.MathJax = { tex: { tags: "ams", }, }; </script> 
+ <script type="text/javascript" async="async" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>  
+ 
+<script type="text/javascript" 
+src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" 
+></script> 
+</head><body 
+>
+   <!--l. 2--><div class="crosslinks"><p class="noindent">[<a 
+href="Limitsse8.html" >next</a>] [<a 
+href="#tailLimitsse7.html">tail</a>] [<a 
+href="Limitsch2.html#Limitsse7.html" >up</a>] </p></div>
+   <h3 class="sectionHead"><span class="titlemark">2.1   </span> <a 
+href="Limits.html#QQ2-12-10" id="x12-100002.1">Limits of Sequences</a></h3>
+   <div class="sectionTOCS">
+   </div>
+   <div class="newtheorem">
+<!--l. 4--><p class="noindent" ><span class="head">
+<a 
+ id="x12-10001r1"></a>
+<span 
+class="cmbx-12">Definition 2.1.1 </span>(<span 
+class="cmbx-12">Limit of a sequence</span>)<span 
+class="cmbx-12">.</span>  </span> Given a sequence of real numbers \(\{a_n\}\),
+we say \(\lim \limits _{n\to \infty } a_n = L\) if the following holds: \begin {align*}  \forall \epsilon &gt;0, \exists N&gt;0 \text { such that if } n&gt; N, \text {then } |a_n -L| &lt; \epsilon  \end {align*}
+</p><!--l. 10--><p class="indent" >   We say the <span 
+class="cmbx-12">Limit Exists </span>for the sequence \(\{a_n\}\), or \(\{a_n\}\) <span 
+class="cmbx-12">converges</span>, if there exists \(L \in \mathbb {R}\)
+such that \(a_n \to L\)
+</p>
+   </div>
+<!--l. 11--><p class="indent" >
+</p><!--l. 14--><p class="noindent" >
+</p>
+   <h4 class="subsectionHead"><a 
+href="#x12-11000" id="x12-11000">Arithmetic Properties of Limits </a></h4>
+<!--l. 16--><p class="noindent" >We start with the arithmetic properties of Limits and prove them with the
+formal definition of limits given above(<a 
+href="#x12-10001r1">2.1.1<!--tex4ht:ref: formal_def_limit --></a>)
+</p>
+   <div class="newtheorem">
+
+<!--l. 23--><p class="noindent" ><span class="head">
+<a 
+ id="x12-11001r1"></a>
+<span 
+class="cmbx-12">Proposition 1.</span>  </span><span 
+class="cmti-12">We Have:</span>
+</p><!--l. 26--><p class="indent" >
+      </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+   <span 
+class="cmti-12">1.</span> </dt><dd 
+class="enumerate-enumitem">\(\lim \limits _{n \to \infty }{c} = c\) <span 
+class="cmti-12">where</span> \(c\) <span 
+class="cmti-12">is a constant</span>
+      </dd><dt class="enumerate-enumitem">
+   <span 
+class="cmti-12">2.</span> </dt><dd 
+class="enumerate-enumitem">\(\lim \limits _{n\to \infty } \dfrac {1}{n^p} = 0\) <span 
+class="cmti-12">where</span> \(p &gt; 0\) <span 
+class="cmti-12">is a fixed positive number</span>
+      </dd><dt class="enumerate-enumitem">
+   <span 
+class="cmti-12">3.</span> </dt><dd 
+class="enumerate-enumitem"><span 
+class="cmti-12">If</span> \(\lim \limits _{n \to \infty }{a_n}= L\) <span 
+class="cmti-12">and</span> \(\lim \limits _{n \to \infty }{b_n}= M\) <span 
+class="cmti-12">where L and M are finite numbers, then:</span>
+           <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+       <span 
+class="cmti-12">a)</span> </dt><dd 
+class="enumerate-enumitem">\(\lim _{n \to \infty }{(a_n \pm b_n )} = L \pm M\)
+           </dd><dt class="enumerate-enumitem">
+       <span 
+class="cmti-12">b)</span> </dt><dd 
+class="enumerate-enumitem">\(\lim _{n \to \infty }{a_nb_n}= LM\)
+           </dd><dt class="enumerate-enumitem">
+       <span 
+class="cmti-12">c)</span> </dt><dd 
+class="enumerate-enumitem"><span 
+class="cmti-12">Suppose that</span> \(M \neq 0\)<span 
+class="cmti-12">, then</span> \( \lim \limits _{n \to \infty }{\dfrac {a_n}{b_n} = \dfrac {L}{M}} \)</dd></dl>
+      </dd><dt class="enumerate-enumitem">
+   <span 
+class="cmti-12">4.</span> </dt><dd 
+class="enumerate-enumitem"><span 
+class="cmti-12">If</span> \(\lim \limits _{n \to \infty }{a_n}= L\)<span 
+class="cmti-12">, and</span> \(a_n\) <span 
+class="cmti-12">is a sequence of positive numbers and</span> \(p,q \in \mathbb {N}\) <span 
+class="cmti-12">then:</span>
+           <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+       <span 
+class="cmti-12">a)</span> </dt><dd 
+class="enumerate-enumitem">\(\lim _{n \to \infty }a_n^p = L^p\)
+           </dd><dt class="enumerate-enumitem">
+       <span 
+class="cmti-12">b)</span> </dt><dd 
+class="enumerate-enumitem">\(\lim _{n \to \infty }a_n^{\frac {p}{q}} = L^{\frac {p}{q}}\)</dd></dl>
+      </dd><dt class="enumerate-enumitem">
+   <span 
+class="cmti-12">5.</span> </dt><dd 
+class="enumerate-enumitem"><span 
+class="cmti-12">If</span> \(\lim \limits _{n \to \infty }{a_n}= L\)<span 
+class="cmti-12">,</span> \(\lim \limits _{n \to \infty }{|a_n|}= |L|\)</dd></dl>
+   </div>
+<!--l. 43--><p class="indent" >
+
+</p><!--l. 53--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><a 
+href="#x12-12000" id="x12-12000">Proof of 4 (a)</a></h5>
+<a 
+ id="x12-12000doc"></a>
+<!--l. 55--><p class="noindent" ><span 
+class="cmbx-12">Statement:</span>
+</p><!--l. 57--><p class="noindent" >If \(\{a_n\}\) is a sequence of positive numbers such that \(\lim \limits _{n \to \infty }a_n =L\), we need to prove using \(\epsilon , N\)
+definition that \begin {align*}  \lim \limits _{n \to \infty }a_n^p = L^p  \end {align*}
+</p><!--l. 61--><p class="indent" >   Where \(p \in \mathbb {N}\)
+</p><!--l. 65--><p class="indent" >   We need to show that for any \(\epsilon &gt;0\) there exists some \(N \in \mathbb {N}\) such that if \(n&gt;N\) \begin {align*}  |a_n^p-L^p| &lt; \epsilon  \end {align*}
+</p><!--l. 69--><p class="noindent" ><span 
+class="cmbx-12">observations:</span>
+</p><!--l. 72--><p class="noindent" >Using the identity
+</p><!--l. 77--><p class="indent" >   \begin {align*}  x^p-y^p = (x-y)(x^{p-1}+x^{p-2}y+...+xy^{p-2}+y^{p-1})  \end {align*}
+</p><!--l. 79--><p class="noindent" >we have \begin {align*}  |a_n^p -L^p| = |a_n-L||a_n^{p-1}+a_n^{p-2}L+...+a_nL^{p-2}+L^{p-1}|\\ \implies |a_n^p -L^p| \leq |a_n-L|||a_n^{p-1}|+|a_n^{p-2}L|+...+|a_nL^{p-2}|+|L^{p-1}||  \end {align*}
+</p><!--l. 86--><p class="noindent" >We need to bound \(|a_n^kL^m|\) where \(k,m \in \mathbb {N}\) and \(0\leq k,m \leq p-1\) with \(k+m =p-1\). \begin {align*}  |a_n-L| &lt;1 &amp;\implies -1 &lt; a_n-L&lt;1 \implies L-1&lt;a_n&lt;L+1\\ &amp;\implies |a_n| &lt; |L|+1 \qquad \text { for some } n &gt; N_1\\ &amp;\implies |a_n|^k |L|^m &lt;(|L|+1)^k|L|^m  \end {align*}
+</p><!--l. 93--><p class="indent" >   for elegance, let \begin {align*}  M = \max \{|L|^{p-1},(|L|+1)^1|L|^{p-2},...,(|L|+1)^{p-2}|L|^{1},(|L|+1)^{p-1}\}\\ \implies |a_n^p -L^p| &lt; |a_n-L|pM  \end {align*}
+</p><!--l. 99--><p class="indent" >   Hence we bound \(|a_n^p-L^p|\) above by \(\epsilon \) by requiring that: \begin {align*}  |a_n-L| &lt; \frac {\epsilon }{pM}  \end {align*}
+</p><!--l. 103--><p class="indent" >   for some \(p \in \mathbb {N}\).
+</p>
+   <div class="proof">
+<!--l. 106--><p class="indent" >   <span class="head">
+<span 
+class="cmti-12">Proof.</span> </span>
+</p><!--l. 110--><p class="indent" >   Now, we can complete the proof. Because \(a_n \to L\), \(\exists N_1 \in \mathbb {N}\) such that if \(n &gt; N_0\) then for \(\epsilon _0 = 1\),
+\begin {align*}  |a_n-L| &lt;1 &amp;\implies |a_n| &lt; |L|+1 \\ &amp;\implies |a_n|^k |L|^m &lt;(|L|+1)^k|L|^m  \end {align*}
+</p><!--l. 115--><p class="indent" >   For \(k,m \in \mathbb {N}\) and \(0\leq k,m \leq p-1\) with \(k+m =p-1\).
+</p><!--l. 118--><p class="indent" >   Again, using the fact that \(a_n \to L\), \(\exists N_1 \in \mathbb {N}\) such that if \(n &gt; N_1\) then for \(p \in \mathbb {N}\) and some \(\epsilon _1\), \begin {align*}  |a_n-L| &lt; \epsilon _1 = \frac {\epsilon }{pM}  \end {align*}
+</p><!--l. 122--><p class="indent" >   Then, for any arbitrary \(\epsilon &gt; 0\), there exists \(N = max\{N_0, N_1\}\) such that if \(n &gt; N\), both the previous
+inequalities hold: \begin {align*}  |a_n^p -L^p| = |a_n-L||a_n^{p-1}+a_n^{p-2}L+...+a_nL^{p-2}+L^{p-1}| \\ \implies |a_n^p -L^p| \leq |a_n-L|\left ||a_n^{p-1}|+|a_n^{p-2}L|+...+|a_nL^{p-2}|+|L^{p-1}|\right |\\ \implies |a_n^p -L^p| &lt; |a_n-L|pM\\ \implies |a_n^p -L^p| &lt; \frac {\epsilon }{pM} * pM = \epsilon  \end {align*}
+</p><!--l. 129--><p class="indent" >   Hence, if \(a_n\to L\), \(a_n^p \to L^p\) for positive sequences of \(a_n\) and \(p \in \mathbb {N}\)                                     □
+</p>
+   </div>
+
+<!--l. 143--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><a 
+href="#x12-13000" id="x12-13000">Proof of 4 (b)</a></h5>
+<!--l. 145--><p class="noindent" ><span 
+class="cmbx-12">Statement:</span>
+</p><!--l. 147--><p class="noindent" >If \(\{a_n\}\) is a sequence of positive numbers such that \(\lim \limits _{n \to \infty } a_n = L\), then \begin {align*}  \lim \limits _{n\to \infty } a_n^{\frac {p}{q}} = L^{\frac {p}{q}}  \end {align*}
+</p><!--l. 153--><p class="noindent" >Or equivalently, for any \(\epsilon &gt;0\), \(\exists N \in \mathbb {N}\) such that for all \(n&gt;N\) we have: \begin {align*}  |a_n^{\frac {p}{q}} - L^{\frac {p}{q}}| &amp;&lt; \epsilon \\ |a_n^{\frac {p}{q}} - L^{\frac {p}{q}}| &amp;= |(a_n^p)^{\frac {1}{q}}-(L^p)^{\frac {1}{q}}|\\ \implies |a_n^{\frac {p}{q}} - L^{\frac {p}{q}}| &amp;= \frac {|a_n^p -L^p|}{|(L^p)^{\frac {q-1}{q}}+ (a_n^p)^{\frac {1}{q}}(L^p)^{\frac {q-2}{q}}+...+(a_n^p)^{\frac {q-2}{q}}(L^p)^{\frac {1}{q}}+(a_n^p)^{\frac {q-1}{q}}|} \leq \frac {|a_n^p -L^p|}{|(L^p)^{\frac {q-1}{q}}|}  \end {align*}
+</p><!--l. 160--><p class="indent" >   Hence we must show that: \begin {align*}  \frac {|a_n^p -L^p|}{|(L^p)^{\frac {q-1}{q}}|} &lt; \epsilon \\ \implies |a_n^p -L^p| &lt; |(L^p)^{\frac {q-1}{q}}|\epsilon  \end {align*}
+</p><!--l. 165--><p class="indent" >   From <span 
+class="cmbx-12">4 (a) </span>we know that for positive sequence \(\{a_n\}\) that has a limit \(L\), \(a_n^p \to L^p\). Hence we
+can start the proof.
+</p>
+   <div class="proof">
+<!--l. 169--><p class="indent" >   <span class="head">
+<span 
+class="cmti-12">Proof.</span> </span>Given that \(a_n \to L\) and \(a_n\) is positive, \begin {gather*}  a_n^p\to L^p \\ \therefore \forall \epsilon _1 &gt; 0 \quad \exists N_1 \in \mathbb {N} \text { s.t for } n &gt; N_1 \\ |a_n^p - L^p| &lt; \epsilon _1  \end {gather*} Hence, choosing \(\epsilon _1 = |(L^p)^{\frac {q-1}{q}}|\epsilon \), where \(\epsilon \) is some arbitrary
+positive value, we can complete the proof. By taking \(N = N_1\) so that when \(n&gt; N\),
+\begin {align*}  |a_n^{\frac {p}{q}} - L^{\frac {p}{q}}| \leq \frac {|a_n^p -L^p|}{|(L^p)^{\frac {q-1}{q}}|} = \frac {\epsilon }{|(L^p)^{\frac {q-1}{q}}|} \times |(L^p)^{\frac {q-1}{q}}| = \epsilon  \end {align*}
+</p><!--l. 180--><p class="indent" >   Hence, \(a_n^{\frac {p}{q}} \to L^{\frac {p}{q}}\)                                                                                  □
+</p>
+   </div>
+<!--l. 194--><p class="noindent" >
+</p>
+   <h5 class="subsubsectionHead"><a 
+href="#x12-14000" id="x12-14000">Proof of 5</a></h5>
+<!--l. 196--><p class="noindent" ><span 
+class="cmbx-12">Statement:</span>
+</p><!--l. 198--><p class="noindent" >If \(\{a_n\}\) is a sequence of real numbers such that \(\lim \limits _{n \to \infty }a_n =L \), \(\lim \limits _{n \to \infty }|a_n| =|L| \).
+</p><!--l. 201--><p class="noindent" ><br 
+class="newline" /><br 
+class="newline" />We need to prove that for any \(\epsilon &gt;0\), \(\exists N \in \mathbb {N}\) such that for \(n &gt; N\) \begin {align*}  ||a_n|-|L|| &lt; \epsilon  \end {align*}
+</p><!--l. 208--><p class="indent" >   Note that, by the reverse triangle inequality (<span 
+class="cmbx-12">??</span>) \begin {gather*}  ||a_n|-|L|| \leq |a_n-L|  \end {gather*} But, because \(a_n \to L\), it is indeed
+the case for any arbitrary \(\epsilon &gt;0\), \(\exists N \in \mathbb {N}\) such that for all \(n &gt;N\) \begin {align*}  |a_n -L| &lt; \epsilon \\ ||a_n|-|L|| \leq |a_n-L| &lt; \epsilon \\ \implies ||a_n|-|L|| &lt; \epsilon  \end {align*}
+
+</p><!--l. 220--><p class="noindent" >
+</p>
+   <h4 class="subsectionHead"><a 
+href="#x12-15000" id="x12-15000">Exercises</a></h4>
+<a 
+ id="x12-15001r26"></a>
+   <div  
+class="centerline">                                      <span 
+class="cmbx-12x-x-120">Exercise</span><span 
+class="cmbx-12x-x-120"> 26</span>                            </div><a 
+ id="x12-15002"></a>
+Let \(P(x)\) and \(Q(x)\) be two polynomials of equal degree (say \( k \in \mathbb {N})\) show that: \begin {align*}  \lim _{n \to \infty } \dfrac {p(n)}{q(n)} = \dfrac {a_k}{b_k}  \end {align*}
+<!--l. 231--><p class="indent" >   Where \(a_k\) and \(b_k\) are the leading coefficients of \(p(x)\) and \(q(x)\) respectively.
+</p>
+   <div  
+class="centerline">                                <span 
+class="cmbx-12">Answer of exercise</span><span 
+class="cmbx-12"> 26</span>                            </div>
+<!--l. 243--><p class="indent" >   \begin {align*}  \lim _{n \to \infty } \dfrac {p(n)}{q(n)} &amp; = \lim _{n \to \infty } \dfrac {a_kn^k+a_{k-1}n^{k-1}+ ... + a_1n+a_0}{b_kn^k+b_{k-1}n^{k-1}+ ... + b_1n+b_0}\\ &amp; = \lim _{n \to \infty } \dfrac { \dfrac {a_kn^k+a_{k-1}n^{k-1}+ ... + a_1n+a_0}{n^k}}{\dfrac {b_kn^k+b_{k-1}n^{k-1}+ ... + b_1n+b_0}{n^k}} \\ &amp;= \lim _{n \to \infty } \dfrac {a_k+\frac {a_{k-1}}{n}+ ... + \frac {a_1}{n^{k-1}}+\frac {a_0}{n^k}}{b_k+\frac {b_{k-1}}{n}+ ... + \frac {b_1}{n^{k-1}}+\frac {b_0}{n^k}}  \end {align*}
+</p><!--l. 246--><p class="indent" >   since \(\lim \limits _{n \to \infty }\dfrac {1}{n^p} =0\) for \(p &gt;0\)
+
+</p>
+   <!--l. 2--><div class="crosslinks"><p class="noindent">[<a 
+href="Limitsse8.html" >next</a>] [<a 
+href="Limitsse7.html" >front</a>] [<a 
+href="Limitsch2.html#Limitsse7.html" >up</a>] </p></div>
+<!--l. 2--><p class="indent" >   <a 
+ id="tailLimitsse7.html"></a>  </p> 
+</body> 
+</html>

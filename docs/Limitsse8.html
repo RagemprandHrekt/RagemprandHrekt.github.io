@@ -1,0 +1,112 @@
+<!DOCTYPE html> 
+<html lang="en-US" xml:lang="en-US" > 
+<head><title>Squeeze Theorem</title> 
+<meta  charset="utf-8" /> 
+<meta name="generator" content="TeX4ht (https://tug.org/tex4ht/)" /> 
+<meta name="viewport" content="width=device-width,initial-scale=1" /> 
+<link rel="stylesheet" type="text/css" href="Limits.css" /> 
+<meta name="src" content="Limits.tex" /> 
+<script>window.MathJax = { tex: { tags: "ams", }, }; </script> 
+ <script type="text/javascript" async="async" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>  
+ 
+<script type="text/javascript" 
+src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" 
+></script> 
+</head><body 
+>
+   <!--l. 2--><div class="crosslinks"><p class="noindent">[<a 
+href="Limitsse9.html" >next</a>] [<a 
+href="Limitsse7.html" >prev</a>] [<a 
+href="Limitsse7.html#tailLimitsse7.html" >prev-tail</a>] [<a 
+href="#tailLimitsse8.html">tail</a>] [<a 
+href="Limitsch2.html#Limitsse8.html" >up</a>] </p></div>
+   <h3 class="sectionHead"><span class="titlemark">2.2   </span> <a 
+href="Limits.html#QQ2-13-16" id="x13-160002.2">Squeeze Theorem</a></h3>
+   <div class="sectionTOCS">
+   </div>
+   <div class="newtheorem">
+<!--l. 4--><p class="noindent" ><span class="head">
+<a 
+ id="x13-16001r1"></a>
+<span 
+class="cmbx-12">Definition 2.2.1 </span>(<span 
+class="cmbx-12">Squeeze Theorem</span>)<span 
+class="cmbx-12">.</span>  </span> If there exists \(N &gt;0\) such that \(a_n \leq b_n \leq c_n\) for any \(n\geq N\),
+and \begin {align*}  \lim \limits _{n \to \infty } a_n = \lim \limits _{n \to \infty } c_n = L  \end {align*}
+</p><!--l. 10--><p class="indent" >   Where \(L \in \mathbb {R}\) (i.e. finite), then \(\{b_n\}\) also has a limit and \(\lim \limits _{n \to \infty }b_n =L\)
+</p>
+   </div>
+<!--l. 12--><p class="indent" >
+</p>
+   <div class="proof">
+<!--l. 15--><p class="indent" >   <span class="head">
+<span 
+class="cmti-12">Proof.</span> </span>Given that \(\lim \limits _{n\to \infty } a_n = \lim \limits _{n\to \infty } c_n = L\) and there exists some \(N &gt; 0\) such that for all \(n&gt;N\), \(a_n \leq b_n \leq c_n\). <br 
+class="newline" /><br 
+class="newline" />Because \(a_n \to L\), for any \(\epsilon &gt;0\), \(\exists N_1 &gt; 0\) such for \(n&gt;N_1\) \begin {align*}  |a_n-L| &lt; \epsilon \\ \implies -\epsilon &lt;a_n-L&lt; \epsilon \\ \implies L - \epsilon &lt; a_n &lt; L +\epsilon  \end {align*}
+</p><!--l. 24--><p class="indent" >   Similarly, because, \(c_n \to L\), for the same \(\epsilon \) as above, \(\exists N_2 \in \mathbb {N}\), so that for \(n&gt;N_2\) \begin {align*}  |c_n-L| &lt; \epsilon \\ \implies L-\epsilon &lt; c_n &lt; L+ \epsilon  \end {align*}
+</p><!--l. 29--><p class="indent" >   Because \(\exists N &gt; 0\) such that \(a_n\leq b_n \leq c_n\) for any \(n \geq N\), choose \(N' = \max \{N_1,N_2,N\}\), then for \(n&gt; N'\), all the three conditions hold,
+and choose some arbitrary \(\epsilon \) \begin {gather*}  a_n\leq b_n \leq c_n \\ L-\epsilon &lt; a_n \leq b_n \leq c_n &lt; L + \epsilon \\ \implies -\epsilon &lt;b_n -L &lt; \epsilon \\ \implies |b_n -L| &lt; \epsilon  \end {gather*} Hence for any arbitrary \(\epsilon \), when the above conditions
+hold, \(b_n \to L\) as well
+                                                                        □
+
+</p>
+   </div>
+<!--l. 43--><p class="noindent" >
+</p>
+   <h4 class="subsectionHead"><a 
+href="#x13-17000" id="x13-17000">Exercises</a></h4>
+<a 
+ id="x13-17001r27"></a>
+   <div  
+class="centerline">                                      <span 
+class="cmbx-12x-x-120">Exercise</span><span 
+class="cmbx-12x-x-120"> 27</span>                            </div><a 
+ id="x13-17002"></a>
+Prove that for any \(a &gt; 1\) and any polynomial \(p(x)\), we have: \begin {align*}  \lim \limits _{n \to \infty } \dfrac {p(n)}{a^n} =0  \end {align*}
+   <div  
+class="centerline">                                <span 
+class="cmbx-12">Answer of exercise</span><span 
+class="cmbx-12"> 27</span>                            </div>
+<!--l. 59--><p class="indent" >   We need to show that  \begin {align*}  c_n \leq \dfrac {p(n)}{a^n} \leq b_n \\ \text {where} \lim \limits _{n \to \infty }c_n =0 \text { and }\lim \limits _{n \to \infty }b_n =0  \end {align*}
+</p><!--l. 67--><p class="noindent" >consider \(p(n)\) of some degree \(k \in \mathbb {N}\): \begin {align*}  p(n) = b_kn^k + b_{k-1}n^{k-1}+ ... + b_1n+b_0  \end {align*}
+</p><!--l. 72--><p class="noindent" >For a polynomial \(p(n)\) of some degree \(k \in \mathbb {N}\) and some \(a &gt;1\): \begin {align*}  \lim \limits _{n \to \infty }\dfrac {p(n)}{a^n} &amp;= \lim \limits _{n \to \infty }\dfrac {b_kn^k + b_{k-1}n^{k-1}+ ... + b_1n+b_0}{a^n}\\ &amp;= \lim \limits _{n \to \infty } \left [ \dfrac {b_k}{a^n}n^k +\dfrac {b_{k-1}}{a^n}n^{k-1} +...+\dfrac {b_1}{a^n}n+\dfrac {b_0}{a^n} \right ]  \end {align*}
+</p><!--l. 78--><p class="indent" >   consider any index \(j \in [0,k]\) \begin {align*}  b_j\dfrac {1}{a^n}n^j = b_j\left (\dfrac {1}{a}\right )^nn^j \qquad \because a&gt;1 \implies \frac {1}{a} &lt;1 \text { and } \frac {1}{a} \in (-1,1)\\ \implies \text {from the lemma} \end {align*}
+</p><!--l. 82--><p class="indent" >   from the lemma: \begin {gather*}  \lim \limits _{n \to \infty } b_j\left (\dfrac {1}{a}\right )^nn^j = \lim \limits _{n \to \infty }b_j \lim \limits _{n \to \infty } \left (\dfrac {1}{a}\right )^nn^j = \lim \limits _{n \to \infty }b_j \times 0 =0\\ \lim \limits _{n \to \infty } \left [ \dfrac {b_k}{a^n}n^k +\dfrac {b_{k-1}}{a^n}n^{k-1} +...+\dfrac {b_1}{a^n}n+\dfrac {b_0}{a^n} \right ] =0+0+...+0+0\\ \lim \limits _{n \to \infty }\dfrac {p(n)}{a^n} =0  \end {gather*}
+<a 
+ id="x13-17003r28"></a>
+</p>
+   <div  
+class="centerline">                                      <span 
+class="cmbx-12x-x-120">Exercise</span><span 
+class="cmbx-12x-x-120"> 28</span>                            </div><a 
+ id="x13-17004"></a>
+Suppose \(p(x)\) is a polynomial such that \(p(n) \geq 1\) for any \(n \in \mathbb {N}\). Prove that \begin {align*}  \lim \limits _{n \to \infty } p(n)^{\frac {1}{n}} = 1  \end {align*}
+   <div  
+class="centerline">                                <span 
+class="cmbx-12">Answer of exercise</span><span 
+class="cmbx-12"> 28</span>                            </div>
+<!--l. 104--><p class="indent" >   The goal is to prove that: \begin {align*}  b_n \leq p(n)^{\frac {1}{n}} \leq c_n \qquad \text {for } n &gt; N, \text { for some }N\in \mathbb {N}  \end {align*}
+</p><!--l. 108--><p class="indent" >   where \(b_n, c_n \to 1\) as \(n \to \infty \)<br 
+class="newline" /><br 
+class="newline" />Let: \begin {align*}  p(n)^{\frac {1}{n}} -1 = x_n\\ x_n\geq 0  \end {align*}
+</p><!--l. 115--><p class="indent" >   We need to bound \(x_n\). Note that \begin {align*}  (1+x_n)^n = p(n)\\ \implies 1+nx_n+C_2^nx_n^2+...+nx_n^{n-1} +x_n^n = p(n)  \end {align*}
+</p><!--l. 120--><p class="indent" >   WLOG, assume \(p(n)\) has a degree of \(k\) and that \(n&gt;k\), using the general form of
+polynomials: \begin {align*}  p(n) = a_kn^k + a_{k-1}n^{k-1}+...+a_1n+a_0\\  \end {align*}
+</p><!--l. 124--><p class="indent" >   For convenience, set \(M = \max \{|a_k|,|a_{k-1}|,...,|a_0|\}\), hence, for large \(n\) \begin {align*}  p(n) \leq Mn^{k+1}  \end {align*}
+</p><!--l. 128--><p class="indent" >   Now, \begin {align*}  1+nx_n+C_2^nx_n^2+...+nx_n^{n-1} +x_n^n \leq Mn^{k+1} \\ C^n_{k+2}x_n \leq 1+nx_n+C_2^nx_n^2+...+nx_n^{n-1} +x_n^n \leq Mn^{k+1}  \end {align*}
+</p><!--l. 133--><p class="indent" >   Hence, \begin {align*}  0\leq x_n \leq \frac {Mn^{k+1}}{C^n_{k+2}}\\ \frac {Mn^{k+1}}{C^n_{k+2}} = \frac {M(k+2)!}{n\left ( 1-\frac {1}{n}\right )...\left ( 1-\frac {k+1}{n}\right )}  \end {align*}
+</p><!--l. 138--><p class="indent" >   Clearly \begin {align*}  \lim _{n\to \infty }\frac {M(k+2)!}{n\left ( 1-\frac {1}{n}\right )...\left ( 1-\frac {k+1}{n}\right )} = 0  \end {align*}
+</p><!--l. 142--><p class="indent" >   Hence, by the squeeze theorem, \(x_n\to 0\), hence \(p(n)^{\frac {1}{n}}\to 1\)
+
+</p>
+   <!--l. 2--><div class="crosslinks"><p class="noindent">[<a 
+href="Limitsse9.html" >next</a>] [<a 
+href="Limitsse7.html" >prev</a>] [<a 
+href="Limitsse7.html#tailLimitsse7.html" >prev-tail</a>] [<a 
+href="Limitsse8.html" >front</a>] [<a 
+href="Limitsch2.html#Limitsse8.html" >up</a>] </p></div>
+<!--l. 2--><p class="indent" >   <a 
+ id="tailLimitsse8.html"></a>  </p> 
+</body> 
+</html>

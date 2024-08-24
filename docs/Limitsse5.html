@@ -1,0 +1,486 @@
+<!DOCTYPE html> 
+<html lang="en-US" xml:lang="en-US" > 
+<head><title>Natural Numbers. Induction</title> 
+<meta  charset="utf-8" /> 
+<meta name="generator" content="TeX4ht (https://tug.org/tex4ht/)" /> 
+<meta name="viewport" content="width=device-width,initial-scale=1" /> 
+<link rel="stylesheet" type="text/css" href="Limits.css" /> 
+<meta name="src" content="Limits.tex" /> 
+<script>window.MathJax = { tex: { tags: "ams", }, }; </script> 
+ <script type="text/javascript" async="async" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>  
+ 
+<script type="text/javascript" 
+src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" 
+></script> 
+</head><body 
+>
+   <!--l. 2--><div class="crosslinks"><p class="noindent">[<a 
+href="Limitsse6.html" >next</a>] [<a 
+href="Limitsse4.html" >prev</a>] [<a 
+href="Limitsse4.html#tailLimitsse4.html" >prev-tail</a>] [<a 
+href="#tailLimitsse5.html">tail</a>] [<a 
+href="Limitsch1.html#Limitsse5.html" >up</a>] </p></div>
+   <h3 class="sectionHead"><span class="titlemark">1.5   </span> <a 
+href="Limits.html#QQ2-8-7" id="x8-70001.5">Natural Numbers. Induction</a></h3>
+   <div class="sectionTOCS">
+   </div>
+<!--l. 3--><p class="indent" >   A precise approach of defining natural numbers is as follows:
+</p>
+   <div class="newtheorem">
+<!--l. 4--><p class="noindent" ><span class="head">
+<a 
+ id="x8-7001r1"></a>
+<span 
+class="cmbx-12">Definition 1.5.1 </span>(Natural Numbers)<span 
+class="cmbx-12">.</span>  </span> 
+</p><!--l. 7--><p class="indent" >   A Subset \(S\) of a field \(F\) is called <span 
+class="cmti-12">inductive </span>iff:
+      </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+  (i) </dt><dd 
+class="enumerate-enumitem">\(1\in S\) (\(S\) contains the unity element of \(F\)) and,
+      </dd><dt class="enumerate-enumitem">
+ (ii) </dt><dd 
+class="enumerate-enumitem">\((\forall x \in S)\;\; x+1\in S\)</dd></dl>
+<!--l. 12--><p class="noindent" >Define \(N\) to be the intersection of <span 
+class="cmti-12">all </span>such subsets. We then obtain the following.
+</p>
+   </div>
+<!--l. 13--><p class="indent" >
+</p>
+   <div class="newtheorem">
+<!--l. 14--><p class="noindent" ><span class="head">
+<a 
+ id="x8-7004r2"></a>
+<span 
+class="cmbx-12">Theorem 2.</span>  </span><span 
+class="cmti-12">The  Set</span>  \(N\)  <span 
+class="cmti-12">so  defined  is  inductive  itself.  In  fact,  it  is  the</span>
+<span 
+class="cmti-12">“smallest” inductive set in</span> \(F\) <span 
+class="cmti-12">(i.e. contained in any other such set).</span>
+
+</p>
+   </div>
+<!--l. 16--><p class="indent" >
+</p>
+   <div class="proof">
+<!--l. 18--><p class="indent" >   <span class="head">
+<span 
+class="cmti-12">Proof.</span> </span>We have to show that, with our new definition,
+      </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+  (i) </dt><dd 
+class="enumerate-enumitem">\(1 \in N\) and
+      </dd><dt class="enumerate-enumitem">
+ (ii) </dt><dd 
+class="enumerate-enumitem">\((\forall x \in N)\;\; x+1 \in N.\)</dd></dl>
+<!--l. 24--><p class="indent" >   Now, by definition, the unity \(1\), is in <span 
+class="cmti-12">each </span>inductive set; Hence belongs to the
+intersection of such sets, i.e., to \(N\). Thus, \(1 \in N\), as claimed.<br 
+class="newline" />   Next, we take any \(x \in N\). Then, by our definition of \(N\), \(x\) is in <span 
+class="cmti-12">every </span>inductive set \(S\).
+Hence, by the property (ii) of such sets, also \(x+1\) is in every such set \(S\); thus, \(x+1\) is in
+the intersection of <span 
+class="cmti-12">all </span>inductive sets, i.e., \(x+1 \in N\), and so \(N\) is inductive, indeed.
+<br 
+class="newline" />   Finally, by definition, \(N\) is the <span 
+class="cmti-12">common </span>part of all such sets, hence contained in
+each.                                                                                          □
+</p>
+   </div>
+<!--l. 28--><p class="indent" >   For applications, this is usually expressed as:
+</p>
+   <div class="newtheorem">
+<!--l. 29--><p class="noindent" ><span class="head">
+<a 
+ id="x8-7007r3"></a>
+<span 
+class="cmbx-12">Theorem 3 </span>(First Inductive Law)<span 
+class="cmbx-12">.</span>  </span><span 
+class="cmti-12">A proposition</span> \(P(n)\) <span 
+class="cmti-12">involving a natural</span> \(n\) <span 
+class="cmti-12">holds for</span>
+<span 
+class="cmti-12">all</span> \(n \in N\) <span 
+class="cmti-12">in a field</span> \(F\) <span 
+class="cmti-12">if:</span>
+      </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+  <span 
+class="cmti-12">(i)</span> </dt><dd 
+class="enumerate-enumitem"><span 
+class="cmti-12">It holds for</span> \(n=1\;\; [P(1)\; \text {is true } ]\)<span 
+class="cmti-12">; and</span>
+
+      </dd><dt class="enumerate-enumitem">
+ <span 
+class="cmti-12">(ii)</span> </dt><dd 
+class="enumerate-enumitem"><span 
+class="cmti-12">whenever</span> \(P(n)\) <span 
+class="cmti-12">holds for</span> \(n=m\)<span 
+class="cmti-12">, it holds for</span> \(n=m+1\)<span 
+class="cmti-12">;</span> \([P(m) \implies P(m+1)].\)</dd></dl>
+   </div>
+<!--l. 35--><p class="indent" >
+</p>
+   <div class="proof">
+<!--l. 37--><p class="indent" >   <span class="head">
+<span 
+class="cmti-12">Proof.</span> </span>Let \(S\) be the set of all those \(n \in N\) for which \(P(n)\) is true; that is, \(S =\{n \in N \;|\; P(n) \} \). We must
+show that actually <span 
+class="cmti-12">each</span> \(n \in N\) is in \(S\), i.e., \(N \subseteq S\).<br 
+class="newline" />   First, we show that \(S\) is inductive. By our assumption (i), \(P(1)\) is true. So, \(1 \in S\).
+<br 
+class="newline" />Next, suppose \(x \in S\). This means that \(P(x)\) is true, but by assumption (ii), this implies
+\(P(x+1)\), i.e., \(x+1 \in S\). Thus, \(1 \in S\) and \((\forall x \in S)\;\;x+1 \in S\); so, \(S\) is <span 
+class="cmti-12">inductive</span>. By the new definition of Natural
+numbers, \(N \subseteq S\).                                                                                  □
+</p>
+   </div>
+<!--l. 41--><p class="indent" >   This theorem is widely used to prove general propositions on natural
+elements, as follows. In order to show that some formula or proposition \(P(n)\) is true
+for <span 
+class="cmti-12">every </span>natural number \(n\), we  <span 
+class="cmti-12">first verify</span> \(P(1)\), i.e., show that \(P(n)\) holds for \(n=1\). We then
+show that \begin {align*}  (\forall m \in N)\;\;P(m) \implies P(m+1);  \end {align*}
+</p><!--l. 45--><p class="indent" >   that is, if \(P(n)\) holds for some \(n=m\), <span 
+class="cmti-12">then </span>it also holds for \(n=m+1\). Once, these two facts are
+established, The first inductive law ensures, that \(P(n)\) holds for all natural
+\(n\).<br 
+class="newline" /><br 
+class="newline" /><span 
+class="cmbx-12">Examples</span>
+      </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+ (A) </dt><dd 
+class="enumerate-enumitem">If \(n\) and \(m\) are natural numbers, so are \(n+m\) and \(nm\). To prove it, fix any \(m \in \N \). Let \(P(n)\) mean
+      that \(m+n \in \N \), we now verify the following:
+           <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+       (i) </dt><dd 
+class="enumerate-enumitem">\(P(1)\) is true; for \(m \in \N \) is given. Hence, by the very definition of \(\N \), \(m+1 \in \N \). But this
+           means exactly that \(P(n)\) holds for \(n=1\). i.e., \(P(1)\) is true.
+
+           </dd><dt class="enumerate-enumitem">
+      (ii) </dt><dd 
+class="enumerate-enumitem">\(P(k) \implies P(k+1)\). Suppose that \(P(n)\) holds for some particular \(n=k\). This means that
+           \(m+k \in \N \).  Hence,  by  the  definition  of  \(\N \),  \((m+k)+1 \in \N \);  or,  by  associativity,  \(m+(k+1) \in \N \).  But,
+           this means exactly that \(P(k+1)\) is true if \(P(k)\) is true. Hence induction is
+           complete, and this means that \(n+m \in \N \).</dd></dl>
+      <!--l. 54--><p class="noindent" >For multiplication, similarly, fix \(m \in \N \), and let \(P(n)\) mean that \(mn \in \N \).
+           </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+       (i) </dt><dd 
+class="enumerate-enumitem">\(P(1)\) <span 
+class="cmti-12">is true</span>; for \(m \in \N \) is given, by Axiom IV, we have \(m =m\cdot 1 \in \N \). Hence \(P(1)\) is true.
+           </dd><dt class="enumerate-enumitem">
+      (ii) </dt><dd 
+class="enumerate-enumitem">\(P(k) \implies P(k+1)\); Suppose that \(P(n)\) holds for some \(n=k\). This means that \(mk \in \N \). for \(n=k+1\), we have
+           \(mn=m\cdot (k+1)\), by the distributive property, we have \(mn=mk+m\), by earlier, \(mk \in \N \) and \(m \in \N \), hence,
+           \(mk+m \in \N \). Thus, by induction, \(mn \in N\).</dd></dl>
+      </dd><dt class="enumerate-enumitem">
+ (B) </dt><dd 
+class="enumerate-enumitem">If \(n \in \N \), then \(n-1=0\) or \(n-1 \in \N \). Indeed let \(P(n)\) mean that \(n-1 =0\) or \(n-1 \in \N \). We again verify the two
+      steps:
+           <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+       (i) </dt><dd 
+class="enumerate-enumitem">\(P(1)\) <span 
+class="cmti-12">is true</span>; for if \(n=1\), then \(n-1=1-1=0\), thus one of the desired alternatives, namely
+           \(n-1=0\) holds if \(n=1\). Hence, \(P(1)\) is true.
+           </dd><dt class="enumerate-enumitem">
+      (ii) </dt><dd 
+class="enumerate-enumitem">\(P(m) \implies P(m+1)\).  Suppose  \(P(n)\)  holds  for  some  <span 
+class="cmti-12">particular   </span>value  \(n=m\)  (inductive
+           hypothesis). This means that either \(m-1=0\) or \(m-1 \in \N \). <br 
+class="newline" />
+           <!--l. 64--><p class="noindent" >In  the  first  case,  we  have  \((m-1)+1 =0 +1 =1 \in \N \).  But  \((m-1)+1 = m +((-1)+1)= m+ (1+(-1))=(m+1)-1\),  by  associativity  and
+           commutativity. Thus, \((m+1) -1 \in \N \). <br 
+class="newline" />
+           </p><!--l. 66--><p class="noindent" >In the second case, \(m-1 \in \N \), implies \((m-1)+1 \in \N \) by the definition of \(\N \). Thus, in both
+           cases, \((m+1)-1 \in \N \), and this shows that \(P(m+1)\) is true if \(P(m)\) is true.</p></dd></dl>
+      </dd><dt class="enumerate-enumitem">
+ (C) </dt><dd 
+class="enumerate-enumitem">In an ordered field, all naturals are \(\geq 1\). Indeed, let \(P(n)\), now mean that \(n\geq 1\). As
+      before, we again carry out the two inductive steps.
+           <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+       (i) </dt><dd 
+class="enumerate-enumitem">\(P(1)\) <span 
+class="cmti-12">holds</span>; for if \(n=1\), then certainly \(n\geq 1\); so \(P(n)\) holds for \(n=1\).
+
+           </dd><dt class="enumerate-enumitem">
+      (ii) </dt><dd 
+class="enumerate-enumitem">\(P(m) \implies P(m+1)\).  We  make  the  inductive  hypothesis  that  \(P(m)\)  holds  for  some
+           particular \(m\). This means that \(m\geq 1\). Hence, by monotonicity of addition
+           and transitivity (Axioms IX and Axiom VIII), we have \(m+1\geq 1+1 &gt;1\) (the
+           latter follows by adding 1 on both sides of \(1&gt;0\)). Thus \(m+1\geq 1\), thus \(P(m+1)\) holds
+           if \(P(m)\) holds. Induction is complete.</dd></dl>
+      </dd><dt class="enumerate-enumitem">
+ (D) </dt><dd 
+class="enumerate-enumitem"><span 
+class="cmti-12">In an ordered field</span>, \(m, n \in \N \) and \(m&gt;n\) <span 
+class="cmti-12">implies</span> \(m-n \in \N \). This is an extremely tricky problem to
+      solve by induction because if we fix \(m\) to be some particular value \(\in \N \),
+      then doing induction on \(n\), eventually \(n\) will be greater than \(m\), hence \(P(n)\)
+      won’t hold for \(n \geq m\). Instead, we have to carefully define the proposition
+      while fixing an arbitrary \(m \in \N \), let \(P(n)\) mean “\(m \leq n\) or \(m-n \in \N \)”. Then, we have the
+      following:
+           <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+       (i) </dt><dd 
+class="enumerate-enumitem">\(P(1)\) <span 
+class="cmti-12">is true</span>; for if \(n=1\), then \(m-n =m -1\), but by Example (B), \(m-1=0\) or \(m-1 \in \N \). This shows \(P(n)\)
+           holds for \(n=1\).
+           </dd><dt class="enumerate-enumitem">
+      (ii) </dt><dd 
+class="enumerate-enumitem">\(P(k)\implies P(k+1);\) Suppose \(P(k)\) holds for some particular \(k\in \N \). This means that: \begin {align*}  m \leq k \;\;\text {or}\;\; m-k \in \N .  \end {align*}
+           <!--l. 80--><p class="noindent" >For the first case, clearly, if \(m\leq k\), because \(k&lt;k+1\), by the transitive property of
+           an ordered field, we have \(m\leq k+1\). For the second case, if \(m-k\in \N \), by Example (B),
+           we have either: \begin {align*}  (m-k) -1=0\;\;\text {or}\;\; (m-k) -1 \in \N  \end {align*}
+           </p><!--l. 84--><p class="noindent" >In the first, case, \(m-k =1\), hence \(m\leq k+1\). For the latter case, using associativity and
+           commutativity, we have \(m - (k+1) \in \N \). Thus, \(P(k) \implies P(k+1)\), and by induction we have : If, \(n,m \in \N \) and \(m&gt;n\),
+           then \(m-n \in \N \).</p></dd></dl>
+      </dd></dl>
+<div class="newtheorem">
+<!--l. 87--><p class="noindent" ><span class="head">
+<a 
+ id="x8-7024r1"></a>
+<span 
+class="cmbx-12">Lemma 1.</span>  </span><span 
+class="cmti-12">For no naturals</span> \(m,n\) <span 
+class="cmti-12">in an ordered field is</span> \(m&lt;n&lt;m+1\)<span 
+class="cmti-12">. i.e., there is no natural</span>
+<span 
+class="cmti-12">between any arbitrary natural and its successor.</span>
+</p>
+</div>
+
+<!--l. 89--><p class="indent" >
+</p>
+<div class="proof">
+<!--l. 91--><p class="indent" >   <span class="head">
+<span 
+class="cmti-12">Proof.</span> </span>For, by Example (D), \(n&gt;m\), would imply that \(n-m \in \N \). By Example (C), we have
+\(n-m\geq 1\), or \(n\geq m+1\). Then by the trichotomy of order, we exclude \(n&lt; m+1\). Thus, \(m&lt;n&lt;m+1\) is impossible for
+natural numbers.                                                                          □
+</p>
+   </div>
+<div class="newtheorem">
+<!--l. 93--><p class="noindent" ><span class="head">
+<a 
+ id="x8-7025r4"></a>
+<span 
+class="cmbx-12">Theorem 4 </span>(Well Orderedness)<span 
+class="cmbx-12">.</span>  </span><span 
+class="cmti-12">In  an  ordered  field,  every  nonempty</span>
+<span 
+class="cmti-12">subset of</span> \(\N \) <span 
+class="cmti-12">(the naturals) has a least element, i.e., one not exceeding any</span>
+<span 
+class="cmti-12">other of its members.</span>
+</p>
+</div>
+<!--l. 95--><p class="indent" >
+</p>
+<div class="proof">
+<!--l. 97--><p class="indent" >   <span class="head">
+<span 
+class="cmti-12">Proof.</span> </span>Given some \(A\) such that \(\varnothing \neq A \subseteq \N \), we want to show that \(A\) has a least element. To do
+this, let: \begin {align*}  A_n = \{x\in A\;|\; x \leq a\}\;\; n=1,2, ...  \end {align*}
+</p><!--l. 101--><p class="indent" >   That is, \(A_n\) consists of those elements of \(A\) that are \(\leq n\) (\(A_n\) might be empty). Now let \(P(n)\)
+mean \begin {align*}  \textit {``either $A_n = \varnothing $ or $A_n$ has a least element''}  \end {align*}
+</p><!--l. 105--><p class="indent" >   We will show by induction that \(P(n)\) holds for each \(n \in \N \). We have the following:
+      </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+  (i) </dt><dd 
+class="enumerate-enumitem">\(P(1)\) <span 
+class="cmti-12">is true</span>; for, by construction, \(A_1\) consists of all naturals from \(A\) that are
+      \(\leq 1\) (if any). But, by Example (C), the only such natural is \(1\). Thus, \(A_1\), if
+
+      not empty, consists of 1 alone, and so 1 is also its least member. We
+      see that either \(A_1 = \varnothing \) or \(A_1\) has a least element; i.e., \(P(1)\) is true.
+      </dd><dt class="enumerate-enumitem">
+ (ii) </dt><dd 
+class="enumerate-enumitem">\(P(m) \implies P(m+1)\). Suppose \(P(m)\) holds for some particular \(m\). This means that \(A_m = \varnothing \) or \(A_m\) has a least
+      element (call it \(m_0\)). In the latter case, \(m_0\) is also the least element of \(A_{m+1}\); for,
+      by the lemma, \(A_{m+1}\) differs from \(A_n\) by \(m+1\) at most, which is greater than all
+      members of \(A_m\).<br 
+class="newline" /><br 
+class="newline" />If, however, \(A_m = \varnothing \), then for the same reason, \(A_{m+1}\) (if \(\neq \varnothing \)) consists of \(m+1\) alone; so \(m+1\) is
+      also the least element. <br 
+class="newline" /><br 
+class="newline" />This shows that \(P(m+1)\) is true if \(P(m)\) is. Thus, the proposition holds for every \(A_n\).</dd></dl>
+<!--l. 114--><p class="noindent" >Now, by assumption, \(A \neq \varnothing \); so we fix some \(n \in A\). Then the set \begin {align*}  A_n = \{ \ x \in A\;\; |\;\; x \leq n\ \}  \end {align*}
+</p><!--l. 118--><p class="indent" >   contains \(n\) and hence \(A_n \neq \varnothing \). Thus, by the proposition, \(A_n\) must have a least element \(m_0\), \(m_0 \leq n\).
+But \(A\) differs from \(A_n\) only by elements \(&gt; n\) (if any), which are all \(&gt; m_0\). Thus \(m_0\) is the desired
+least element of \(A\) as well.                                                                □
+</p>
+   </div>
+<!--l. 120--><p class="noindent" >This theorem yields a new form of induction law for ordered fields: The Second
+Induction Law
+</p>
+   <div class="newtheorem">
+<!--l. 121--><p class="noindent" ><span class="head">
+<a 
+ id="x8-7028r5"></a>
+<span 
+class="cmbx-12">Theorem 5 </span>(Second Induction Law)<span 
+class="cmbx-12">.</span>  </span><span 
+class="cmti-12">A Proposition</span> \(P(n)\) <span 
+class="cmti-12">holds for each natural</span>
+<span 
+class="cmti-12">number</span> \(n\) <span 
+class="cmti-12">in an ordered field if</span>
+      </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+  <span 
+class="cmti-12">(i)</span> </dt><dd 
+class="enumerate-enumitem">\(P(1)\) <span 
+class="cmti-12">holds, and</span>
+      </dd><dt class="enumerate-enumitem">
+ <span 
+class="cmti-12">(ii)</span> </dt><dd 
+class="enumerate-enumitem"><span 
+class="cmti-12">whenever</span> \(P(n)\) <span 
+class="cmti-12">holds for all naturals</span> \(n\) <span 
+class="cmti-12">less than some</span> \(m \in \N \)<span 
+class="cmti-12">, it also holds for</span> \(n=m\)<span 
+class="cmti-12">.</span></dd></dl>
+
+   </div>
+<!--l. 127--><p class="indent" >
+</p>
+   <div class="proof">
+<!--l. 129--><p class="indent" >   <span class="head">
+<span 
+class="cmti-12">Proof.</span> </span>We shall use a so-called indirect proof or proof by contradiction.
+That is, instead of proving our assertion directly, we shall show that the
+opposite is false, and so, our theorem must be true. <br 
+class="newline" />   Thus assume (i) and (ii) and seeking a contradiction, suppose \(P(n)\) fails for
+some \(n \in \N \) (call such \(n\) as “bad”). Then these bad naturals from a non-empty
+subset of \(\N \), call it \(A\). By the well ordered property of \(\N \), \(A\) has a least member \(m\).
+Thus, \(m\) is the least natural for which \(P(n)\) fails. If also follows that all \(n\) less than \(m\)
+do satisfy \(P(n)\) (among them is 1 by (i)). But then, by our assumption (ii), \(P(n)\) also
+holds for \(n=m\), which is impossible since, m is bad by construction.<br 
+class="newline" />   This construction shows that there cannot be any “bad” naturals.     □
+</p>
+   </div>
+<!--l. 134--><p class="noindent" >A similar induction law applies to definitions. It reads as follows:
+</p>
+   <div class="newtheorem">
+<!--l. 135--><p class="noindent" ><span class="head">
+<a 
+ id="x8-7031r2"></a>
+<span 
+class="cmbx-12">Definition 1.5.2 </span>(Recursive Definitions)<span 
+class="cmbx-12">.</span>  </span><span 
+class="cmti-12">A notion</span> \(C(n)\) <span 
+class="cmti-12">is regarded as defined for</span>
+<span 
+class="cmti-12">every natural element of an ordered field</span> \(F\) <span 
+class="cmti-12">if</span>
+      </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+  (i) </dt><dd 
+class="enumerate-enumitem"><span 
+class="cmti-12">it has been defined for</span> \(n=1\)<span 
+class="cmti-12">, and</span>
+      </dd><dt class="enumerate-enumitem">
+ (ii) </dt><dd 
+class="enumerate-enumitem"><span 
+class="cmti-12">some rule or formula is given that expresses</span> \(C(n)\) <span 
+class="cmti-12">in terms of</span> \(C(1),\ C(2),\ ...,\ C(n-1)\)<span 
+class="cmti-12">, i.e., in</span>
+      <span 
+class="cmti-12">terms of all</span> \(C(k)\) <span 
+class="cmti-12">with</span> \(k&lt;n\)<span 
+class="cmti-12">, or some of them.</span></dd></dl>
+
+   </div>
+<!--l. 141--><p class="indent" >    Such definitions are referred to as <span 
+class="cmti-12">inductive or recursive</span>. The admissibility can be proved
+rigorously <span class="footnote-mark"><a 
+href="Limits9.html#fn1x2"><sup class="textsuperscript">1</sup></a></span><a 
+ id="x8-7034f1"></a> .<br 
+class="newline" />   We shall now illustrate this procedure by several important examples of
+inductive definitions to be used throughout our later work.
+</p>
+   <div class="newtheorem">
+<!--l. 144--><p class="noindent" ><span class="head">
+<a 
+ id="x8-7036r3"></a>
+<span 
+class="cmbx-12">Definition 1.5.3 </span>(Natural number Power)<span 
+class="cmbx-12">.</span>  </span>Given an element \(x\) of a field \(F\), we
+define the \(n\)-th power of \(x\), denoted </p>
+<div class="center" 
+>
+<!--l. 146--><p class="noindent" >
+</p><!--l. 147--><p class="noindent" >(i) \(x^1 =x\) and (ii) \(x^n = x^{n-1}x\), \(n =2,3, ...\).</p></div>
+<!--l. 149--><p class="noindent" >By the inductive law expressed above \(x^n\) is defined for every natural \(n\). If \(x \neq 0\), we also
+define \(x^0=1\) and \(x^{-n} =\frac {1}{x^n}\)
+</p>
+   </div>
+<!--l. 150--><p class="indent" >
+</p>
+   <div class="newtheorem">
+<!--l. 151--><p class="noindent" ><span class="head">
+<a 
+ id="x8-7037r4"></a>
+<span 
+class="cmbx-12">Definition 1.5.4 </span>(Factorial)<span 
+class="cmbx-12">.</span>  </span>For every natural number \(n\), we define recursively
+the expression \(n!\) as follows: </p>
+<div class="center" 
+>
+<!--l. 153--><p class="noindent" >
+</p><!--l. 154--><p class="noindent" >(i) \(1! =1\); (ii) \(n! = (n-1)! \cdot n, \;\; n=2,3,... \)</p></div>
+
+<!--l. 156--><p class="noindent" >We also define \(0!=1\)
+</p>
+   </div>
+<!--l. 157--><p class="indent" >
+</p>
+   <div class="newtheorem">
+<!--l. 158--><p class="noindent" ><span class="head">
+<a 
+ id="x8-7038r5"></a>
+<span 
+class="cmbx-12">Definition 1.5.5 </span>(Sums and Products of \(n\) elements)<span 
+class="cmbx-12">.</span>  </span>The sum and product of \(n\)
+elements \(x_1,\ \ldots ,\ x_n \in F\) of a field, denoted by \begin {align*}  x_1+ x_2+ \cdots + x_n\;\; \text {and}\;\; x_1\cdot x_2 \cdots x_n  \end {align*}
+</p><!--l. 163--><p class="indent" >   (or \(\sum _{k=1}^{n} x_k\) and \(\prod _{k=1}^nx_k\)), respectively, are defined recursively as follows: </p>
+<div class="center" 
+>
+<!--l. 164--><p class="noindent" >
+</p><!--l. 165--><p class="noindent" >Sums:    (i) \(\sum _{k=1}^1 x_k = x_1\);   (ii) \(\sum _{k=1}^n x_k = \left (\sum _{k=1}^{n-1} x_k\right ) +x_n\),    \(n=2,3,\ldots \)<br />
+Products:    (i) \(\prod _{k=1}^1 x_k = x_1\);   (ii) \(\prod _{k=1}^n x_k = \left (\prod _{k=1}^{n-1} x_k\right ) +x_n\),    \(n=2,3,\ldots \)</p></div>
+   </div>
+<!--l. 168--><p class="indent" >    Induction can be used to define the notion of an ordered n-tuple if the
+concept of an ordered pair is assumed to be known.
+</p>
+   <div class="newtheorem">
+<!--l. 171--><p class="noindent" ><span class="head">
+<a 
+ id="x8-7039r6"></a>
+<span 
+class="cmbx-12">Definition 1.5.6 </span>(\(n\)-tuple)<span 
+class="cmbx-12">.</span>  </span>For any objects \(x_1,x_2, \ldots , x_n\), the <span 
+class="cmti-12">ordered</span> \(n\)-tuple \((x_1, \ldots , x_n)\) is defined
+by
+      </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+  (i) </dt><dd 
+class="enumerate-enumitem">\((x_1) = x_1\) (i.e., an ordered “<span 
+class="cmti-12">one-tuple</span>” \((x_1)\) is \(x_1\) itself);
+      </dd><dt class="enumerate-enumitem">
+ (ii) </dt><dd 
+class="enumerate-enumitem">\((x_1, \ldots , x_n) = ((x_1, \ldots , x_{n-1}), x_n) \) \(n =2,3,\ldots \) .</dd></dl>
+
+<!--l. 177--><p class="noindent" >Accordingly, we may now also define the Cartesian Product \begin {align*}  A_1 \times A_2 \times \cdots \times A_n  \end {align*}
+</p><!--l. 181--><p class="indent" >   of \(n\) sets either as the set of all \(n\)-tuples \((x_1, \ldots , x_n)\) such that \(x_k \in A_k\) \(k=1,2, \ldots , n\), or directly by
+induction.
+</p>
+   </div>
+<!--l. 182--><p class="indent" >
+
+</p>
+   <!--l. 2--><div class="crosslinks"><p class="noindent">[<a 
+href="Limitsse6.html" >next</a>] [<a 
+href="Limitsse4.html" >prev</a>] [<a 
+href="Limitsse4.html#tailLimitsse4.html" >prev-tail</a>] [<a 
+href="Limitsse5.html" >front</a>] [<a 
+href="Limitsch1.html#Limitsse5.html" >up</a>] </p></div>
+<!--l. 2--><p class="indent" >   <a 
+ id="tailLimitsse5.html"></a> </p> 
+</body> 
+</html>

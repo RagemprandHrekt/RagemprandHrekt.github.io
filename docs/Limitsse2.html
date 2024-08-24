@@ -1,0 +1,301 @@
+<!DOCTYPE html> 
+<html lang="en-US" xml:lang="en-US" > 
+<head><title>Arithmetic Operations in a Field</title> 
+<meta  charset="utf-8" /> 
+<meta name="generator" content="TeX4ht (https://tug.org/tex4ht/)" /> 
+<meta name="viewport" content="width=device-width,initial-scale=1" /> 
+<link rel="stylesheet" type="text/css" href="Limits.css" /> 
+<meta name="src" content="Limits.tex" /> 
+<script>window.MathJax = { tex: { tags: "ams", }, }; </script> 
+ <script type="text/javascript" async="async" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>  
+ 
+<script type="text/javascript" 
+src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" 
+></script> 
+</head><body 
+>
+   <!--l. 1--><div class="crosslinks"><p class="noindent">[<a 
+href="Limitsse3.html" >next</a>] [<a 
+href="Limitsse1.html" >prev</a>] [<a 
+href="Limitsse1.html#tailLimitsse1.html" >prev-tail</a>] [<a 
+href="#tailLimitsse2.html">tail</a>] [<a 
+href="Limitsch1.html#Limitsse2.html" >up</a>] </p></div>
+   <h3 class="sectionHead"><span class="titlemark">1.2   </span> <a 
+href="Limits.html#QQ2-5-4" id="x5-40001.2">Arithmetic Operations in a Field</a></h3>
+   <div class="sectionTOCS">
+   </div>
+<!--l. 3--><p class="indent" >   All arithmetic properties of real numbers can be deduced from the
+axioms stated earlier. Now, we explore the consequences of the first
+six axioms (I-VI) which holds for every <span 
+class="cmti-12">every </span>(even unordered) field
+\(F\).
+</p>
+   <div class="newtheorem">
+<!--l. 5--><p class="noindent" ><span class="head">
+<a 
+ id="x5-4001r1"></a>
+<span 
+class="cmbx-12">Definition 1.2.1.</span>  </span>Given two elements \(x\) and \(y\) of a field \(F\). we define their
+difference, \begin {align*}  x-y = x +(-y).  \end {align*}
+</p><!--l. 10--><p class="indent" >   In other words, <span 
+class="cmti-12">to subtract an element</span> \(y\) <span 
+class="cmti-12">means to add its additive inverse,</span>
+\(-y\).<br 
+class="newline" />If \(y \neq 0\), we also define the <span 
+class="cmti-12">quotient </span>of \(x\) by \(y\), \begin {align*}  \frac {x}{y} = x \cdot (y^{-1})  \end {align*}
+</p><!--l. 15--><p class="indent" >   Also denoted by \(x/y\). In other words, <span 
+class="cmti-12">to divide</span> \(x\) <span 
+class="cmti-12">by</span> \(y\) <span 
+class="cmti-12">means to multiply</span> \(x\) <span 
+class="cmti-12">by the</span>
+<span 
+class="cmti-12">reciprocal of y</span>
+</p>
+   </div>
+<!--l. 16--><p class="indent" >    Hence we have defined two new operations: <span 
+class="cmti-12">subtraction </span>and <span 
+class="cmti-12">division</span>, that
+are just special cases of addition and multiplication, we can apply the axioms to
+these new operations, in the following corollaries.
+</p>
+   <div class="newtheorem">
+<!--l. 20--><p class="noindent" ><span class="head">
+<a 
+ id="x5-4002r1"></a>
+
+<span 
+class="cmbx-12">Corollary 1.</span>  </span><span 
+class="cmti-12">The difference</span> \(x-y\) <span 
+class="cmti-12">and the quotient</span> \(x/y\) <span 
+class="cmti-12">(where</span> \(y \neq 0\)<span 
+class="cmti-12">) of two real numbers</span>
+\(x\) <span 
+class="cmti-12">and</span> \(y\) <span 
+class="cmti-12">are themselves real numbers. (Similarly for difference and quotient of</span>
+<span 
+class="cmti-12">field elements in general).</span>
+</p>
+   </div>
+<!--l. 22--><p class="indent" >
+</p><!--l. 24--><p class="indent" >   In Symbols: \begin {align*}  (\forall x,y \in \mathbb {R}^1) \;\;\; (x-y )\in \mathbb {R}^1, \;\; (x/y) \in \mathbb {R}^1 \;\; (\text {the latter if $y\neq 0$}).  \end {align*}
+</p>
+   <div class="newtheorem">
+<!--l. 28--><p class="noindent" ><span class="head">
+<a 
+ id="x5-4003r2"></a>
+<span 
+class="cmbx-12">Corollary 2.</span>  </span><span 
+class="cmti-12">If</span> \(a,b,c\) <span 
+class="cmti-12">are elements of field</span> \(F\)<span 
+class="cmti-12">, with</span> \(a=b\)<span 
+class="cmti-12">, then </span>\begin {align*}  a+c=b+c \;\; \text {and}\;\; ac=bc  \end {align*}
+</p><!--l. 33--><p class="indent" >   <span 
+class="cmti-12">(In other words, we may add one and the same element</span> \(c\) <span 
+class="cmti-12">to both sides of the</span>
+<span 
+class="cmti-12">equation</span> \(a=b\)<span 
+class="cmti-12">; Similarly for multiplication.)</span>
+</p>
+   </div>
+<!--l. 34--><p class="indent" >    In Symbols: \begin {align*}  (\forall a,b,c \in F)\;\;a=b \implies a+c =b+c\;\; \text {and}\;\; ac=bc  \end {align*}
+</p>
+   <div class="proof">
+<!--l. 40--><p class="indent" >   <span class="head">
+<span 
+class="cmti-12">Proof.</span> </span>By the properties of equality, we have \(a+c = a+c\). Now, as \(a=b\), we may replace \(a\)
+by \(b\) on the right side. This yields \(a+c =b+c\) as required. Similarly for \(ac=bc\).                 □
+</p>
+   </div>
+<!--l. 43--><p class="indent" >   The Converse to this corollary is the following.
+</p>
+   <div class="newtheorem">
+<!--l. 45--><p class="noindent" ><span class="head">
+<a 
+ id="x5-4004r3"></a>
+
+<span 
+class="cmbx-12">Corollary 3.</span>  </span><span 
+class="cmti-12">(Cancellation Law). If</span> \(a,b,c\) <span 
+class="cmti-12">are elements in a field</span> \(F\)<span 
+class="cmti-12">, then </span>\begin {align*}  a+c = b+c \implies a=b.  \end {align*}
+</p><!--l. 49--><p class="indent" >   <span 
+class="cmti-12">If, further,</span> \(c\neq 0\)<span 
+class="cmti-12">, then, </span>\begin {align*}  ac=bc \implies a=b.  \end {align*}
+</p>
+   </div>
+<!--l. 53--><p class="indent" >    (In other words, we may cancel a summand and a <span 
+class="cmti-12">nonzero </span>factor on both
+sides of the equation.)
+</p>
+   <div class="proof">
+<!--l. 57--><p class="indent" >   <span class="head">
+<span 
+class="cmti-12">Proof.</span> </span>Let \(a+c = b+c\). By corollary 2, we may add \((-c)\) on both sides of the equation to get
+\begin {align*}  (a+c) +(-c) = (b+c) + (-c)  \end {align*}
+</p><!--l. 61--><p class="indent" >   By Associativity (Axiom III), \begin {align*}  a+[c +(-c)]=b+[c+(-c)].  \end {align*}
+</p><!--l. 65--><p class="indent" >   As \(c+(-c) =0\) (by Axiom V), we get \(a+0=b+0\), i.e., \(a=b\) by (Axiom IV); Similarly for
+multiplication.                                                                             □
+</p>
+   </div>
+   <div class="newtheorem">
+<!--l. 68--><p class="noindent" ><span class="head">
+<a 
+ id="x5-4005r1"></a>
+<span 
+class="cmbx-12">Theorem 1.</span>  </span><span 
+class="cmti-12">Given two elements,</span> \(a\) <span 
+class="cmti-12">and</span> \(b\)<span 
+class="cmti-12">, of a field</span> \(F\)<span 
+class="cmti-12">, there always exists a</span>
+<span 
+class="cmti-12">unique element</span> \(x\) <span 
+class="cmti-12">such that</span> \(a+x =b\)<span 
+class="cmti-12">; This element equals the difference</span> \(b-a\)<span 
+class="cmti-12">.</span><br 
+class="newline" /><span 
+class="cmti-12">(Thus</span> \(a+x =b\) <span 
+class="cmti-12">means that</span> \(x=b-a\)<span 
+class="cmti-12">.)</span><br 
+class="newline" /><span 
+class="cmti-12">     If, further,</span> \(a\neq 0\)<span 
+class="cmti-12">, there also is a unique element</span> \(y \in F\)<span 
+class="cmti-12">, with</span> \(ay=b\)<span 
+class="cmti-12">; This element equals</span>
+<span 
+class="cmti-12">the quotient</span> \(b/a\)<span 
+class="cmti-12">. (Thus</span> \(ay=b\)<span 
+class="cmti-12">,</span> \(a\neq 0\)<span 
+class="cmti-12">, means that</span> \(y =b/a\)<span 
+class="cmti-12">.)</span>
+</p>
+   </div>
+<!--l. 73--><p class="indent" >    In symbols: \begin {align*}  (\forall a,b \in F)\;(\exists ! \, x,y \in F ) \;\;a+x =b \;\; ay =b \;\; (\text {the latter if $a\neq 0$})  \end {align*}
+</p>
+   <div class="proof">
+<!--l. 79--><p class="indent" >   <span class="head">
+
+<span 
+class="cmti-12">Proof.</span> </span>It is easily checked that the equation \(a+x=b\) is satisfied by \(x=b-a\). In fact, we have:
+\begin {align*}  a+x &amp;= a+(b-a)\\ &amp;= (b-a)+a &amp;(\text {II})\\ &amp;= [b+(-a)]+a \\ &amp;= b+[(-a)+a] &amp;(\text {III})\\ &amp;= b+ 0 &amp;(\text {V})\\ &amp;= b &amp;(\text {IV})  \end {align*}
+</p><!--l. 89--><p class="indent" >   Thus, the equation \(a+x=b\) has <span 
+class="cmti-12">at least one </span>solution for \(x\). To prove that this solution
+is unique, suppose that we have still another solution, \(x'\), say. Then, we obtain \(a+x=b\)
+and \(a+x'=b\), so that \(a+x=a+x'\) or \(x+a=x'+a\), Cancelling \(a\) (by Corollary 3), we see that \(x=x'\), so that the two
+solutions coincide.<br 
+class="newline" /><br 
+class="newline" />   For Multiplication, similarly, it can be checked that the equation \(ay=b\) is satisfied
+by \(y=b/a\), given \(a\neq 0\). \begin {align*}  ay &amp;=a \cdot (b\cdot a^{-1}) \\ &amp;= (b\cdot a^{-1}) \cdot a &amp;(\text {II})\\ &amp;= b\cdot (a^{-1}\cdot a) &amp;(\text {III})\\ &amp;= b\cdot 1 &amp; (\text {V})\\ &amp;= b &amp;(\text {IV})  \end {align*}
+</p><!--l. 100--><p class="indent" >   Hence, we can again conclude that the equation, \(ay=b\) has <span 
+class="cmti-12">at least one </span>solution for
+\(y\). For another solution \(y'\), \(ay'=b\) implies \(ay= ay'\), Canceling \(a\) (by Corollary 3), we can indeed see
+that \(y=y'\). Thus, both the existence and the uniqueness of the solutions have been
+proven.                                                                                       □
+</p>
+   </div>
+<!--l. 104--><p class="indent" >   Theorem 1 shows that subtraction and addition are <span 
+class="cmti-12">inverse </span>operations to
+addition and multiplication. Now, we can move a summand or a factor from one
+side of the equation to another side.
+</p>
+   <div class="newtheorem">
+<!--l. 105--><p class="noindent" ><span class="head">
+<a 
+ id="x5-4006r4"></a>
+<span 
+class="cmbx-12">Corollary 4.</span>  </span><span 
+class="cmti-12">For any element</span> \(x\) <span 
+class="cmti-12">of a field</span> \(F\)<span 
+class="cmti-12">, we have</span> \(0-x=-x\)<span 
+class="cmti-12">. If, further,</span> \(x\neq 0\)<span 
+class="cmti-12">, then</span> \(1/x=x^{-1}\)<span 
+class="cmti-12">.</span>
+</p>
+   </div>
+<!--l. 107--><p class="indent" >
+</p>
+   <div class="proof">
+<!--l. 109--><p class="indent" >   <span class="head">
+<span 
+class="cmti-12">Proof.</span> </span>We have by definition, \begin {align*}  0-x &amp;=0+(-x)\\ &amp;= -x &amp;(\text {IV})  \end {align*}
+</p><!--l. 114--><p class="indent" >   Similarly, \begin {align*}  1/x &amp;= 1\cdot x^{-1}\\ &amp;= x^{-1} &amp;(\text {IV})  \end {align*}
+
+                                                                        □
+</p>
+   </div>
+   <div class="newtheorem">
+<!--l. 121--><p class="noindent" ><span class="head">
+<a 
+ id="x5-4007r5"></a>
+<span 
+class="cmbx-12">Corollary 5.</span>  </span><span 
+class="cmti-12">For any element</span> \(x\) <span 
+class="cmti-12">of a field</span> \(F\)<span 
+class="cmti-12">, we have </span>\begin {align*}  x\cdot 0 =0\cdot x =0  \end {align*}
+</p>
+   </div>
+<!--l. 127--><p class="indent" >    (Hence we never have \(0\cdot x=1\); This is why \(0\) cannot have multiplicative
+inverse)
+</p>
+   <div class="proof">
+<!--l. 131--><p class="indent" >   <span class="head">
+<span 
+class="cmti-12">Proof.</span> </span>By distributivity (Axiom VI) and Axiom IV, we get \begin {align*}  0x+0x=(0+0)x =0x=0+0x  \end {align*}
+</p><!--l. 135--><p class="indent" >   Thus \(0x+0x=0+0x\). Cancelling \(0x\) from both sides (Corollary 3), we get \(0\cdot x=0\), and by
+commutativity (Axiom II), we also get \(x\cdot 0=0\).                                            □
+</p>
+   </div>
+   <div class="newtheorem">
+<!--l. 139--><p class="noindent" ><span class="head">
+<a 
+ id="x5-4008r6"></a>
+<span 
+class="cmbx-12">Corollary 6.</span>  </span><span 
+class="cmti-12">(Rule of signs). For any elements</span> \(a,b\) <span 
+class="cmti-12">of a field</span> \(F\)<span 
+class="cmti-12">, we have</span>
+      </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+  <span 
+class="cmti-12">(i)</span> </dt><dd 
+class="enumerate-enumitem">\(a(-b) = (-a)b = -(a\cdot b)\)<span 
+class="cmti-12">;</span>
+      </dd><dt class="enumerate-enumitem">
+ <span 
+class="cmti-12">(ii)</span> </dt><dd 
+class="enumerate-enumitem">\(-(-a)=a\)<span 
+class="cmti-12">;</span>
+
+      </dd><dt class="enumerate-enumitem">
+ <span 
+class="cmti-12">(iii)</span> </dt><dd 
+class="enumerate-enumitem">\((-a)(-b) = ab\)<span 
+class="cmti-12">.</span></dd></dl>
+   </div>
+<!--l. 146--><p class="indent" >
+</p>
+   <div class="proof">
+<!--l. 148--><p class="indent" >   <span class="head">
+<span 
+class="cmti-12">Proof.</span> </span>Formula (i) means that \(a(-b)\), and similarly \((-a)b\), equals the additive inverse of \(ab\).
+Hence to prove (i), we have to show that \(a(-b) +ab=0\). By distributivity (Axiom VI), Axiom
+V, and Corollary 5 we have \begin {align*}  a(-b) +ab = a[(-b)+b] = a \cdot 0 = 0  \end {align*}
+</p><!--l. 152--><p class="indent" >   Also, similarly, \begin {align*}  (-a)b +ab = b[(-a)+a] = b\cdot 0 =0  \end {align*}
+</p><!--l. 156--><p class="indent" >   For (ii), we need to show that \(-(-a) =a\). Because, \(-a\) is the additive inverse of \(a\), we have \(a+(-a)=0\).
+Also, by definition, \(-(-a)\) is the additive inverse of \((-a)\), hence, \(-a+(-(-a))=0\). By Corollary 2, we can
+add \(a\) to both sides of the equation: \begin {align*}  a+ (-a) +(-(-a))&amp;=a+0\\ \implies 0+(-(-a))&amp;=a+0 \quad \text {(V)}\\ \implies -(-a)&amp;=a \quad \text {(IV)}  \end {align*}
+</p><!--l. 162--><p class="indent" >   Formula (iii) can be derived from (i) and (ii), by first using (i) twice
+replacing \(a\) with \((-a)\): \begin {align*}  (-a)(-b) = -((-a) \cdot b) = -(-(a\cdot b))  \end {align*}
+</p><!--l. 166--><p class="indent" >   Because of closure (Axiom I), \(a\cdot b \in F\), Hence Formula (ii), applies, giving
+\(-(-(a\cdot b)) = a \cdot b\)                                                                        □
+</p>
+   </div>
+
+   <!--l. 2--><div class="crosslinks"><p class="noindent">[<a 
+href="Limitsse3.html" >next</a>] [<a 
+href="Limitsse1.html" >prev</a>] [<a 
+href="Limitsse1.html#tailLimitsse1.html" >prev-tail</a>] [<a 
+href="Limitsse2.html" >front</a>] [<a 
+href="Limitsch1.html#Limitsse2.html" >up</a>] </p></div>
+<!--l. 2--><p class="indent" >   <a 
+ id="tailLimitsse2.html"></a> </p> 
+</body> 
+</html>

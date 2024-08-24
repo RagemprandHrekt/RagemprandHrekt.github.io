@@ -1,0 +1,2492 @@
+\documentclass[12pt]{book}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,mathtools}
+\usepackage{listings}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\e}{\epsilon}
+
+\newtheorem{prop}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\title{Honours Calculus}
+\author{Ragemprand Hrekt}
+\date{\today}
+
+\usepackage{enumitem}
+\usepackage{multicol}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+
+\chapter{Real Numbers}
+
+% --------------------------------------------------------------
+%     Real Numbers start
+% --------------------------------------------------------------
+
+
+\section{Axioms of an Ordered field}
+
+\textbf{A. Axioms of Addition and Multiplication}
+\
+\begin{enumerate}[label=\textbf{\Roman*}]
+	\item (Closure Law) \textit{The sum $x+y$ and the product $xy$ of any two real numbers $x$ and $y$ are themselves real numbers.} In symbols: 
+	\begin{align*}
+	(\forall x,y \in \mathbb{R}^1) \quad (x+y ) \in 	\mathbb{R}^1, (xy) \in \mathbb{R}^1
+	\end{align*}
+	\item (Commutative Law) $(\forall x,y \in \mathbb{R}^1)$,  $x+y = y+x$, $xy = yx$.
+	\item (Associative Laws) $(\forall x,y,z \in \mathbb{R}^1)$, $(x+y) +z = x + (y+z)$, $(xy)z =x(yz)$
+	\item (Existence of neutral elements)
+		\begin{enumerate}
+			\item \textit{There exists a (unique) real number, called "zero" (0), such that, for all real $x$, $x+0 =x$.}
+			\item \textit{There exists a (unique) real number, called "one" (1), such that $1 \neq 0$ and, for all real $x$, $x \cdot 1 =x$.} In symbols: 
+			\begin{gather*}
+				(\exists! \, 0 \in \mathbb{R}^1) \: (\forall x \in \mathbb{R}^1) \;\; x+0=x,\\
+				(\exists! \, 1 \in \mathbb{R}^1) \: (\forall x \in \mathbb{R}^1) \;\; x \cdot 1 =x, \quad 1 \neq 0	
+			\end{gather*}
+  
+		\end{enumerate}
+		The numbers 0 and 1 are called the \textit{neutral elements} of addition and multiplication respectively.
+	\item (Existence of Inverses)
+		\begin{enumerate}
+			\item \textit{For every real number $x$, there is a (unique) real number, denoted $-x$, such that $x + (-x) =0.$}
+			\item \textit{For every real number $x$, other than 0, there is a (unique) real number denoted $x^{-1}$, such that $x \cdot x^{-1} =1$.} In symbols:
+				\begin{gather*}
+					(\forall x \in \mathbb{R}^1) \;(\exists! \, -x \in \mathbb{R}^1) \;\; x + (-x) =0,\\
+					(\forall x \in \mathbb{R}^1 \,|\, x \neq 0) \; (\exists! \,  x^{-1} \in \mathbb{R}^1) \;\; x\cdot x^{-1} =1. 	
+				\end{gather*}
+ 
+		\end{enumerate}
+		The numbers $-x$ and $x^{-1}$ are called, respectively, the \textit{additive inverse} (or the \textit{symmetric}) and the \textit{multiplicative inverse} (or the \textit{reciprocal}) of $x$.
+	\item  (Distributive Law) $ (\forall x,y,z \in \mathbb{R}^1) \; (x+y)z = xz +yz.$ 
+\end{enumerate}
+\textbf{Note:} The Uniqueness assertions in Axioms IV and V can be proven from other axioms.
+\\
+\\
+\textbf{B. Axioms of order}
+\begin{enumerate}[label=\textbf{\Roman*}]
+	\setcounter{enumi}{6}
+	\item (Trichotomy) \textit{For any real numbers $x$ and $y$, we have either $x<y$, $x> y$ or $x =y$, but never two of these relations together}.
+	\item (Transitivity) \textit{If $x,y, z$ are real numbers with $x <y$ and $y<z$, then $x<z$.} In symbols:
+		\begin{align*}
+			(\forall x,y,z \in \mathbb{R}^1) \;\:\: x<y<z \implies \; x<z 
+		\end{align*}
+	\item (Monotonicity of addition and multiplication)
+	\begin{enumerate}
+		\item \textit{$(\forall x,y,z \in \mathbb{R}^1) \; x< y$ implies $x+z<y+z$}.
+		\item \textit{$(\forall x,y,z \in \mathbb{R}^1) \; x<y$ and $z>0$ implies $xz <yz$}
+	\end{enumerate}
+\end{enumerate}
+
+\noindent 
+Due to the introduction of inequalities "$<$", and axioms VII-IX, the real numbers can be regarded as given in some \textit{definite order}, under which smaller numbers \textit{precede} the larger ones. Any set, in which a certain relation "$>$" has been defined so that Trichotomy and Transitivity Laws are satisfied, is called an \textit{ordered set}. $\mathbb{R}^1$ is an \textit{ordered set}.
+
+It should be noted that the axioms only specify certain properties of real numbers \textit{without indicating what these numbers are.} This question is left entirely open, so that we may regard real numbers as just any other mathematical objects that are only supposed to satisfy our axioms but otherwise are \textit{entirely arbitrary}. Whatever follows from the axioms must be true not only for real numbers but also for any other set that conforms with these axioms.     
+
+\begin{definition}[\textbf{Field}]
+A \textit{Field} $F$ is any set of objects with two operations $(+)$ and $(\cdot)$ defined in it, provided these operations satisfy the first six axioms (I-VI) listed above. \\
+If this set is also equipped with an order relation $(<)$ satisfying the additional three axioms VII-IX, it is called an \textit{ordered field.} 
+\end{definition}
+
+\begin{definition}
+An element $x$ of an ordered field $F$ is said to be \textit{positive} or \textit{negative} according as $x>0$ or $x<0$. The element $0$ itself is neither positive nor negative. 	
+\end{definition}
+
+\section{Arithmetic Operations in a Field}
+
+All arithmetic properties of real numbers can be deduced from the axioms stated earlier. Now, we explore the consequences of the first six axioms (I-VI) which holds for every \textit{every} (even unordered) field $F$.
+
+\begin{definition}
+Given two elements $x$ and $y$ of a field $F$. we define their difference,
+\begin{align*}
+x-y = x +(-y).	
+\end{align*}
+In other words, \textit{to subtract an element $y$ means to add its additive inverse, $-y$}.\\
+If $y \neq 0$, we also define the \textit{quotient} of $x$  by $y$,
+\begin{align*}
+\frac{x}{y} = x \cdot (y^{-1})	
+\end{align*}
+Also denoted by $x/y$. In other words, \textit{to divide $x$ by $y$ means to multiply $x$ by the reciprocal of y}
+\end{definition} 
+Hence we have defined two new operations: \textit{subtraction} and \textit{division}, that are just special cases of addition and multiplication, we can apply the axioms to these new operations, in the following corollaries. 
+
+
+\begin{corollary}
+	The difference $x-y$ and the quotient $x/y$ (where $y \neq 0$) of two real numbers $x$ and $y$ are themselves real numbers. (Similarly for difference and quotient of field elements in general). 
+\end{corollary}
+
+In Symbols:
+\begin{align*}
+	(\forall x,y \in \mathbb{R}^1) \;\;\; (x-y )\in \mathbb{R}^1, \;\; (x/y) \in \mathbb{R}^1 \;\; (\text{the latter if $y\neq 0$}).
+\end{align*}
+\begin{corollary}
+	If $a,b,c$ are elements of field $F$, with $a=b$, then 
+	\begin{align*}
+		a+c=b+c \;\; \text{and}\;\;	ac=bc
+	\end{align*}
+(In other words, we may add one and the same element $c$ to both sides of the equation $a=b$; Similarly for multiplication.)
+\end{corollary}
+In Symbols:
+\begin{align*}
+	(\forall a,b,c \in F)\;\;a=b \implies a+c =b+c\;\; \text{and}\;\; ac=bc 	
+\end{align*}
+\begin{proof}
+By the properties of equality, we have $a+c = a+c$. Now, as $a=b$, we may replace $a$ by $b$ on the right side. This yields $a+c =b+c$ as required. Similarly for $ac=bc$.
+\end{proof}
+
+The Converse to this corollary is the following.
+
+\begin{corollary} (Cancellation Law). If $a,b,c$ are elements in a field $F$, then
+\begin{align*}
+a+c = b+c \implies a=b.	
+\end{align*}
+If, further, $c\neq 0$, then, 
+\begin{align*}
+ac=bc \implies a=b.	
+\end{align*}
+\end{corollary}
+\noindent
+(In other words, we may cancel a summand and a \textit{nonzero} factor on both sides of the equation.)
+\begin{proof}
+	Let $a+c = b+c$. By corollary 2, we may add $(-c)$ on both sides of the equation to get
+	\begin{align*}
+	(a+c) +(-c) = (b+c) + (-c)	
+	\end{align*}
+ By Associativity (Axiom III),
+ \begin{align*}
+ a+[c +(-c)]=b+[c+(-c)].	
+ \end{align*}
+As $c+(-c) =0$ (by Axiom V), we get $a+0=b+0$, i.e., $a=b$ by (Axiom IV); Similarly for multiplication.   
+\end{proof}
+
+\begin{theorem} 
+Given two elements, $a$ and $b$, of a field $F$, there always exists a unique element $x$ such that $a+x =b$; This element equals the difference $b-a$.\\
+(Thus $a+x =b$ means that $x=b-a$.)\\\
+\indent
+If, further, $a\neq 0$, there also is a unique element $y \in F$, with $ay=b$; This element equals the quotient $b/a$. (Thus $ay=b$, $a\neq0$, means that $y =b/a$.)    
+\end{theorem}
+In symbols:
+\begin{align*}
+(\forall a,b \in F)\;(\exists! \, x,y \in F ) \;\;a+x =b \;\; ay =b \;\; (\text{the latter if $a\neq 0$}) 	
+\end{align*}
+\begin{proof}
+It is easily checked that the equation $a+x=b$ is satisfied by $x=b-a$. In fact, we have:
+\begin{align*}
+a+x &= a+(b-a)\\
+&= (b-a)+a  	&(\text{II})\\
+&= [b+(-a)]+a \\
+&= b+[(-a)+a]  &(\text{III})\\
+&= b+ 0  &(\text{V})\\
+&= b &(\text{IV})
+\end{align*}
+
+Thus, the equation $a+x=b$ has \textit{at least one} solution for $x$. To prove that this solution is unique, suppose that we have still another solution, $x'$, say. Then, we obtain $a+x=b$ and $a+x'=b$, so that $a+x=a+x'$ or $x+a=x'+a$, Cancelling $a$ (by Corollary 3), we see that $x=x'$, so that the two solutions coincide.\\ \\
+\indent 
+For Multiplication, similarly, it can be checked that the equation $ay=b$ is satisfied by $y=b/a$, given $a\neq0$. 
+\begin{align*}
+ay &=a \cdot (b\cdot a^{-1}) \\
+&= 	(b\cdot a^{-1}) \cdot a &(\text{II})\\
+&= 	b\cdot (a^{-1}\cdot a) &(\text{III})\\
+&= b\cdot 1 & (\text{V})\\
+&= b &(\text{IV})
+\end{align*}
+
+Hence, we can again conclude that the equation, $ay=b$ has \textit{at least one} solution for $y$. For another solution $y'$, $ay'=b$ implies $ay= ay'$, Canceling $a$ (by Corollary 3), we can indeed see that $y=y'$.
+Thus, both the existence and the uniqueness of the solutions have been proven.       
+\end{proof}
+
+Theorem 1 shows that subtraction and addition are \textit{inverse} operations to addition and multiplication. Now, we can move a summand or a factor from one side of the equation to another side.
+\begin{corollary}
+	For any element $x$ of a field $F$, we have $0-x=-x$. If, further, $x\neq 0$, then $1/x=x^{-1}$. 
+\end{corollary}
+\begin{proof}
+We have by definition, 
+\begin{align*}
+0-x &=0+(-x)\\
+&= -x	&(\text{IV})
+\end{align*}
+Similarly, 
+\begin{align*}
+1/x &= 1\cdot x^{-1}\\
+&= x^{-1} &(\text{IV})	
+\end{align*}
+
+\end{proof}
+\begin{corollary}
+	For any element $x$ of a field $F$, we have
+	\begin{align*}
+	x\cdot 0 =0\cdot x =0	
+	\end{align*}
+ 
+\end{corollary}
+\noindent
+(Hence we never have $0\cdot x=1$; This is why $0$ cannot have multiplicative inverse)
+\begin{proof}
+By distributivity (Axiom VI) and Axiom IV, we get
+\begin{align*}
+	0x+0x=(0+0)x =0x=0+0x	
+\end{align*}
+Thus $0x+0x=0+0x$. Cancelling $0x$ from both sides (Corollary 3), we get $0\cdot x=0$, and by commutativity (Axiom II), we also get $x\cdot 0=0$.
+\end{proof}
+
+
+\begin{corollary} (Rule of signs). For any elements $a,b$ of a field $F$, we have
+\begin{enumerate}[label=({\roman*})]
+	\item $a(-b) = (-a)b = -(a\cdot b)$;
+	\item $-(-a)=a$;
+	\item $(-a)(-b) = ab$.
+\end{enumerate} 
+	
+\end{corollary}
+\begin{proof}
+Formula (i) means that $a(-b)$, and similarly $(-a)b$, equals the additive inverse of $ab$. Hence to prove (i), we have to show that $a(-b) +ab=0$. By distributivity (Axiom VI), Axiom V, and Corollary 5 we have
+\begin{align*}
+	a(-b) +ab = a[(-b)+b] = a \cdot 0 = 0
+\end{align*}
+Also, similarly,  
+\begin{align*}
+(-a)b +ab = b[(-a)+a] = b\cdot 0 =0	
+\end{align*}
+For (ii), we need to show that $-(-a) =a$. Because, $-a$ is the additive inverse of $a$, we have $a+(-a)=0$. Also, by definition, $-(-a)$ is the additive inverse of $(-a)$, hence, $-a+(-(-a))=0$. By Corollary 2, we can add $a$ to both sides of the equation:
+\begin{align*}
+	a+ (-a) +(-(-a))&=a+0\\
+	\implies 0+(-(-a))&=a+0 \quad \text{(V)}\\
+	\implies -(-a)&=a \quad 	\text{(IV)}
+\end{align*}
+Formula (iii) can be derived from (i) and (ii), by first using (i) twice replacing $a$ with $(-a)$:
+\begin{align*}
+	(-a)(-b) = -((-a) \cdot b) = -(-(a\cdot b))
+\end{align*}
+Because of closure (Axiom I), $a\cdot b \in F$, Hence Formula (ii), applies, giving $-(-(a\cdot b)) = a \cdot b$
+\end{proof}
+
+% --------------------------------------------------------------
+%     Inequalities and Absolute Values
+% --------------------------------------------------------------
+
+\section{Inequalities in an Ordered Field. Absolute Values}
+
+As further examples of applications of the axioms, we deduce some corollaries to Axioms VII-IX. They apply to any \textit{ordered field}.
+
+\begin{corollary}
+	If $x$ is a positive element of an ordered field $F$, then $-x$ is negative; and if $x$ is negative, $-x$ is positive. 
+\end{corollary}
+\begin{proof}
+	Given $x>0$, we may add $(-x)$ to both sides, by Axiom IX,
+	\begin{align*}
+		x + (-x) >0	+(-x).\;\; \text{i.e.,}\;\; 0>-x, 
+	\end{align*}
+ as required. Similarly it can be shown that $x<0$ implies $-x>0$.
+\end{proof}
+\begin{corollary}[Addition and Multiplication of inequalities] If $a,b,x,y$ are elements of an ordered field $F$, such that $a<b$ and $x<y$, then 
+\begin{align*}
+	a+x<b+y
+\end{align*}
+(i.e., we may always add two inequalities).\\
+\indent 
+ If, further, $a,b,x,y$ are positive , then $a<b$ and $x<y$ implies $ax<by$.\\
+ (i.e., the inequalities may be multiplied)
+\end{corollary}
+\begin{proof}
+	Suppose $a<b$ and $x<y$, with $a,b,x,y$ positive. Then, multiplying the first inequality by $x$, and the second by $b$ (Axiom IX), we have,
+	\begin{align*}
+	ax<bx\;\;\text{and}\;\; bx<by.	
+	\end{align*}
+Hence, by transitivity, $ax<bx<by$, i.e., $ax<by$, as required.   
+\end{proof}
+\begin{corollary}
+	All nonzero elements of an ordered field have positive squares. That is, if $a\neq 0$, then $a^2=a\cdot a >0$. (Hence $1= 1^2>0$.) 
+\end{corollary}
+\begin{proof}
+	As $a\neq 0$, we have, by trichotomy (Axiom VII), either $a>0$ or $a<0$.\\
+	If $a>0$, then we may multiply by $a$, obtaining, $a\cdot a > a\cdot 0$, by Axiom IX, i.e., $a^2>0$.\\
+	If $a<0$, then by corollary 7, $-a>0$; so we can multiply the inequality $a<0$ by $(-a)$, using again Axiom IX, we then obtain
+	\begin{align*}
+	a(-a)<0\cdot (-a) =0	
+	\end{align*}
+i.e., $-a^2<0$, whence $a^2>0$, as required.   
+\end{proof}
+
+\begin{definition}[Absolute value]
+
+\indent
+
+Given an element $x$ of an ordered field $F$, we define its \textit{absolute value}, denoted as $|x|$, as follows:
+\begin{center}
+	\textit{If $x\geq 0$, then $|x|=x$; if, however, $x<0$, then $|x|=-x$.}
+\end{center}
+In particular, $|0|=0$. It follows that $|x|$ is \textit{always nonnegative}. In fact, if $x\geq 0$, then $|x|=x$; and if $x<0$, then by corollary 7, $-x>0$; and here $-x = |x| >0$. Moreover, we always have
+\begin{align}
+-|x| \leq x \leq |x|.	
+\end{align}
+For, if $x \geq 0$, then, $|x|=x$ by definition, and $-|x| =-x \leq 0 \leq x$. If, however, $x<0$, then $|x|>x$, since $|x|$ is positive, while $x$ is negative and $x=-|x|$. Thus, this holds for both the cases.   	
+\end{definition}
+\begin{corollary}
+	For any elements $x,y$ of an ordered field $F$, we have $|x|<y$ iff $-y<x<y$.
+\end{corollary}
+\begin{proof}
+	Suppose first that $|x|<y$. Then by formula (1.1), we have $x \leq |x| <y$, whence $x<y$. It remains to prove that $-y<x$. This is certainly true if $x$ is non negative (for $-y$ is negative here). If, however, $x$ is negative, then by definition, $-x =|x|$, whence $-x<y$; that is $-y<x$. Thus, in all cases, $|x|<y$ implies $-y<x<y$.
+
+The converse is proven in a similar way, by distinguishing two cases: $x\geq 0$ and $x<0$. Suppose that $-y < x <y$. For the case where $x \geq 0$, by definition, $|x| =x <y$, but when $x<0$, by definition, we have $|x|=-x$, because $-y<x$, $-x<y$, which means that $|x| =-x <y$. Thus, in all cases, $-y<x<y$ implies $|x|<y$. Proving the equivalence. 
+\end{proof}
+\begin{corollary}
+	For any elements $a$ and $b$ of an ordered field $F$, we have
+	\begin{align*}
+	|ab| = |a|\cdot |b|.	
+	\end{align*}
+If, further $b\neq 0$, then
+\begin{align*}
+\frac{|a|}{|b|} = \left| \frac{a}{b} \right|. 	
+\end{align*}
+\end{corollary}
+\begin{proof}
+For the proof, consider the four possible cases:
+\begin{center}
+	(1) $a\geq 0,\: b \geq 0$; (2) $a\geq 0,\: b<0$; (3) $a<0,\: b\geq 0$; (4) $a<0,\: b<0$
+\end{center}
+(1)\\
+Because, $a\geq 0,\: b \geq 0$, $|a| =a$, and $|b| =b$, by the definition of absolute value. Additionally, by Axiom IX, we have $ab\geq 0$, Hence, $|ab|=ab = |a|\cdot |b|$, from corollary 2. If $b\neq 0$, the same reasoning applies but with replacing $b$ with $b^{-1}$.\\
+(2)\\
+From earlier, $|a|=a$, but $|b|=-b$, by the definition of absolute value. From Corollary 6, we have $a(-b) = -(a\cdot b)$, hence we have, $|a|\cdot |b|= a(-b)=-(a\cdot b)$. For $|a\cdot b|$, because $a\geq 0$ and $b<0$, $a\cdot b \leq 0$, if $a\neq 0$, then $a\cdot b<0$, by the monotonicity of inequality (Axiom IX). Hence, $|a\cdot b| = -(a\cdot b).$ Thus, (2) is also proven.\\
+ (3)\\ Trivial, see (2).\\
+ (4)\\
+ Because $a<0$ and $b<0$, $|a| =-a$ and $|b|=-b$, by the definition of absolute value. From Corollary 6, we again have $|a|\cdot |b| = (-a)\cdot (-b) =ab = a \cdot b$. Because $-a>0$ and $-b>0$, using Corollary 8, we get: $(-a)\cdot (-b) > 0 \cdot 0$. $0\cdot 0= 0$ from Corollary 5, Thus, $(-a)\cdot(-b)=ab >0$ and $|ab|=ab$, giving the desired result. For division, again, replace, $b$ with $b^{-1}$ 
+\end{proof}
+\begin{corollary}[\textbf{Triangular Inequalities}]
+For any elements $a$ and $b$ of an ordered field $F$, we have:
+\begin{enumerate}[label=(\roman*)]
+	\item $|a+b| \leq |a|+|b|$
+	\item $||a|-|b||\leq |a-b|$
+\end{enumerate}	
+\end{corollary}
+\begin{proof}
+	Inequality (i) can be proved simply by using the definition of absolute value and Corollary 10. We have:
+	\begin{align*}
+	-|a| \leq a\leq |a|	\;\;\text{and}\;\; -|b|\leq b \leq |b|
+	\end{align*}
+ Adding the inequalities, we have:
+\begin{align*}
+-(|a|+|b|) \leq a+b \leq |a|+|b|	
+\end{align*}
+ By Corollary 10, $|a+b|\leq |a|+|b|$, as required.\\
+ \\
+ \indent
+ To prove (ii), let $x =a-b$. By (i), $|x+b| \leq |x|+|b|$, i.e., 
+ \begin{align*}
+ |(a-b) +b| \leq |a-b| +|b|	
+ \end{align*}
+whence, $|a|\leq |a-b|+|b|$, or $|a|-|b| \leq |a-b|$. Similarly, interchanging $a$ and $b$:
+\begin{align*}
+	|x+a|\leq |x|+|a|\\
+	\implies |(b-a)+a| \leq |b-a|+|a|\\
+	\implies -|a-b| \leq |a| -|b|
+\end{align*}
+Hence, by Corollary 10, $||a|-|b||\leq |a-b|.$  
+\end{proof}
+
+\begin{corollary}[\textbf{Density of an Ordered Field}]
+	Given any two elements $a$ and $b$ of an ordered field $F$, there always is an element $x \in F$ such that $a<x<b$. (This element is said to lie between $a$ and $b$)
+\end{corollary}
+This is an important proposition. This is often expressed by saying that \textit{every ordered field} is \textit{densely ordered}.
+\begin{proof}
+	Because we have $a<b$, we have $0<b-a$. Assume we have some element $0<c<1$, where $c \in F$ , by the monotonicity of multiplication (Axiom IX), $0<c\cdot (b-a)$, additionally, because $c<1$, again by the monotonicity of multiplication (Axiom IX), $c\cdot (b-a)< 1\cdot (b-a)=b-a$, by property of multiplicative identity (Axiom IV). Thus we have this key inequality:
+	\begin{align*}
+		0 <c\cdot (b-a) < b-a
+	\end{align*}
+Now, we add $a$ to inequality, giving:
+\begin{align*}
+a+0< a+(c\cdot (b-a)) < a+(b-a)
+\end{align*}
+By applying associativity, commutativity and additive zero properties, we have the desired result:
+\begin{align*}
+a<a+(c\cdot (b-a)) < b.
+\end{align*}
+Hence, $x= a+(c\cdot (b-a))$ is between $a$ and $b$, where $0<c<1$. Indeed, this process can be repeated an infinite amount of times, hence this proposition can be strengthened to say that there are an infinite number of elements between $a$ and $b$. 
+
+\end{proof}
+% --------------------------------------------------------------
+%     End of Inequalities and Absolute Values
+% --------------------------------------------------------------
+
+% --------------------------------------------------------------
+%     Problems on Arithmetic Operations and Inequalities in a Field
+% --------------------------------------------------------------
+
+
+
+\section{Problems on Arithmetic Operations and Inequalities in a Field}
+
+\begin{ex}[1]
+\\
+Using the "preliminary definition" of natural numbers, deduce from our axioms that
+\begin{enumerate}[label=(\alph*)]
+	\item $2+3=5$;
+	\item $3+4=7$;
+	\item $2\cdot 2=4$;
+	\item $3\cdot 2=6$; 
+\end{enumerate}  
+\end{ex}
+\begin{sol}
+\
+\begin{enumerate}[label=(\alph*)]
+	\item Using the preliminary definition, e.g.: $2=1+1$, and the Field Axioms:
+		\begin{align*}
+			2+3 &= (1+1)+3 &\text{(definition of "2")}\\
+			&= 3+ (1+1) & \text{(Axiom II)}\\
+			&= (3+1)+1 &\text{(Axiom III)}\\
+			&= 4+1 &\text{(definition of "4")}\\
+			&=5 &\text{(definition of "5")} 
+		\end{align*}
+ 	\item Similarly, we have:
+ 		\begin{align*}
+ 			3+4 &= (2+1)+4 &\text{(definition of "3")}\\
+ 			&= 4+(2+1) &\text{(Axiom II)}\\
+ 			&= 4+(1+2) &\text{(Axiom II)}\\
+ 			&= (4+1)+2 &\text{(Axiom III)}\\
+ 			&= 5+2 &\text{(definition of "5")}\\
+ 			&= 5+(1+1) &\text{(definition of "2")}\\
+ 			&= (5+1)+1 & \text{(Axiom III)}\\
+ 			&= 6+1 & \text{(definition of "6")}\\
+ 			&= 7 &\text{(definition of "7")}	
+ 		\end{align*}
+	\item Again, using the preliminary definition, and the Field Axioms we have:
+		\begin{align*}
+			2\cdot 2 &= (1+1)\cdot 2 & \text{(definition of "2")}\\
+			&= 1\cdot 2 + 1 \cdot 2 & \text{(Axiom VI)}\\
+			&= 2+2 &\text{(Axiom IV)}\\
+			&= 2+(1+1) & \text{(definition of "2")}\\
+			&= (2+1)+1 & \text{(Axiom III)}\\
+			&= 3+1 & \text{(definition of "3")}\\
+			&= 4 & \text{(definition of "4")}
+		\end{align*}
+	\item Similarly, 
+		\begin{align*}
+			3 \cdot 2 &= 3\cdot (1+1) & \text{(definition of "2")}\\
+			&= (1+1)\cdot 3& \text{(Axiom II)}\\
+			&= 3 \cdot 1+3 \cdot 1 & \text{(Axiom VI)}\\
+			&= 3+3 &\text{(Axiom IV)}\\
+			&= 3+ (2+1) &\text{(definition of "3")}\\
+			&= 3+(1+2) & \text{(Axiom II)}\\
+			&= (3+1)+2 & \text{(Axiom III)}\\
+			&= 4+2 & \text{(definition of "4")}\\
+			&= 4+(1+1) & \text{(definition of "2")}\\
+			&= (4+1)+1 & \text{(Axiom III)}\\
+			&= 5 +1 & \text{(definition of "5")}\\
+			&= 6 & \text{definition of "6")}	
+		\end{align*}
+
+\end{enumerate}	
+\end{sol}
+\begin{ex}[2]
+\\
+Deduce from axioms, step by step, that in any field $F$, we have the following:
+\begin{enumerate}[label=(\roman*)]
+	\item $abcd=cbad = dacb$; similarly for addition.
+	\item If $x\neq 0$ and $y \neq 0$, then $xy\neq 0.$
+	\item $(xy)^{-1}= x^{-1}y^{-1}$, provided that $y \neq 0$ and $y \neq 0$. Why must one assume that neither $x$ nor $y$ are zero?
+	\item If $x\neq 0, \: y\neq 0$ and $z \neq 0$, then $(xzy)^{-1}=x^{-1}y^{-1}z^{-1}$.
+	\item If $x\neq 0$ and $y \neq 0$, then
+		\begin{align*}
+			\frac{a}{x}\cdot \frac{b}{y}= \frac{ab}{xy} \;\; \text{and}\;\; \frac{a}{x}+\frac{b}{y} = \frac{ay+bx}{xy}
+		\end{align*} 
+	\item $(a+b)(x+y)=ax+bx+ay+by$; \;\; (vi$'$) \; $(a+b)^2=a^2+2ab +b^2.$
+	\item $(a+b)(x-y)=ax+bx-ay-by;$ \;\; (vii$'$) \; $(a+b)(a-b)=a^2-b^2.$
+\end{enumerate}
+\end{ex}
+\begin{sol}
+\
+\begin{enumerate}[label=(\roman*)]
+	\item For addition, we have $a+b+c+d$, which is equivalent to $c+b+a +d$ and $d+a+c+b$
+		\begin{align*}
+			a+b+c+d &=(a+b+c)+d 	& \text{(Definition 3.)}\\
+			&= ((a+b)+c)+d & \text{(Definition 3.)} \\
+			&= (c+(a+b))+d & \text{(Axiom II)}\\
+			&= (c+(b+a))+d & \text{(Axiom II)}\\
+			&= ((c+b)+a))+d & \text{(Axiom III)}\\
+			&= (c+b+a)+d & \text{(Definition 3.)}\\
+			&= c+b+a+d & \text{(Definition 3.)}
+		\end{align*}
+		Similarly,
+		\begin{align*}
+			a+b+c+d &=(a+b+c)+d 	& \text{(Definition 3.)}\\
+			&= d+(a+b+c) & \text{(Axiom II)}\\
+			&= d+((a+b)+c) &\text{(Definition 3.)}\\
+			&= d+(a+(b+c)) & \text{(Axiom III)}\\
+			&= d+(a+(c+b)) & \text{(Axiom II)}\\
+			&= d+((a+c)+b) & \text{(Axiom III)}\\
+			&= d+(a+c+b) & \text{(Definition 3.)}\\
+			&= d+a+c+b & \text{(Definition 3.')}
+		\end{align*}
+		For multiplication, we have the expression $abcd$, which is equal to $cbad$ and $dacb$.
+		\begin{align*}
+			abcd &= (abc)\cdot d	 	& \text{(Definition 3.)}\\
+			&= ((ab)\cdot c)\cdot d 	& \text{(Definition 3.)}\\
+			&= (c\cdot (ab))\cdot d 	& \text{(Axiom II)}\\
+			&= (c\cdot (ba))\cdot d & \text{(Axiom II)}\\
+			&= ((cb)\cdot a)\cdot d & \text{(Axiom III)}\\
+			&= (cba)\cdot d & \text{(Definition 3.)}\\
+			&= cbad & \text{(Definition 3.)}
+		\end{align*}
+		Similarly, 
+		\begin{align*}
+			abcd &= (abc)\cdot d	 	& \text{(Definition 3.)}\\
+			&= d\cdot (abc) &\text{(Axiom II)}\\
+			&= d\cdot ((ab)\cdot c) &\text{(Definition 3.)}\\
+			&= d\cdot (a\cdot (bc))) & \text{(Axiom III)}\\
+			&= d \cdot (a\cdot (cb)) & \text{(Axiom II)}\\
+			&= d\cdot ((ac)\cdot b) & \text{(Axiom III)}\\
+			&= d \cdot (acb) & \text{(Definition 3.)}\\
+			&= dacb & \text{(Definition 3.')}
+		\end{align*}
+ 	\item If $x\neq 0$ and $y \neq 0$, we have $xy \neq 0$.\\
+ 		Assume, $xy=0$  
+ 		\begin{align*}
+ 			xy&=0 & \text{(Assumption)}\\
+ 			(xy)\cdot y^{-1} &= 0\cdot y^{-1} & \text{(Corollary 2.)}\\
+ 			(xy) \cdot y^{-1} &= 0 & \text{(Corollary 5.)}\\
+ 			x\cdot (y\cdot y^{-1}) &=0 &\text{(Axiom III)}\\
+ 			x\cdot 1&=0 & \text{(Axiom V)}\\
+ 			x&=0 & \text{(Axiom IV)} 
+ 		\end{align*}
+		This contradicts our assumption that $x\neq 0$, thus, $xy\neq 0$
+	\item We need to show that $(xy)^{-1}=x^{-1}y^{-1}$, given that neither $x$ nor $y$ are zero. The equation implies that $x^{-1}y^{-1}$ is the multiplicative inverse of $xy$:
+		\begin{align*}
+		(xy)\cdot (x^{-1}y^{-1})= xyx^{-1}y^{-1} = xx^{-1}\cdot yy^{-1} =1\cdot 1=1	
+		\end{align*}
+ 		Hence, $(xy)^{-1} =x^{-1}y^{-1}$. $x$ or $y$ cannot be $0$, as in both cases, $xy=0$, which does not have a multiplicative inverse.
+ 	\item If $x\neq 0, y \neq 0$ and $z \neq 0$, then $(xyz)^{-1}=x^{-1}y^{-1}z^{-1}$. Similarly, the statement implies that $x^{-1}y^{-1}z^{-1}$ is the multiplicative inverse of $xyz$:
+ 		\begin{align*}
+ 			(xyz)(x^{-1}y^{-1}z^{-1}) = (x)\cdot (yz)\cdot(x^{-1}) \cdot (y^{-1}z^{-1})=(x) \cdot (x^{-1}) \cdot (yz)\cdot (y^{-1}z^{-1}) = 1 \cdot 1
+ 		\end{align*}
+ 		By (iii), and (i), thus we have the result.
+ 	\item If $x \neq 0$ and $y \neq 0$, we have:
+ 		\begin{align*}
+ 			\frac{a}{x}\cdot \frac{b}{y} &=ax^{-1} \cdot by^{-1} & \text{(Definition)}\\
+ 			&=ab x^{-1}y^{-1} & \text{(by (i))}\\
+ 			&= (ab)\cdot(xy)^{-1} & \text{(by (iii))}\\
+ 			&= \frac{ab}{xy} & \text{(Definition)}
+ 		\end{align*}
+ 		Now, for addition, 
+ 		\begin{align*}
+ 			\frac{a}{x} +\frac{b}{y} &=ax^{-1} + by^{-1} & \text{(Definition)}\\
+ 			\left(\frac{a}{x} +\frac{b}{y}\right)\cdot x  &= (ax^{-1}+by^{-1})\cdot x & \text{(Corollary 2)}\\
+ 			\left(\frac{a}{x} +\frac{b}{y}\right)\cdot x &= ax^{-1}\cdot x + by^{-1}\cdot x &\text{(Axiom VI)}\\
+ 			\left(\frac{a}{x} +\frac{b}{y}\right)\cdot x &= a\cdot 1 + by^{-1}\cdot x & \text{(Axiom V)}\\
+ 			\left(\frac{a}{x} +\frac{b}{y}\right)\cdot x &= a + by^{-1}\cdot x & \text{(Axiom IV)}\\
+ 			\left(\frac{a}{x} +\frac{b}{y}\right)\cdot (xy) &= (a+ by^{-1}x)\cdot y & \text{(Corollary 2)}\\
+ 			\left(\frac{a}{x} +\frac{b}{y}\right)\cdot (xy) &= ay + by^{-1}xy & \text{(Axiom VI)}\\
+ 			\left(\frac{a}{x} +\frac{b}{y}\right)\cdot (xy) &= ay + bxy^{-1}y & \text{(By (i))}\\
+ 			\left(\frac{a}{x} +\frac{b}{y}\right)\cdot (xy) &= ay + bx \cdot 1 & \text{(Axiom V)}\\
+ 			\left(\frac{a}{x} +\frac{b}{y}\right)\cdot (xy) &= ay+bx & \text{(Axiom IV)} \\
+ 			\left(\frac{a}{x} +\frac{b}{y}\right)\cdot (xy) \cdot (xy)^{-1} &= (ay+bx)\cdot (xy)^{-1} & \text{(Corollary 2)}\\
+ 			\left(\frac{a}{x} +\frac{b}{y}\right) \cdot 1 &=  (ay+bx)\cdot (xy)^{-1} & \text{(Axiom V)}\\
+ 			\frac{a}{x} +\frac{b}{y} &= (ay+bx)\cdot (xy)^{-1} & \text{(Axiom IV)}\\
+ 			\frac{a}{x} +\frac{b}{y} &= \frac{ay+bx}{xy} & \text{(Definition)}
+ 		\end{align*}   
+ 	\item We need to prove that $(a+b)(x+y) =ax+bx+ay+by$:
+ 		\begin{align*}
+ 			(a+b)(x+y) &= a\cdot(x+y)+b\cdot (x+y) & \text{(Axiom VI)}\\
+ 			&= (x+y) \cdot a + (x+y)\cdot b & \text{(Axiom II)}\\
+ 			&= ax+ay+bx+by & \text{(Axiom VI)}\\
+ 			&= ax+bx+ay+by & \text{(By (i))}
+ 		\end{align*}
+ 		When $x=a$ and $y=b$, we have:
+ 		\begin{align*}
+ 			(a+b)(a+b) &= a\cdot a + b\cdot a + a\cdot b+b\cdot b & \text{(By (vi))}	\\
+ 			&= a^2+a\cdot b + a\cdot b + b^2 & \text{(Axiom II)}\\
+ 			&= a^2 + 1\cdot (a\cdot b) + 1\cdot (a\cdot b) + b^2 & \text{(Axiom IV)}\\
+ 			&= a^2 +(1+1)\cdot (a\cdot b)+b^2 & \text{(Axiom VI)}\\
+ 			&= a^2 + 2ab +b^2 & \text{(Definition of ``2'')}
+ 		\end{align*}
+	\item We need to prove that $(a+b)(x-y)=ax+bx-ay-by$.
+		\begin{align*}
+			(a+b)(x-y) &= (a+b)(x+(-y)) & \text{(Definition)}\\
+			&= a\cdot (x+(-y))+b\cdot (x+(-y)) & \text{(Axiom VI)}\\
+			&= (x+(-y)) \cdot a +(x+(-y)) \cdot b & \text{(Axiom II)}\\
+			&= xa + (-y)\cdot a + xb+(-y)\cdot b & \text{(Axiom VI)}\\
+			&= xa+ (- (y\cdot a))+xb +(-(y\cdot b)) & \text{(Corollary 6)}\\
+			&= ax+(-ay) +bx+(-by) & \text{(Axiom II)} \\
+			&= ax+ bx-ay-by & \text{(by (i))}
+		\end{align*}
+		When $x=a$ and $y=b$, we have, by the current formula:
+		\begin{align*}
+			(a+b)(a-b) &= a\cdot a+ b\cdot a-a\cdot b-b\cdot b\\
+			&= a^2 + b\cdot a-a\cdot b-b^2 & \text{(Definition)}\\
+			&= a^2+ a\cdot b - a\cdot b - b^2 & \text{(Axiom II)}\\
+			&= a^2 +0-b^2 & \text{(Axiom V)}\\
+			&= a^2 -b^2 & \text{(Axiom IV)}
+		\end{align*} 
+\end{enumerate}	
+\end{sol}
+
+
+\begin{ex}[3]
+\\
+Show that:
+\begin{align*}
+	(a+b+c)x = ax+bx+cx\;\; \text{and}\;\; (a+b+c+d)x= ax+bx+cx+dx;  	
+\end{align*}
+\end{ex}
+\begin{sol}
+We solve the 3 term expression equation first, from which, we then prove the case for N term expression equation.
+\begin{align*}
+	(a+b+c)x&= ((a+b)+c)x &\text{(Definition)}\\
+	&=(a+b)x+cx & \text{(Axiom VI)}\\
+	&= ax+bx+cx & \text{(Axiom VI)}
+\end{align*}
+Assume for a $k$ term expression we have $(a_1+a_2+...+a_k)x= a_1x+a_2x+...+a_kx$. Then, for the $k+1$ term expression, we have:
+\begin{align*}
+	(a_1+a_2+...a_k+a_{k+1})x &= ((a_1+a_2+...+a_k)+a_{k+1})x & \text{(Definition)}\\
+	&= (a_1+a_2+...+a_k)x + a_{k+1}x & \text{(Axiom VI)}\\
+	&= a_1x+a_2x+...+a_kx +a_{k+1}x & \text{(Inductive Hypothesis)}
+\end{align*}
+Hence, the equation holds for $k+1$ term expression if it holds for a $k$ term expression, because the equation is shown to hold for a $3$ term expression, by induction, it holds for all $k\geq 3$ term expression including $4$ and $5$ term expressions.
+\end{sol}
+
+\begin{ex}[4]
+\\
+Prove the following for \textit{ordered fields}:
+\begin{enumerate}[label=(\roman*)]
+	\item If $x>0$, then also $x^{-1}>0.$
+	\item If $x>y>z>u$, then $x>u$.
+	\item If $x>y \geq 0$, then 
+		\begin{align*}
+			x^2>y^2\geq 0\;\;\text{and}\;\; x^3>y^3 \geq 0\;\; \text{(where $x^3=x^2x$);}
+		\end{align*}
+		similarly, 
+		\begin{align*}
+			x^4>y^4\geq 0\;\;\text{(where $x^4=x^3x$).} 	
+		\end{align*}
+	\item If $x>y>0$, then $1/x<1/y$. What if $x>0>y$ or $0>x>y$?
+	\item $|a+b+c|\leq |a|+|b|+|c|$ and $|a+b+c+d|\leq |a|+|b|+|c|+|d|.$ 
+\end{enumerate} 
+\end{ex}
+\begin{sol}
+\begin{enumerate}[label=(\roman*)]
+	\item We have to prove that when $x>0$, $x^{-1}>0$. Assume that $x^{-1}<0$ instead but $x>0$. We have:
+		\begin{align*}
+			x^{-1} &<0 \\
+			x^{-1}\cdot x &< 0\cdot x & \text{(Axiom IX)}\\
+			x^{-1}\cdot x &< 0  	 & \text{(Corollary 5)}\\
+			1&<0 & \text{(Axiom V)}
+		\end{align*}
+		But, if $1<0$, then by the monotonicity of multiplication, we have $x<0$, which contradicts our premise. Hence $x^{-1}$ is either $0$ or greater than $0$, by the trichotomy of an ordered field. But, if $x^{-1}=0$, then
+		\begin{align*}
+			x^{-1}&=0 \\
+			x^{-1}\cdot x &= 0 \cdot x & \text{(Corollary 2)}\\
+			x^{-1}\cdot x &=0 &\text{(Corollary 5)}\\
+			1&=0 & \text{(Axiom V)}
+		\end{align*}
+		But, if $1=0$, then, by Corollary 2 and 5, we have $x=0$, which again contradicts our premise. Hence, by the trichotomy of an ordered field, $x^{-1}>0$ when $x>0$.
+	\item If $x>y$ and $y>z$, then by transitive property of an ordered field, $x>z$. If in addition, $z>u$, applying the transitive property once more, $x>u$.
+	\item Given $x>y\geq 0$, we need to prove that $x^2>y^2\geq 0$. We have
+		\begin{align*}
+			x &>y \\
+			x\cdot x &>y \cdot y & \text{(Corollary 8)}\\
+			x^2&>y^2 \geq 0 & \text{(Corollary 9)}
+		\end{align*}
+		Similarly, applying Corollary 8, we get $x^3>y^3$, Then because $x^2>0$, $x^3>0$ by Axiom IX and Corollary 5. Similarly $y^3\geq 0$, Hence $x^3>y^3\geq 0$. With the same reasoning, we also get $x^4>y^4\geq 0$.
+	\item If $x>y>0$, then we need to prove that $1/x<1/y$, and how this changes if $x>0>y$ or $0>x>y$.
+		\begin{align*}
+			x>y>0 \\
+			x^{-1},\:\: y^{-1} >0
+		\end{align*}
+		By, (i), Hence, Multiplying both sides of the inequality, $x>y$ by $x^{-1}$ and $y^{-1}$, by the monotonicity of multiplication (Axiom IX), we get:
+		\begin{align*}
+			x&>y\\
+			1&>yx^{-1}\\
+			y^{-1}&>x^{-1}.	
+		\end{align*}
+		If $x>0>y$, $x^{-1}>0$ by (ii), but, $y^{-1}<0$, but by Corollary 7, $-y^{-1}$ would be positive. Hence, by monotonicity of multiplication (Axiom IX),
+		\begin{align*}
+			x&>y\\
+			1&>yx^{-1}\\
+			-y^{-1}&> -x^{-1}\\
+			x^{-1}&>y^{-1} 
+		\end{align*}
+		Similarly, if $0>x>y$, then $-x^{-1}$ and $-y^{-1}$ are positive, hence by the monotonicity of multiplication,
+		\begin{align*}
+			x&>y\\
+			-1&>-yx^{-1}\\
+			y^{-1}&>x^{-1}
+		\end{align*}
+	\item Now, we need to show that $|a+b+c|\leq |a|+|b|+|c|$. 
+		 \begin{align*}
+		 		|a+b+c| &= |(a+b)+c| & \text{(Definition)}\\
+		 		&\leq |(a+b)|+|c| &\text{(Corollary 12)}\\
+		 		&\leq (|a|+|b|)+|c| & \text{(Corollary 12)}\\
+		 		&\leq |a|+|b|+|c| 
+		 \end{align*}
+		 The same reasoning applies for an $k$ term sum.
+\end{enumerate}
+
+\end{sol}
+
+
+% --------------------------------------------------------------
+%     End on Problems on Arithmetic Operations and Inequalities in a Field
+% --------------------------------------------------------------
+
+% --------------------------------------------------------------
+%     Natural Numbers & Induction
+% --------------------------------------------------------------
+
+\section{Natural Numbers. Induction}
+A precise approach of defining natural numbers is as follows: 
+\begin{definition}[Natural Numbers]
+\
+
+A Subset $S$ of a field $F$ is called \textit{inductive} iff:
+\begin{enumerate}[label=(\roman*)]
+	\item $1\in S$ ($S$ contains the unity element of $F$) and, 
+	\item $(\forall x \in S)\;\; x+1\in S$
+\end{enumerate}
+Define $N$ to be the intersection of \textit{all} such subsets. We then obtain the following. 
+\end{definition}
+\begin{theorem}
+	The Set $N$ so defined is inductive itself. In fact, it is the ``smallest'' inductive set in $F$ (i.e. contained in any other such set).
+\end{theorem}
+\begin{proof}
+	We have to show that, with our new definition, 
+	\begin{enumerate}[label=(\roman*)]
+		\item $1 \in N$ and
+		\item $(\forall x \in N)\;\; x+1 \in N.$
+	\end{enumerate}
+	
+	\indent Now, by definition, the unity $1$, is in \textit{each} inductive set; Hence belongs to the intersection of such sets, i.e., to $N$. Thus, $1 \in N$, as claimed.\\
+	\indent Next, we take any $x \in N$. Then, by our definition of $N$, $x$ is in \textit{every} inductive set $S$. Hence, by the property (ii) of such sets, also $x+1$ is in every such set $S$; thus, $x+1$ is in the intersection of \textit{all} inductive sets, i.e., $x+1 \in N$, and so $N$ is inductive, indeed. \\
+	\indent Finally, by definition, $N$ is the \textit{common} part of all such sets, hence contained in each.
+\end{proof}
+For applications, this is usually expressed as: 
+\begin{theorem}[First Inductive Law]
+A proposition $P(n)$ involving a natural $n$ holds for all $n \in N$ in a field $F$ if:
+\begin{enumerate}[label=(\roman*)]
+	\item It holds for $n=1\;\; [P(1)\; \text{is true } ]$; and
+	\item whenever $P(n)$ holds for $n=m$, it holds for $n=m+1$; $[P(m) \implies P(m+1)].$ 
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+	Let $S$ be the set of all those $n \in N$ for which $P(n)$ is true; that is, $S =\{n \in N \;|\; P(n) \} $. We must show that actually \textit{each} $n \in N$ is in $S$, i.e., $N \subseteq S$.\\ 
+	\indent First, we show that $S$ is inductive. By our assumption (i), $P(1)$ is true. So, $1 \in S$. \\
+	Next, suppose $x \in S$. This means that $P(x)$ is true, but by assumption (ii), this implies $P(x+1)$, i.e., $x+1 \in S$. Thus, $1 \in S$ and $(\forall x \in S)\;\;x+1 \in S$; so, $S$ is \textit{inductive}. By the new definition of Natural numbers, $N \subseteq S$.
+\end{proof}
+This theorem is widely used to prove general propositions on natural elements, as follows. In order to show that some formula or proposition $P(n)$ is true for \textit{every} natural number $n$, we \textit{ first verify} $P(1)$, i.e., show that $P(n)$ holds for $n=1$. We then show that
+\begin{align*}
+	(\forall m \in N)\;\;P(m) \implies P(m+1); 
+\end{align*}  
+that is, if $P(n)$ holds for some $n=m$, \textit{then} it also holds for $n=m+1$. Once, these two facts are established, The first inductive law ensures, that $P(n)$ holds for all natural $n$.\\
+\\
+\textbf{Examples}
+\begin{enumerate}[label=(\Alph*)]
+	\item If $n$ and $m$ are natural numbers, so are $n+m$ and $nm$. To prove it, fix any $m \in \N$. Let $P(n)$ mean that $m+n \in \N$, we now verify the following:
+		\begin{enumerate}[label=(\roman*)]
+			\item $P(1)$ is true; for $m \in \N$ is given. Hence, by the very definition of $\N$, $m+1 \in \N$. But this means exactly that $P(n)$ holds for $n=1$. i.e., $P(1)$ is true.
+			\item $P(k) \implies P(k+1)$. Suppose that $P(n)$ holds for some particular $n=k$. This means that $m+k \in \N$. Hence, by the definition of $\N$, $(m+k)+1 \in \N$; or, by associativity, $m+(k+1) \in \N$. But, this means exactly that $P(k+1)$ is true if $P(k)$ is true. Hence induction is complete, and this means that $n+m \in \N$.  
+		\end{enumerate}
+		For multiplication, similarly, fix $m \in \N$, and let $P(n)$ mean that $mn \in \N$.
+		\begin{enumerate}[label=(\roman*)]
+			\item \textit{$P(1)$ is true}; for $m \in \N$ is given, by Axiom IV, we have $m =m\cdot 1 \in \N$. Hence $P(1)$ is true.
+			\item $P(k) \implies P(k+1)$; Suppose that $P(n)$ holds for some $n=k$. This means that $mk \in \N$. for $n=k+1$, we have $mn=m\cdot (k+1)$, by the distributive property, we have $mn=mk+m$, by earlier, $mk \in \N$ and $m \in \N$, hence, $mk+m \in \N$. Thus, by induction, $mn \in N$. 
+		\end{enumerate}
+	\item If $n \in \N$, then $n-1=0$ or $n-1 \in \N$. Indeed let $P(n)$ mean that $n-1 =0$ or $n-1 \in \N$. We again verify the two steps:
+		\begin{enumerate}[label=(\roman*)]
+			\item \textit{$P(1)$ is true}; for if $n=1$, then $n-1=1-1=0$, thus one of the desired alternatives, namely $n-1=0$ holds if $n=1$. Hence, $P(1)$ is true.
+			\item $P(m) \implies P(m+1)$. Suppose $P(n)$ holds for some \textit{particular} value $n=m$ (inductive hypothesis). This means that either $m-1=0$ or $m-1 \in \N$. \\
+				
+				\indent In the first case, we have $(m-1)+1 =0 +1 =1 \in \N$. But $(m-1)+1 = m +((-1)+1)= m+ (1+(-1))=(m+1)-1$, by associativity and commutativity. Thus, $(m+1) -1 \in \N$. \\
+				
+				\indent In the second case, $m-1 \in \N$, implies $(m-1)+1 \in \N$ by the definition of $\N$. Thus, in both cases, $(m+1)-1 \in \N$, and this shows that $P(m+1)$ is true if $P(m)$ is true.   
+		\end{enumerate}
+	\item In an ordered field, all naturals are $\geq 1$. Indeed, let $P(n)$, now mean that $n\geq 1$. As before, we again carry out the two inductive steps. 
+		\begin{enumerate}[label=(\roman*)]
+			\item \textit{$P(1)$ holds}; for if $n=1$, then certainly $n\geq 1$; so $P(n)$ holds for $n=1$.
+			\item $P(m) \implies P(m+1)$. We make the inductive hypothesis that $P(m)$ holds for some particular $m$. This means that $m\geq 1$. Hence, by monotonicity of addition and transitivity (Axioms IX and Axiom VIII), we have $m+1\geq 1+1 >1$ (the latter follows by adding 1 on both sides of $1>0$). Thus $m+1\geq 1$, thus $P(m+1)$ holds if $P(m)$ holds. Induction is complete.
+		\end{enumerate}
+	\item \textit{In an ordered field}, $m, n \in \N$ and $m>n$ \textit{implies} $m-n \in \N$. This is an extremely tricky problem to solve by induction because if we fix $m$ to be some particular value $\in \N$, then doing induction on $n$, eventually $n$ will be greater than $m$, hence $P(n)$ won't hold for $n \geq m$. Instead, we have to carefully define the proposition while fixing an arbitrary $m \in \N$, let $P(n)$ mean ``$m \leq n$ or $m-n \in \N$''. Then, we have the following:
+		\begin{enumerate}[label=(\roman*)]
+			\item \textit{$P(1)$ is true}; for if $n=1$, then $m-n =m -1$, but by Example (B), $m-1=0$ or $m-1 \in \N$. This shows $P(n)$ holds for $n=1$.
+			\item $P(k)\implies P(k+1);$ Suppose $P(k)$ holds for some particular $k\in \N$. This means that:
+				\begin{align*}
+					m \leq k  \;\;\text{or}\;\; m-k \in \N.	
+				\end{align*}
+				For the first case, clearly, if $m\leq k$, because $k<k+1$, by the transitive property of an ordered field, we have $m\leq k+1$. For the second case, if $m-k\in\N$, by Example (B), we have either:
+				\begin{align*}
+					(m-k) -1=0\;\;\text{or}\;\; (m-k) -1 \in \N
+				\end{align*}
+				In the first, case, $m-k =1$, hence  $m\leq  k+1$. For the latter case, using associativity and commutativity, we have $m - (k+1) \in \N$. Thus, $P(k) \implies P(k+1)$, and by induction we have : If, $n,m \in \N$ and $m>n$, then $m-n \in \N$. 
+ 		\end{enumerate}
+\end{enumerate}
+\begin{lemma}
+For no naturals $m,n$ in an ordered field is $m<n<m+1$. i.e., there is no natural between any arbitrary natural and its successor. 
+\end{lemma}
+\begin{proof}
+For, by Example (D), $n>m$, would imply that $n-m \in \N$. By Example (C), we have $n-m\geq 1$, or $n\geq m+1$. Then by the trichotomy of order, we exclude $n< m+1$. Thus, $m<n<m+1$ is impossible for natural numbers.   
+\end{proof}
+\begin{theorem}[Well Orderedness]
+	In an ordered field, every nonempty subset of $\N$ (the naturals) has a least element, i.e., one not exceeding any other of its members. 
+\end{theorem}
+\begin{proof}
+Given some $A$ such that $\varnothing \neq A \subseteq \N$, we want to show that $A$ has a least element. To do this, let:
+\begin{align*}
+		A_n = \{x\in A\;|\; x \leq a\}\;\; n=1,2, ...
+\end{align*}
+That is, $A_n$ consists of those elements of $A$ that are $\leq n$ ($A_n$ might be empty). Now let $P(n)$ mean
+\begin{align*}
+	\textit{``either $A_n = \varnothing$ or $A_n$ has a least element''}	
+\end{align*}
+We will show by induction that $P(n)$ holds for each $n \in \N$. We have the following:
+\begin{enumerate}[label=(\roman*)]
+	\item \textit{$P(1)$ is true}; for, by construction, $A_1$ consists of all naturals from $A$ that are $\leq 1$ (if any). But, by Example (C), the only such natural is $1$. Thus, $A_1$, if not empty, consists of 1 alone, and so 1 is also its least member. We see that either $A_1 = \varnothing$ or $A_1$ has a least element; i.e., $P(1)$ is true.
+	\item $P(m) \implies P(m+1)$. Suppose $P(m)$ holds for some particular $m$. This means that $A_m = \varnothing$ or $A_m$ has a least element (call it $m_0$). In the latter case, $m_0$ is also the least element of $A_{m+1}$; for, by the lemma, $A_{m+1}$ differs from $A_n$ by $m+1$ at most, which is greater than all members of $A_m$.\\
+		\\
+		If, however, $A_m = \varnothing$, then for the same reason, $A_{m+1}$ (if $\neq \varnothing $) consists of $m+1$ alone; so $m+1$ is also the least element. \\
+		\\
+		This shows that $P(m+1)$ is true if $P(m)$ is. Thus, the proposition holds for every $A_n$.  
+\end{enumerate}
+Now, by assumption, $A \neq \varnothing$; so we fix some $n \in A$. Then the set
+\begin{align*}
+	A_n = \{ \ x \in A\;\; |\;\; x \leq n\ \}	
+\end{align*}
+contains $n$ and hence $A_n \neq \varnothing$. Thus, by the proposition, $A_n$ must have a least element $m_0$, $m_0 \leq n$. But $A$ differs from $A_n$ only by elements $> n$ (if any), which are all $> m_0$. Thus $m_0$ is the desired least element of $A$ as well.
+\end{proof} 
+This theorem yields a new form of induction law for ordered fields: The Second Induction Law
+\begin{theorem}[Second Induction Law]
+A Proposition $P(n)$ holds for each natural number $n$ in an ordered field if
+\begin{enumerate} [label = (\roman*)]
+	\item $P(1)$ holds, and 
+	\item whenever $P(n)$ holds for all naturals $n$ less than some $m \in \N$, it also holds for $n=m$.  
+\end{enumerate} 
+\end{theorem}
+\begin{proof}
+We shall use a so-called indirect proof or proof by contradiction. That is, instead of proving our assertion directly, we shall show that the opposite is false, and so, our theorem must be true. 
+\\
+\indent Thus assume (i) and (ii) and seeking a contradiction, suppose $P(n)$ fails for some $n \in \N$ (call such $n$ as ``bad''). Then these bad naturals from a non-empty subset of $\N$, call it $A$. By the well ordered property of $\N$, $A$ has a least member $m$. Thus, $m$ is the least natural for which $P(n)$  fails. If also follows that all $n$ less than $m$ do satisfy $P(n)$ (among them is 1 by (i)). But then, by our assumption (ii), $P(n)$ also holds for $n=m$, which is impossible since, m is bad by construction.\\
+\indent This construction shows that there cannot be any ``bad'' naturals.    
+\end{proof} 
+\noindent  A similar induction law applies to definitions. It reads as follows:
+\begin{definition}[Recursive Definitions]
+\textit{A notion $C(n)$ is regarded as defined for every natural element of an ordered field $F$ if }
+\begin{enumerate}[label =(\roman*)]
+	\item \textit{it has been defined for $n=1$, and}
+	\item \textit{some rule or formula is given that expresses $C(n)$ in terms of $C(1),\ C(2),\ ...,\ C(n-1)$, i.e., in terms of all $C(k)$ with $k<n$, or some of them.}
+\end{enumerate}
+\end{definition}
+Such definitions are referred to as \textit{inductive or recursive}. The admissibility can be proved rigorously \footnote{ Cf., e.g., P.Halmos, \textit{Naive Set Theory}, D. Van Nostrand }.\\
+\indent We shall now illustrate this procedure by several important examples of inductive definitions to be used throughout our later work.
+\begin{definition}[Natural number Power]
+	Given an element $x$ of a field $F$, we define the $n$-th power of $x$, denoted 
+\begin{center}
+	(i) $x^1 =x$ and (ii) $x^n = x^{n-1}x$, $n =2,3, ...$.  
+\end{center}
+By the inductive law expressed above $x^n$ is defined for every natural $n$. If $x \neq 0$, we also define $x^0=1$ and $x^{-n} =\frac{1}{x^n}$
+\end{definition}
+\begin{definition}[Factorial]
+	For every natural number $n$, we define recursively the expression $n!$ as follows:
+\begin{center}
+	(i) $1! =1$; (ii) $n! = (n-1)! \cdot n, \;\; n=2,3,... $
+\end{center}
+We also define $0!=1$ 
+\end{definition}
+\begin{definition}[Sums and Products of $n$ elements]
+	The sum and product of $n$ elements $x_1,\ \ldots,\ x_n \in F$ of a field, denoted by
+	\begin{align*}
+		x_1+ x_2+ \cdots + x_n\;\; \text{and}\;\; x_1\cdot x_2 \cdots x_n 
+	\end{align*}
+(or $\sum_{k=1}^{n} x_k$ and $\prod_{k=1}^nx_k$), respectively, are defined recursively as follows:
+\begin{center}
+	Sums: \;\; (i) $\sum_{k=1}^1 x_k = x_1$;\;\; (ii) $\sum_{k=1}^n x_k = \left(\sum_{k=1}^{n-1} x_k\right) +x_n$, \;\; $n=2,3,\ldots$\\
+	Products: \;\; (i) $\prod_{k=1}^1 x_k = x_1$;\;\; (ii) $\prod_{k=1}^n x_k = \left(\prod_{k=1}^{n-1} x_k\right) +x_n$, \;\; $n=2,3,\ldots$   
+\end{center}
+\end{definition}
+ Induction can be used to define the notion of an ordered n-tuple if the concept of an ordered pair is assumed to be known. 
+ 
+ \begin{definition}[$n$-tuple]
+ 	For any objects $x_1,x_2, \ldots, x_n$, the \textit{ordered} $n$-tuple $(x_1, \ldots, x_n)$ is defined by
+ \begin{enumerate}[label=(\roman*)]
+ 	\item $(x_1) = x_1$ (i.e., an ordered ``\textit{one-tuple}'' $(x_1)$ is $x_1$ itself);
+ 	\item $(x_1, \ldots, x_n) = ((x_1, \ldots, x_{n-1}), x_n) $ $n =2,3,\ldots$ .
+ \end{enumerate}
+ Accordingly, we may now also define the Cartesian Product
+ \begin{align*}
+ 	A_1 \times A_2 \times \cdots \times A_n	
+ \end{align*}
+ of $n$ sets either as the set of all $n$-tuples $(x_1, \ldots, x_n)$ such that $x_k \in A_k$ $k=1,2, \ldots, n$, or directly by induction. 
+\end{definition}
+  
+% --------------------------------------------------------------
+%     End of Natural Numbers & Induction
+% --------------------------------------------------------------
+
+\section{Problems on Natural Numbers and Induction}
+
+\begin{ex}[1]
+\\
+Using induction, prove the following:
+\begin{enumerate}[label= (\roman*)]
+	\item $1^n=1$ in any field;
+	\item $(\forall n \in \N)$ $2^n\geq 2$ in any ordered field; Specify the proposition $P(n)$. 
+\end{enumerate} 
+\end{ex}
+
+\begin{ex}[2] 
+\\
+Prove that if $x_1,\ldots, x_n$ are natural elements of a field, so are
+\begin{align*}
+	\sum_{k=1}^n x_k \;\; \text{and}\;\; \prod_{k=1}^{n}x_k
+\end{align*}	
+Assume this known for $n=2$, and use induction on $n$. 
+\end{ex}
+\begin{ex}[3]
+\\
+Prove that the sum and product of $n$ elements of an ordered field are positive if all these elements are.
+\end{ex}
+\begin{ex}[4]
+\\
+Prove by induction that if $x_1, x_2, \ldots, x_n$ are nonzero elements of a field, so is $\prod_{k=1}^n x_k$; and
+\begin{align*}
+	\left(\prod_{k=1}^n x_k \right)^{-1} = \prod_{k=1}^n x_k^{-1}	
+\end{align*}
+ Assume this known for $n=2$.
+\end{ex}
+\begin{ex}[5]
+\\
+Use induction over $n$ to prove that for any field elements $c, x_k$ and $y_k$:
+\begin{align*}
+	\text{(i)}\;\;\; c\left(\sum_{k=1}^n x_k \right) = \sum_{k=1}^n cx_k;\;\;\; \text{(ii)}\;\;\; \sum_{k=1}^n (x_k\pm y_k) = \sum_{k=1}^n x_k \pm \sum_{k=1}^n y_k.   
+\end{align*}
+\end{ex}
+\begin{ex}[6]
+\\
+Prove by induction that in any ordered field
+\begin{align*}
+	\left| \sum_{k=1}^n x_k \right| \leq \sum_{k=1}^n |x_k|.
+\end{align*}	
+\end{ex}
+\begin{ex}[7]
+\\
+Prove that in any ordered field, $a<b$ iff $a^n < b^n$, provided $a,b \geq 0$. Infer that $a^n < 1$ if $0 \leq a <1$; $a^n >1$ if $a>1$ ($n=1,2,\ldots$).	
+\end{ex}
+\begin{ex}[8]
+\\
+Use Induction over $n$ to prove that for any element $\e$ of an ordered field $F$, 
+\begin{enumerate}[label=(\roman*)]
+	\item $(1+\e)^n \geq 1 +n\e$ if $\e >-1$
+	\item $(1-\e)^n \geq 1 -n\e $ if $\e <1$ 
+\end{enumerate}
+These are \textit{Bernoulli Inequalities}. Infer that $2^n >n$, $n=1,2,\ldots,$ in $\mathbb{R}$.	
+\end{ex}
+\begin{ex}[9]
+\\
+Prove that in any field,
+\begin{align*}
+	a^{n+1}-b^{n+1}= (a-b)\cdot \sum_{k=0}^n a^kb^{n-k}, \;\; n=1,2, \ldots .
+\end{align*}	
+\end{ex}
+\begin{ex}[10]
+\\
+Prove in $\mathbb{R}$,
+\begin{enumerate}[label=(\roman*)]
+	\item $1+2+\cdots+n= \frac{1}{2}n(n+1)$;
+	\item $\sum_{k=1}^n k^2 = \frac{1}{6}n(n+1)(2n+1)$;
+	\item $\sum_{k=1}^n k^3 = \frac{1}{4}n^2(n+1)^2$;
+	\item $\sum_{k=1}^n k^4 = \frac{1}{30}n(n+1)(2n+1)(3n^2+3n-1)$.
+\end{enumerate}	
+\end{ex}
+\begin{ex}[11]
+\\
+For any field elements $a,b$ and natural numbers $m,n \in \mathbb{R}$, prove the following:
+\begin{multicols}{3}
+\begin{enumerate}[label=(\roman*)]
+	\item $a^ma^n= a^{m+n}$;
+	\item $(a^m)^n =a ^{mn}$;
+	\item $(ab)^n = a^nb^n$.
+\end{enumerate}
+\end{multicols}
+If $a \neq 0$, then also
+\begin{multicols}{2}
+\begin{enumerate}[label = (\roman*)]
+	\setcounter{enumi}{3}
+	\item $\dfrac{a^n}{a^m} = a^{n-m}$; 
+	\item $\left( \dfrac{b}{a} \right)^n = \dfrac{b^n}{a^n}$.
+\end{enumerate}
+\end{multicols}
+If $a,b \neq 0$ show that these laws hold for negative exponents, too. Also, prove the following:
+\begin{multicols}{3}
+\begin{enumerate}[label = (\roman*)]
+	\setcounter{enumi}{5}
+	\item $ma+na = (m+n)a$;
+	\item $ma \cdot nb = (mn)(ab)$;
+	\item $n(a\pm b) = na \pm nb$. 
+\end{enumerate}
+\end{multicols}
+[Hints: Fix $m$ and use induction on $n$. The ``natural multiples'' $nx$ can be defined inductively by $1\cdot x= x,\: nx  =(n-1)x +x, \: n=1,2, \ldots$ ]	
+\end{ex}
+\begin{ex}[$11^\prime$ ]
+\\
+Show by induction that each natural element $x$ of an ordered field $F$ can be uniquely represented as $x=n\cdot 1^{\prime}$, where $n$ is the natural number in $\mathbb{R}$ and $1'$ is the unity in $F$; that is, $x$ is the sum of $n$ unities. 
+Conversely, show that each such $n\cdot 1'$ is a natural element of $F$. Finally, show that, for $m,n \in \N$, we have
+\begin{align*}
+	m<n\;\; \text{iff}\;\; mx<nx, 
+\end{align*}
+Provided $x>0$.  	
+\end{ex}
+\begin{ex}[12]
+\\
+Define the \textit{Binomial Coefficient}
+\begin{align*}
+\begin{pmatrix}
+	n \\
+	k
+\end{pmatrix}  = \frac{n!}{k!(n-k)!}	
+\end{align*}
+For nonnegative integers $n,k\;\; (k \leq n) \in \mathbb{R}$. Verify \textit{Pascal's Law}:
+\begin{align*}
+	\begin{pmatrix} n \\ k \end{pmatrix} + \begin{pmatrix} n \\ k+1 \end{pmatrix} = \begin{pmatrix}n+1 \\ k+1 \end{pmatrix}
+\end{align*}
+Using it, prove inductively that $\big(\begin{smallmatrix} n \\ k\end{smallmatrix} \big)$ is always a natural number. Then, establish inductively the \textit{binomial theorem}: for elements $a,b$ of any field $F$ and any natural number $n$,
+\begin{align*}
+	(a+b)^n = \sum_{k=0}^n \binom{n}{k} a^k b^{n-k}.
+\end{align*}
+\end{ex}
+\begin{ex}[13]
+\\
+Show by induction that if $x_1 = x_2 = \cdots = x_n = x$, then
+\begin{align*}
+	\sum_{k=1}^n x_k = nx \;\; \text{and}\;\; \prod_{k=1}^n = x^n\;\; \text{(where $x$ is in any field).}  
+\end{align*} 	
+\end{ex}
+\begin{ex}[14]
+\\
+Show by induction that in any field
+\begin{align*}
+	\sum_{k=1}^{n}(x_k-x_{k-1}) =x_n -x_0
+\end{align*}	
+Deduce from it the formulae of Problem 10 directly.
+\end{ex}
+\begin{ex}[15]
+\\
+Show by induction that every \textit{finite} sequence $x_1, x_2, \ldots, x_n$ of elements of an ordered field contains a largest and a smallest term (which need not be $x_n$ and $x_1$ since the sequence is not necessarily monotonic). Show by examples that the theorem fails for infinite sequences. Infer that the set of all natural numbers $1,2,3, \ldots$ is infinite.
+\end{ex}
+\begin{ex}[16]
+\\
+Prove by induction that two ordered $n$-tuples
+\begin{align*}
+	(x_1,\ldots, x_n)\;\; \text{and} \;\; (y_1, \ldots, y_n)
+\end{align*}
+are equal iff $x_1 = y_1, x_2= y_2, \ldots, x_n=y_n$. Assume this is known for $n=2$. 	
+\end{ex}
+\begin{ex}[17]
+\\
+Show that if the sets $A$ and $B$ are finite, so are $A \cup B$ and $A \times B$. By induction, prove this for $n$ sets.  	
+\end{ex}
+\begin{ex}[18]
+\\
+	
+\end{ex}
+\begin{ex}[19]
+\\
+Show by induction that if the finite sets $A$ and $B$ have $m$ and $n$ elements, respectively, then
+\begin{enumerate}[label = (\roman*)]
+	\item $A \times B$ has $mn$ elements;
+	\item $A$ has $2^m$ subsets;
+	\item If further $A \cap B = \varnothing$, then $A \cup B$ has $m+n$ elements.
+\end{enumerate} 	
+\end{ex}
+\begin{ex}[20]
+\\
+Prove the \textit{division theorem}: Let $\N' = \N \cup \{0\}$be the set consisting of $0$ and all naturals $(\N)$ in an ordered field. Then for any $m,n \in \N'$ $(n>0)$, there is a unique pair $(q,r) \in \N' \times \N'$ such that
+\begin{align*}
+	m=nq +r\;\; \text{and} \;\; 0 \leq r <n
+\end{align*}
+($q$ and $r$ are called, respectively, the \textit{quotient} and \textit{remainder} from the division of $m$ by $n$). If $r= 0$, we say $n$ \textit{divides} $m$ and write $n|m$.
+\end{ex}
+
+
+% --------------------------------------------------------------
+%     Start of Solutions
+% --------------------------------------------------------------
+
+\subsection{Solutions}
+
+\begin{ex}[1]
+\\
+Using induction, prove the following:
+\begin{enumerate}[label= (\roman*)]
+	\item $1^n=1$ in any field;
+	\item $(\forall n \in \N)$ $2^n\geq 2$ in any ordered field; Specify the proposition $P(n)$. 
+\end{enumerate} 
+\end{ex}
+\begin{sol}
+For (i), we define the proposition $P(n)$, so that we have $1^n =1$ being true. 
+\begin{enumerate}[label = (\roman*)$'$]
+	\item \textit{$P(1)$ is true}; From the inductive definition of $n$th power of any element $x$ in field $F$, we have $1^1= 1$, hence $P(1)$ holds.
+	\item $P(m)\implies P(m+1)$ ; If we assume $P(n)$ holds for some particular $n=m$, then we have $1^m =1$, again by the inductive definition of natural powers, we have $1^{m+1} = 1^m \cdot 1$. From our inductive hypothesis, we have $1^{m+1}=1 \cdot 1 =1$ by the properties of neutral elements (Axiom IV). Thus, $P(m+1)$ is true whenever $P(m)$ is true.   
+\end{enumerate}
+
+\indent Hence, by induction, $1^n =1$ in any field, ordered or not, as we only used the general field axioms.\\
+\indent For  (ii), we can set the induction proposition $P(n)$ mean $2^n \geq 2$. 
+\begin{enumerate}[label = (\roman*)$'$]
+	\item \textit{$P(1)$ is true}; by the definition of natural powers, $2^1=2 \geq 2$. Thus, $P(1)$ holds.
+	\item $P(m)\implies P(m+1)$; If we assume $P(n)$ holds for some $n=m$, then we have $2^m \geq 2$, because $2>1$ (straight forward implication of $1>0$, monotonicity of addition, and definition of ``2''), by the monotonicity of multiplication, we have $2^m \cdot 2 \geq 2 \cdot 1$, by the definition of natural powers, and the properties of neutral elements, $2^{m+1}\geq 2$. Thus, $P(m+1)$ holds if $P(m)$ holds.
+\end{enumerate}
+Hence, by induction, we have $2^n\geq 2$ for all $n \in \N$.
+\end{sol}
+
+
+\begin{ex}[2] 
+\\
+Prove that if $x_1,\ldots, x_n$ are natural elements of a field, so are
+\begin{align*}
+	\sum_{k=1}^n x_k \;\; \text{and}\;\; \prod_{k=1}^{n}x_k
+\end{align*}	
+Assume this known for $n=2$, and use induction on $n$. 
+\end{ex}
+\begin{sol} We have shown in Example (A), that if $x_1,x_2 \in \N$ then, $x_1+x_2 \in \N$ along with $x_1x_2 \in \N$. We can let $P(n)$ mean that $\sum_{k=1}^n x_k \in \N$. For sums, we have:
+\begin{enumerate}[label = (\roman*)]
+	\item 	\textit{$P(2)$ is true}; By definition of sums, we have $\sum_{k=1}^2 x_k = \sum_{k=1}^1x_k+x_2= x_1+x_2$; Because $x_1, x_2 \in \N$, by Example (A), $x_1+x_2 \in \N$. Thus $P(2)$ holds.
+	\item  $P(m)\implies P(m+1)$; Assuming $P(m)$ holds implies that $\sum_{k=1}^m x_k \in \N$. By the definition of sum, $\sum_{k=1}^{m+1} x_k = \sum_{k=1}^m x_k +x_{m+1}$. Because of the inductive hypothesis, $\sum_{k=1}^m x_k \in \N$ and from our assumption, $x_{m+1} \in \N$, thus $\sum_{k=1}^{m+1} x_k$ is also a natural element of the field by Example (A). Thus $P(m+1)$ is true when $P(m)$ is true.
+\end{enumerate}
+Similarly, for products of natural elements, Let $P'(n)$ mean that $\prod_{k=1}^{n}x_k \in \N$. with this we have:
+\begin{enumerate}[label = (\roman*)$'$]
+ \item 	\textit{$P'(2)$ is true}; Again by the definition of products, we have $\prod_{k=1}^2 x_k = (\prod_{k=1}^1x_k) \cdot x_2 = x_1\cdot x_2$, which by Example (A), is also a natural element of the field.
+ \item  $P'(m)\implies P'(m+1)$; Assuming $P'(m)$ holds, we have $\prod_{k=1}^{m}x_k \in \N$ and by definition of products, we have $\prod_{k=1}^{m+1}x_k = (\prod_{k=1}^{m}x_k )\cdot x_{m+1}$, then from the inductive hypothesis and Example (A), we have $\prod_{k=1}^{m+1}x_k \in \N$. Thus, $P'(m+1)$ is true when $P'(m)$ is true. 
+\end{enumerate}
+
+	
+\end{sol}
+
+\begin{ex}[3]
+\\
+Prove that the sum and product of $n$ elements of an ordered field are positive if all these elements are.
+\end{ex}
+\begin{sol}
+Lets define $x_1,\ldots, x_n$ as the $n$ elements of an ordered field, with each being positive, i.e., $>0$. For sums, let proposition $P(n)$ be true if $\sum_{k=1}^n x_k >0$.
+\begin{enumerate}[label = (\roman*)]
+	\item \textit{$P(2)$ is true}; By definition of sums, $\sum_{k=1}^2 x_k = \sum_{k=1}^1x_k+x_2= x_1+x_2$; Because $x_1>0$ and $x_2>0$, by addition of inequalities, and properties of neutral elements, we have $x_1+x_2 >0+0=0$. Thus, $P(2)$ holds.
+	\item $P(m) \implies P(m+1)$; $P(m)$ being true implies, $\sum_{k=1}^m x_k>0$, choosing some $x_{n+1}>0$, by the addition of inequalities, and properties of neutral elements, we have, $\sum_{k=1}^m x_k +x_{m+1}>0$. Now, by the recursive definition of sums, $0< \sum_{k=1}^m x_k +x_{m+1} = \sum_{k=1}^{m+1}x_k$. Hence, $P(m+1)$ is true when $P(m)$ is true.  	
+\end{enumerate}
+Thus, the sum of all positive elements in an ordered field is also positive. Similarly for multiplication, define $P'(n)$ to mean $\prod_{k=1}^n x_k>0$.
+\begin{enumerate}[label = (\roman*)$'$]
+	\item \textit{$P'(2)$ is true}; by definition of products, $\prod_{k=1}^2x_k = (\prod_{k=1}^1x_k)\cdot x_2=x_1\cdot x_2$. Because $x_1>0$ and $x_2>0$, by the monotonicity of multiplication (Axiom IX), $x_1 \cdot x_2 > 0 \cdot x_2$. By  Corollary 5 ($x_2 \cdot 0 = 0 \cdot x_2 =0$), we have $x_1\cdot x_2 >0$, hence $P'(2)$ holds.
+	\item $P'(m) \implies P'(m+1)$; $P'(m)$ being true means that $\prod_{k=1}^{m}x_k >0$, then choose some element $x_{m+1}>0$, by the monotonicity of multiplication and Corollary 5 similar to reasoning in (i)$'$, $(\prod_{k=1}^{m}x_k)\cdot x_{m+1} >0$. By the recursive definition of products $\prod_{k=1}^{m+1}x_k =(\prod_{k=1}^{m}x_k)\cdot x_{m+1} >0$. Hence, $P'(m+1)$ holds when $P'(m)$ is true.  	
+\end{enumerate}
+
+
+  	
+\end{sol}
+
+\begin{ex}[4]
+\\
+Prove by induction that if $x_1, x_2, \ldots, x_n$ are nonzero elements of a field, so is $\prod_{k=1}^n x_k$; and
+\begin{align*}
+	\left(\prod_{k=1}^n x_k \right)^{-1} = \prod_{k=1}^n x_k^{-1}	
+\end{align*}
+ Assume this known for $n=2$.
+\end{ex}
+
+\begin{sol}
+Because it is not known if the field is ordered, we can only use the general field axioms and theories. By Corollary 5, we have $x\cdot 0 =0\cdot x=0$, thus, using this property, we can define the proposition $P(n)$ to mean that $\prod_{k=1}^n x_k \neq 0$. 
+\begin{enumerate}[label = (\roman*)]
+ \item \textit{$P(2)$ is true}; Again, by the recursive definition of products, $\prod_{k=1}^2x_k = (\prod_{k=1}^1x_k)\cdot x_2=x_1\cdot x_2$, we need to show that $x_1 \cdot x_2 \neq 0$. First, assume that opposite: $x_1\cdot x_2 =0$, then we have, by field axioms and Corollary 5:
+ 	\begin{align*}
+ 		x_1\cdot x_2 &=0\\
+ 		x_1^{-1} \cdot (x_1x_2) &= x_1^{-1} \cdot 0\\
+ 		x_2=0 		 
+ 	\end{align*}
+But, this contradicts our assumption that $x_1, x_2 \neq 0$. Thus, $x_1\cdot x_2 \neq 0$. Hence $P(2)$ holds.
+\item $P(m) \implies P(m+1)$; If $P(n)$ holds for some $n=m$, then we have $\prod_{k=1}^m x_k \neq 0$, then from the definition of products, we have $\prod_{k=1}^{m+1} x_k = (\prod_{k=1}^m x_k)\cdot x_{m+1}$, we need to show that $(\prod_{k=1}^m x_k)\cdot x_{m+1} \neq 0$. Similar to the logic used in (i), by assuming that  $(\prod_{k=1}^m x_k)\cdot x_{m+1} = 0$, we can show that this would imply either $\prod_{k=1}^m x_k =0$ or $x_{m+1} = 0$, which is impossible from construction, hence $P(m+1)$ holds whenever $P(m)$ holds. 
+\end{enumerate}
+\indent Thus, the (finite) product of nonzero elements of a field is also nonzero. Now, we have to show that:
+\begin{align*}
+	\left(\prod_{k=1}^n x_k \right)^{-1} = \prod_{k=1}^n x_k^{-1}	
+\end{align*}
+This expression implies that $\prod_{k=1}^n x_k^{-1}$ is the multiplicative inverse of $\prod_{k=1}^n x_k $. Note that it only now makes sense to talk about the multiplicative inverse after we have shown that the expression is nonzero, hence the inverse is defined. We again use induction here with the proposition $P'(n)$ here meaning:
+\begin{align*}
+	 \left(\prod_{k=1}^n x_k\right) \cdot \left(\prod_{k=1}^n x_k^{-1}\right) = 1.
+\end{align*}
+Thus, 
+\begin{enumerate}[label=(\roman*)$'$]
+	\item \textit{$P'(2)$ is true}; By the recursive definition of products, we have $(\prod_{k=1}^n x_k) \cdot (\prod_{k=1}^n x_k^{-1}) = (x_1x_2)\cdot (x_1^{-1}x_2^{-1})$. By commutativity and associativity and the properties of inverses and neutral elements, we have $(x_1x_2)\cdot (x_1^{-1}x_2^{-1}) = (x_1x_1^{-1})\cdot (x_2x_2^{-1})= 1\cdot 1 =1$, thus $P'(2)$ is true.
+	\item $P'(m) \implies P'(m+1)$; If $P'(m)$ holds, then:
+		\begin{gather*}
+			\left(\prod_{k=1}^m x_k\right) \cdot \left(\prod_{k=1}^m x_k^{-1}\right) = 1\\
+			\because \prod_{k=1}^{m+1} x_k = \left(\prod_{k=1}^m x_k\right) \cdot x_{m+1}\;\;\text{and}\;\; \prod_{k=1}^{m+1} x_k^{-1} = \left(\prod_{k=1}^m x_k^{-1}\right) \cdot x^{-1}_{m+1}\\
+			\implies  \left(\prod_{k=1}^{m+1} x_k\right) \cdot \left(\prod_{k=1}^{m+1} x_k^{-1}\right) = \left[\left(\prod_{k=1}^m x_k\right) \cdot x_{m+1} \right]\cdot \left[  \left(\prod_{k=1}^m x_k^{-1}\right) \cdot x^{-1}_{m+1}\right] \\
+			= \left[ \left(\prod_{k=1}^m x_k\right) \cdot \left(\prod_{k=1}^m x_k^{-1}\right)\right] \cdot [x_{m+1}\cdot x^{-1}_{m+1}]
+		\end{gather*}
+		By, the inductive hypotheses, we have $\left(\prod_{k=1}^m x_k\right) \cdot \left(\prod_{k=1}^m x_k^{-1}\right) =1$, also by the properties of fields, we have $x_{m+1}\cdot x^{-1}_{m+1} =1$, thus indeed, we have:
+		\begin{align*}
+			\left(\prod_{k=1}^{m+1} x_k\right) \cdot \left(\prod_{k=1}^{m+1} x_k^{-1}\right) = 1
+		\end{align*}
+\end{enumerate}
+Hence, by the theorem of induction, $P'(n)$ holds for all $n\geq 2$. Note that we still have not completed the proof. Now we have these two true equations:
+\begin{align*}
+	\left(\prod_{k=1}^{n} x_k\right) \cdot \left(\prod_{k=1}^n x_k \right)^{-1} =1\\
+	\left(\prod_{k=1}^{n} x_k\right) \cdot \left(\prod_{k=1}^{n} x_k^{-1}\right) = 1
+\end{align*}
+Hence, 
+\begin{align*}
+ \left(\prod_{k=1}^{n} x_k\right) \cdot \left(\prod_{k=1}^n x_k \right)^{-1} = 	\left(\prod_{k=1}^{n} x_k\right) \cdot \left(\prod_{k=1}^{n} x_k^{-1}\right)
+\end{align*}
+because of our earlier proof that the product is not zero, by the cancellation of the same element (Cancellation Corollary), we finally have:
+\begin{align*}
+	\left(\prod_{k=1}^n x_k \right)^{-1} = \left(\prod_{k=1}^{n} x_k^{-1}\right)
+\end{align*}
+for any non zero $n$ elements $x_1,\ldots, x_n$ of a field (both ordered and unordered).   
+\end{sol}
+
+
+\begin{ex}[5]
+\\
+Use induction over $n$ to prove that for any field elements $c, x_k$ and $y_k$:
+\begin{align*}
+	\text{(i)}\;\;\; c\left(\sum_{k=1}^n x_k \right) = \sum_{k=1}^n cx_k;\;\;\; \text{(ii)}\;\;\; \sum_{k=1}^n (x_k\pm y_k) = \sum_{k=1}^n x_k \pm \sum_{k=1}^n y_k.   
+\end{align*}
+\end{ex}
+\begin{sol}
+For $(i)$, we can let the proposition be the same identity. i.e., $P(n)$ is true if $c(\sum_{k=1}^n x_k ) = \sum_{k=1}^n cx_k$, for any $n \geq 2$:
+\begin{enumerate}[label=(\roman*)]
+	\item \textit{$P(2)$ is true}; By the definition of sums we have $c(\sum_{k=1}^n x_k ) = c\cdot( x_1 +x_2)$. By the distributive property of elements in a ordered field, we have $c(x_1+x_2)=cx_1+cx_2$, which is equal to $\sum_{k=1}^n cx_k$. Thus, $P(2)$ holds.
+	\item $P(m)\implies P(m+1)$; This means that $c(\sum_{k=1}^m x_k ) = \sum_{k=1}^m cx_k$. Hence, by the definition of sums and the distributive property, we have $c(\sum_{k=1}^{m+1} x_k )= c(\sum_{k=1}^{m} +x_{m+1})= c\sum_{k=1}^{m}x_k + cx_{m+1}$, by the inductive hypothesis and the definition of sums, we have $c\sum_{k=1}^{m}x_k + cx_{m+1} = \sum_{k=1}^{m}cx_k + cx_{m+1} = \sum_{k=1}^{m+1}cx_k$. Thus, $P(m+1)$ is true if $P(m)$ is true.  
+\end{enumerate}
+Hence, (i), is shown to be true. for (ii), we again let $P'(n)$ when $\sum_{k=1}^n (x_k\pm y_k) = \sum_{k=1}^n x_k \pm \sum_{k=1}^n y_k$.
+\begin{enumerate}[label=(\roman*)$'$]
+	\item \textit{$P(2)'$ is true}; By the definition of sums, we have $\sum_{k=1}^2 (x_k\pm y_k)=(x_1\pm y_1)+(x_2\pm y_2)$, by associativity and commutativity, we have $(x_1+x_2)\pm (y_1+y_2)$, then by the definition of sums, $(x_1+x_2)\pm (y_1+y_2)= \sum_{k=1}^2 x_k \pm \sum_{k=1}^2 y_k$. Thus, $P'(2)$ is true.
+	\item $P'(m)\implies P'(m+1)$; We have $P'(m)$ holding, hence, $\sum_{k=1}^m (x_k\pm y_k) = \sum_{k=1}^m x_k \pm \sum_{k=1}^m y_k$, when $n=m+1$, we have: $\sum_{k=1}^{m+1} (x_k\pm y_k)= \sum_{k=1}^m (x_k\pm y_k)+ (x_{m+1}\pm y_{m+1})$, and from the inductive hypothesis, we have $(\sum_{k=1}^m x_k \pm \sum_{k=1}^m y_k)+(x_{m+1}\pm y_{m+1})$, by associativity and commutativity, we get the desired result, thus $P'(m+1)$ holds when $P'(m)$ holds.  
+\end{enumerate}	
+\end{sol}
+
+\begin{ex}[6]
+\\
+Prove by induction that in any ordered field
+\begin{align*}
+	\left| \sum_{k=1}^n x_k \right| \leq \sum_{k=1}^n |x_k|.
+\end{align*}	
+\end{ex}
+\begin{sol}
+	Here, we set $P(n)$ to be true, when $| \sum_{k=1}^n x_k | \leq \sum_{k=1}^n |x_k|$.
+\begin{enumerate}[label=(\roman*)]
+	\item \textit{$P(2)$ is true}; Again, by the definition of sums, we have $| \sum_{k=1}^2 x_k |= |x_1+x_2|$, and by the triangle inequality, we have, $|x_1+x_2| \leq |x_1|+|x_2|$. This, again by the definition of sums, is just $\sum_{k=1}^2 |x_k|$. Thus, $P(2)$ is true.
+	\item $P(m)\implies P(m+1)$; Assuming $P(m)$ holds means that $| \sum_{k=1}^m x_k | \leq \sum_{k=1}^m |x_k|$, for the $m+1$ case we have, by definition of sums and triangle inequality:
+		\begin{align*}
+			\left| \sum_{k=1}^{m+1} x_k \right|= \left| \sum_{k=1}^{m} x_k +x_{m+1}\right| \leq \left|\sum_{k=1}^{m} x_k\right|+|x_{m+1}|
+		\end{align*}
+		But, from the inductive hypothesis, 
+		\begin{align*}
+			\left| \sum_{k=1}^{m+1} x_k \right| \leq \left|\sum_{k=1}^{m} x_k\right|+|x_{m+1}| \leq \sum_{k=1}^m |x_k| +|x_{m+1}|= \sum_{k=1}^{m+1} |x_k|
+		\end{align*}
+		Thus, $P(m+1)$ holds when $P(m)$ holds.  
+\end{enumerate}
+\end{sol}
+\begin{ex}[7]
+\\
+Prove that in any ordered field, $a<b$ iff $a^n < b^n$, provided $a,b \geq 0$. Infer that $a^n < 1$ if $0 \leq a <1$; $a^n >1$ if $a>1$ ($n=1,2,\ldots$).	
+\end{ex}
+\begin{sol}
+First, to prove that $a<b$ iff $a^n<b^n$, we need to prove both directions of the statement: $a<b \implies a^n <b^n$ and $a^n < b^n \implies a<b$. Thus, we can define two propositions:
+\begin{align*}
+	P(n) := a<b \implies a^n<b^n \\
+	P'(n) := a^n<b^n \implies a<b
+\end{align*}
+given that $a,b \geq 0$ for all $n\in \N$. Now, we prove $P(n)$:
+\begin{enumerate}[label=(\roman*)]
+	\item \textit{$P(1)$  is true}; we are given, $a<b$. From the inductive definition of $a^1 = a$ and $b^1 =b$, thus, $a^1=a < b = b^1$, hence $a^1<b^1$, showing that $P(1)$ holds.
+	\item $P(m) \implies P(m+1)$; assuming $P(n)$ holds for some $m$, we have $a<b \implies a^m <b^m$. For $m+1$, we have $a^{m+1} = a^ma$, from the definition of natural powers. We also have $a<b$ from the proposition, thus, $a^{m+1}=a^ma<b^ma<b^mb=b^{m+1}$, hence $a^{m+1}<b^{m+1}$. Thus, $P(m+1)$ is true when $P(m)$ holds.    
+\end{enumerate}
+By, the principle of induction, given $a,b\geq 0$, $a<b \implies a^n <b^n$ for all natural $n$ of an ordered field. For $P'(n)$, we use the second induction law, to simply:
+\begin{enumerate}[label=(\roman*)]
+	\item \textit{$P'(1)$  is true}; we are given $a^1<b^1$, but by the definition of natural powers, we have $a^1=a$ and $b^1=b$, thus, $a<b$ as required, showing that $P'(1)$ holds.
+	\item $P'(1), \ldots, P'(m-1) \implies P'(m)$; by assuming $P'(n)$ holds for all $n < m$, specifically holding for $n=1$ and $n=m-1$, we have:
+		\begin{align*}
+			a^{1}<b^{1} \implies a<b, \\
+			a^{m-1}<b^{m-1} \implies a<b
+		\end{align*}
+		with, $a^m=a^{m-1}\cdot a^1<b^{m-1}\cdot a < b^{m-1} \cdot b = b^{m}$, thus, from $P'(1)$ and $P'(m-1)$ we have $a^m<b^m$ also implying that $a<b$. 
+\end{enumerate}
+Hence, by the principle of induction, given $a,b\geq 0$, for any natural element $n$ of an ordered field, $a^n<b^n$ implies $a<b$.\\
+ We now have shown that, given $a,b \geq 0$, for any natural $n$ of a field:
+ \begin{align*}
+ 	a<b \iff a^n<b^n
+ \end{align*}
+if $a<1$, we have $a^n<1^n$, which from Problem 1. we know that $1^n=1$, thus, $a^n<1$, the same reasoning holds for the $a>1$ case, giving $a^n>1^n=1$.\\
+\\
+Note that for $P'(n)$ we can prove the contrapositive $a\geq b \implies  a^n > b^n$, thus proving the original statement much more easily.  
+\end{sol}
+\begin{ex}[8]
+\\
+Use Induction over $n$ to prove that for any element $\e$ of an ordered field $F$, 
+\begin{enumerate}[label=(\roman*)]
+	\item $(1+\e)^n \geq 1 +n\e$ if $\e >-1$
+	\item $(1-\e)^n \geq 1 -n\e $ if $\e <1$ 
+\end{enumerate}
+These are \textit{Bernoulli Inequalities}. Infer that $2^n >n$, $n=1,2,\ldots,$ in $\mathbb{R}$.	
+\end{ex}
+\begin{sol}
+For this, we set $P(n)$ be true when $(1+\e)^n \geq 1 +n\e$, given $\e >-1$.
+\begin{enumerate}[label=(\roman*)]
+	\item \textit{$P(1)$ is true}; we have by the definition of natural powers, $(1+\e)^1=1+\e$, this trivially shows that $P(1)$ is true.
+	\item $P(m)\implies P(m+1)$; if $P(m)$, then $(1+\e)^m \geq 1 +m\e$, because we assume that $\e >-1$, we have $\e-1>0$, thus by the monotonicity of multiplication, $(1+\e)^m(1+\e)  \geq (1+m\e)(1+\e)$. Hence, we have $(1+\e)^{m+1} \geq 1+m\e +\e +m\e^2 > 1+(m+1)\e$. Thus, we have shown that $P(m+1)$ whenever $P(m)$ is true. 
+\end{enumerate}
+By similar reasoning, we can also show (ii). Thus, when $\e =1$, $(1+1)^n \geq 1+n \implies 2^n\geq 1+n>n$.
+\end{sol}
+\begin{ex}[9]
+\\
+Prove that in any field,
+\begin{align*}
+	a^{n+1}-b^{n+1}= (a-b)\cdot \sum_{k=0}^n a^kb^{n-k}, \;\; n=1,2, \ldots .
+\end{align*}	
+\end{ex}
+\begin{sol}
+Here, we need to show that the above identity holds for all naturals $n$ in any field, so we set the inductive proposition as the above identity itself.
+ \begin{enumerate}[label=(\roman*)]
+ 	\item \textit{$P(1)$ is true}; we have, for $n=1$, $a^{1+1}-b^{1+1}=a^2-b^2$, from earlier exercise, we have shown that this is equal to $(a-b)\cdot (a+b)$, but this is equal to $(a-b)\cdot \sum_{k=0}^1 a^kb^{n-k}$. Thus, $P(1)$ holds.
+ 	\item $P(m)\implies P(m+1)$; Here, we have $a^{m+1}-b^{m+1}= (a-b)\cdot \sum_{k=0}^m a^kb^{m-k}$ holding. Consider the case when $n=m+1$ on RHS:
+ 		\begin{align*}
+ 			(a-b)\cdot \sum_{k=0}^{m+1} a^kb^{(m+1)-k}&=(a-b)\cdot \left[b\sum_{k=0}^{m} a^kb^{m-k} +a^{m+1}b^0 \right]
+ 		\end{align*}
+ 		from the inductive hypothesis, we have $\sum_{k=0}^m a^kb^{m-k} = \dfrac{a^{m+1}-b^{m+1}}{a-b}$, thus, we have:
+ 		\begin{align*}
+ 			(a-b)\cdot \sum_{k=0}^{m+1} a^kb^{(m+1)-k}&= (a-b)\cdot \left[ b\cdot \frac{a^{m+1}-b^{m+1}}{a-b} +a^{m+1}\right]\\
+ 			&=a^{(m+1)+1}-b^{(m+1)+1}
+ 		\end{align*}
+ 	Hence, $P(m+1)$ holds.   
+ \end{enumerate}
+\end{sol}
+\begin{ex}[10]
+\\
+Prove in $\mathbb{R}$,
+\begin{enumerate}[label=(\Roman*)]
+	\item $1+2+\cdots+n= \frac{1}{2}n(n+1)$;
+	\item $\sum_{k=1}^n k^2 = \frac{1}{6}n(n+1)(2n+1)$;
+	\item $\sum_{k=1}^n k^3 = \frac{1}{4}n^2(n+1)^2$;
+	\item $\sum_{k=1}^n k^4 = \frac{1}{30}n(n+1)(2n+1)(3n^2+3n-1)$.
+\end{enumerate}	
+\end{ex}
+\begin{sol}
+For simplicity, we will prove simple identities quickly. For (I),
+\begin{enumerate}[label=(\roman*)]
+	\item $P(1)$ is true; $\sum_{k=1}^1k = 1 = \frac{1}{2}\cdot 1 \cdot 2=1$, thus $P(1)$ holds.
+	\item $P(m)\implies P(m+1)$; if $P(m)$ holds, then, $\sum_{k=1}^m k = \frac{m}{2}(m+1)$, adding $m+1$ to both sides, we get the desired result: $\sum_{k=1}^{m+1} k = \frac{(m+1)}{2}((m+1)+1)$. Hence, $P(n)$ holds for all natural $n$. 
+\end{enumerate}
+For (II), (III) and (IV)  we can show this with the same identity. 
+\end{sol}
+\begin{ex}[11]
+\\
+For any field elements $a,b$ and natural numbers $m,n \in \mathbb{R}$, prove the following:
+\begin{multicols}{3}
+\begin{enumerate}[label=(\Roman*)]
+	\item $a^ma^n= a^{m+n}$;
+	\item $(a^m)^n =a ^{mn}$;
+	\item $(ab)^n = a^nb^n$.
+\end{enumerate}
+\end{multicols}
+If $a \neq 0$, then also
+\begin{multicols}{2}
+\begin{enumerate}[label = (\Roman*)]
+	\setcounter{enumi}{3}
+	\item $\dfrac{a^n}{a^m} = a^{n-m}$; 
+	\item $\left( \dfrac{b}{a} \right)^n = \dfrac{b^n}{a^n}$.
+\end{enumerate}
+\end{multicols}
+If $a,b \neq 0$ show that these laws hold for negative exponents, too. Also, prove the following:
+\begin{multicols}{3}
+\begin{enumerate}[label = (\Roman*)]
+	\setcounter{enumi}{5}
+	\item $ma+na = (m+n)a$;
+	\item $ma \cdot nb = (mn)(ab)$;
+	\item $n(a\pm b) = na \pm nb$. 
+\end{enumerate}
+\end{multicols}
+[Hints: Fix $m$ and use induction on $n$. The ``natural multiples'' $nx$ can be defined inductively by $1\cdot x= x,\: nx  =(n-1)x +x, \: n=1,2, \ldots$ ]	
+\end{ex}
+\begin{sol}
+	For (I), we have fix $m$ to be some natural and $P(n)$ is true when $a^ma^n = a^{m+n}$. 
+\begin{enumerate}[label = (\roman*)]
+	\item \textit{$P(1)$ is true}; $a^ma^1=a^{m+1}$ by the definition of natural powers. Thus $P(1)$ holds.
+	\item $P(k)\implies P(k+1)$; Given $a^ma^k = a^{m+k}$, when $n=k+1$, we have $a^{m+k+1}= a^{(m+k)+1}=a^{m+k}$ by the definition of natural powers, the result of which, by the inductive hypothesis, is just $a^ma^ka^1=a^ma^{k+1}$, thus, $P(k+1)$ holds. 
+\end{enumerate}
+For (II), similarly, we have $P(n)$ being true when $(a^m)^n=a^{mn}$.
+\begin{enumerate}[label = (\roman*)]
+	\item \textit{$P(1)$ is true}; $(a^m)^1=a^m$, by the definition of natural powers, and now by properties of neutral elements, $a^m = a^{m\cdot 1}$, thus, $P(1)$ holds.
+	\item $P(k)\implies P(k+1)$; Given $(a^m)^k=a^{mk}$, for $n=k+1$, we have $(a^m)^{k+1}=(a^m)^ka^m$, by the definition of natural powers. Now by the inductive hypothesis, we have $(a^m)^ka^m= a^{mk}a^m$, and from (I), we have $a^{mk}a^m= a^{mk+m} = a^{m(k+1)}$, hence $P(k+1)$ holds.
+\end{enumerate}
+For (III), similarly, we have $P(n)$ being true when $(ab)^n = a^nb^n$.
+\begin{enumerate}[label = (\roman*)]
+	\item \textit{$P(1)$ is true}; $(ab)^1=ab$, by the definition of natural powers. Thus, $P(1)$ trivially holds.
+	\item $P(m)\implies P(m+1)$ Given $(ab)^m=a^mb^m$, for $n=m+1$, we have $(ab)^{m+1} = (ab)^m(ab)$, by the definition of natural powers. Then, from the inductive hypothesis, we have $(ab)^m(ab) = (a^mb^m)\cdot ab$, from which, we apply the commutative and associative properties of field elements proven in the last section, giving us $(a^mb^m)\cdot ab = a^{m+1}b^{m+1}$. Thus, $P(m+1)$ holds.
+\end{enumerate}
+For (IV), similarly, we have $P(n)$ being true when $\dfrac{a^n}{a^m}=a^{n-m}$.
+\begin{enumerate}[label = (\roman*)]
+	\item \textit{$P(1)$ is true}; $\dfrac{a^1}{a^m}=a^1\cdot a^{-m}$ by the definition of natural powers, then again by definition, $a^1\cdot a^{-m}= a^{1-m}$. Thus, $P(1)$ holds.
+	\item $P(k)\implies P(k+1)$; Given $\dfrac{a^k}{a^m}=a^{k-m}$, for $n=k+1$, we have $\dfrac{a^{k+1}}{a^m}=\dfrac{a^k}{a^m}\cdot a^1$, then by the inductive hypothesis, we have $\dfrac{a^k}{a^m}\cdot a^1 = a^{k-m}a^1$, which by definition is $a^{(k+1)-m}$. Thus, $P(k+1)$ holds if $P(k)$ holds.
+\end{enumerate}
+For (V), we have $P(n)$ being true when $\left(\dfrac{b}{a}\right)^n = \dfrac{b^n}{a^n}$.
+\begin{enumerate}[label = (\roman*)]
+	\item \textit{$P(1)$ is true}; $\left(\dfrac{b}{a}\right)^1 = \dfrac{b}{a}$ by the definition of natural powers, hence $P(1)$ trivially holds. 
+	\item $P(m)\implies P(m+1)$; Given $\left(\dfrac{b}{a}\right)^m = \dfrac{b^m}{a^m}$, for $n=m+1$, we have $\left(\dfrac{b}{a}\right)^{m+1}= \left(\dfrac{b}{a}\right)^m \cdot \left(\dfrac{b}{a}\right)^1 = \dfrac{b^m}{a^m} \cdot \dfrac{b}{a}$, which by field properties and definition of natural powers, is $\dfrac{b^{m+1}}{a^{m+1}}$, thus $P(m+1)$ holds.
+\end{enumerate}
+For (VI), we have $P(n)$ being true when $ma+na=(m+n)a$, holding $m$ constant.
+\begin{enumerate}[label = (\roman*)]
+	\item \textit{$P(1)$ is true}; $ma+1\cdot a=ma+a$, from the definition of ``natural multiplies'' of field elements, we have $ma+a=(m+1)a$; thus, $P(1)$ holds. 
+	\item $P(k)\implies P(k+1)$; Given $ma+ka = (m+k)a$, for $n=k+1$, we have $ma+(k+1)a = ma+[ka+a]$ from the definition of natural multiplies. Them by the inductive hypothesis, $ma+[ka+a] = (m+k)a +a$, then again by the definition, is equal to $[m+(k+1)]a$, proving $P(k+1)$.
+\end{enumerate}
+For (VII), we have $P(n)$ being true when $ma\cdot nb =(mn)(ab)$.
+\begin{enumerate}[label = (\roman*)]
+	\item \textit{$P(1)$ is true}; $ma \cdot (1\cdot b)=ma\cdot b = (m \cdot 1)(ab)$ by associativity and commutativity. Thus, $P(1)$ holds.
+	\item $P(k)\implies P(k+1)$; Given $ma\cdot kb = (mk)(ab)$, for $n=k+1$, we have: $ma\cdot (k+1)b=ma\cdot (kb+b) = ma\cdot kb + ma\cdot b$, which by the inductive hypothesis, we have $ma\cdot kb +ma\cdot b=(mk)(ab)+m(ab)=(m(k+1))(ab)$, thus $P(k+1)$ holds.
+\end{enumerate}
+For (VII), we have $P(n)$ being true when $n(a\pm b) = na\pm nb$.
+\begin{enumerate}[label = (\roman*)]
+	\item \textit{$P(1)$ is true}; We have $1\cdot (a\pm b) =a\pm b$ by the definition of natural multiplies. But then, by the properties of neutral elements, $a\pm b= 1\cdot a \pm 1\cdot b$. Thus, $P(1)$ holds.
+	\item $P(m)\implies P(m+1)$; Given $m(a\pm b)=ma \pm mb$, for $n=m+1$, by the definition of natural multiplies, $(m+1)(a\pm b) = m(a\pm b)+ (a\pm b)$, which by the inductive hypothesis, is $(ma\pm mb)+(a\pm b)$, by associativity and commutativity, we have $(ma+a)\pm (mb+b)$, for which applying the definition of natural multiplies, we get $(m+1)a \pm (m+1)b$, showing that $P(m+1)$ holds when $P(m)$ holds. 
+\end{enumerate}
+\end{sol}
+\begin{ex}[$11^\prime$ ]
+\\
+Show by induction that each natural element $x$ of an ordered field $F$ can be uniquely represented as $x=n\cdot 1^{\prime}$, where $n$ is the natural number in $\mathbb{R}$ and $1'$ is the unity in $F$; that is, $x$ is the sum of $n$ unities. 
+Conversely, show that each such $n\cdot 1'$ is a natural element of $F$. Finally, show that, for $m,n \in \N$, we have
+\begin{align*}
+	m<n\;\; \text{iff}\;\; mx<nx, 
+\end{align*}
+Provided $x>0$.  	
+\end{ex}
+\begin{sol}
+Breaking down the problem, we need to first show that \textit{each natural element} $x$ of an \textit{ordered field}  $F$ can be \textit{uniquely represented} as $x=n\cdot 1'$, where $n$ is some \textit{natural number} in $\mathbb{R}$ and $1'$ is the unity in $F$.
+
+Note that, for any ordered field $F$, $1_F>0_F$, along with the fact each natural of $F$ is $\geq 1_F$.   
+
+To create a sound inductive proposition $P(n)$ we need to make sure that, it includes these conditions:
+\begin{enumerate}
+	\item Existence: for each $x \in \mathbb{N}_F$, we have some $n \in \mathbb{N}_\mathbb{R}$, such that $x=n\cdot 1' \in \mathbb{N}_F$. Call the $x$, $x_n$, i.e., $x_n :=n\cdot 1'$.   
+	\item Uniqueness: this representation of $x$ is unique, i.e., If $m$ is some natural number of $\mathbb{N}_\mathbb{R}$, then, $m\cdot 1' = n\cdot 1' \implies m=n$. In other words, if $x_n=x_m \implies n=m$. 
+\end{enumerate}
+Thus, we have:\\
+\\
+Base Case ($P(1)$):
+\begin{enumerate}[label=$\bullet$]
+	\item Existence: $x_1 = 1\cdot 1' =1'$, by the definition of natural multiplies, and by construction, $1' \in \mathbb{N}_F$, thus $x_1$ exists. Coming from the other direction, $1'$ is the smallest natural of element of $F$, by the definition of natural multiplies, $1'=1\cdot 1'= x_1$, thus the smallest natural element of $F$, can be represented by this form.
+	\item Uniqueness: We need to show that there is no $m \in \mathbb{N}_\mathbb{R}$ such that $m\neq 1$, and $m\cdot 1'=1'$. From the properties of naturals, $m\geq 1$, but from the condition $m\neq 1$, $m$ would have to be $>1$. We will show, by induction, that for all $m>1$, it is never the case that $m\cdot 1'=1'$.
+	
+	Taking advantage of the order of $F$, we can set the inductive proposition, $U(n)$, to be true when $n\cdot 1' >1'$, given $n \in \mathbb{N}_{\mathbb{R}}$ and $n>1$
+		\begin{enumerate}[label=(\roman*)]
+			\item \textit{$U(2)$ is true}; for $n=2$, we have, $2\cdot 1'= 1' +1'$, by the definition of natural multiplies. But, because $1'>0$, $2\cdot 1'= 1'+1'> 1'$, by the monotonicity of addition in an ordered field. Thus, $2\cdot 1'>1'$.
+			\item $U(k)\implies U(k+1)$; Given that $U(n)$ holds for $n=k$, we have $k\cdot 1'>1'$, again, by the monotonicity of addition in an ordered field, we have $k\cdot 1'+1'>1'+1'$, by the definition of natural multiplies, we have $(k+1)\cdot 1'>2\cdot 1'$, but we have already shown that $2\cdot 1' > 1'$, thus, by the transitive property of $F$, $(k+1)\cdot 1'>1'$.
+		\end{enumerate}
+		Hence, by induction, we can conclude that there does not exist $m\neq 1$, such that $m\cdot 1'=1'$. Thus, We have shown the Uniqueness.   
+\end{enumerate}
+Inductive Step ($P(k)\implies P(k+1)$):\\
+\\
+Given $P(k)$ holds, $x_k = k\cdot 1' \in \mathbb{N}_F$, and $k\cdot 1'$ is a unique representation.
+\begin{enumerate}[label=$\bullet$]
+	\item Existence: because, $x_k = k\cdot 1' \in \mathbb{N}_{F}$, by the property of any natural element, $x_k+1'$ is also a natural of $F$, hence $k\cdot 1'+1' \in \mathbb{N}_F$. By the definition of natural multiplies, $k\cdot 1'+1' = (k+1)\cdot 1' = x_{k+1} \in \mathbb{N}_F$. Thus, we have shown that $x_{k+1}$ is also a natural of $F$ if $x_k$ is.
+	\item Uniqueness: given $n=k$, for any $m\in \mathbb{N}_{\mathbb{R}}$, $m\cdot 1' = k\cdot 1' \implies m=k$. Adding $1'$, to both sides of the inductive hypothesis's conditional:
+		\begin{align*}
+			k\cdot 1' +1' &= m\cdot 1' +1'\\
+			(k+1)\cdot 1' &= (m+1)\cdot 1'  	
+		\end{align*}
+		by the definition of natural multiples. Note that the conditional of the inductive hypothesis still holds, hence, as does the implication, that is $k=m$, then, adding $1$ to both sides, $k+1= m+1$. because $m$ is arbitrary, we have $(k+1)\cdot 1' = m'\cdot 1' \implies k+1=m'$. Hence, $x_{k+1}=(k+1)\cdot 1'$ is unique if $x_k$ is unique.     	
+\end{enumerate}
+Thus, by the principle of mathematical induction, each natural $x$ of $\mathbb{N}_F$ has a unique representation of the form $x=n\cdot 1'$, where $n \in \mathbb{N}_{\mathbb{R}} $ and $1'$ is the unity of $F$. We have also shown the existence of each $x_n = n\cdot 1'$ in $F$ as its natural elements.\\ 
+\\
+Now, we need to show that, for $m,n \in \mathbb{N}_{\mathbb{R}}$, we have $m<n \iff mx<nx$. First, showing that $m<n \implies mx < nx$.
+\end{sol} 
+\begin{ex}[12]
+\\
+Define the \textit{Binomial Coefficient}
+\begin{align*}
+\begin{pmatrix}
+	n \\
+	k
+\end{pmatrix}  = \frac{n!}{k!(n-k)!}	
+\end{align*}
+For nonnegative integers $n,k\;\; (k \leq n) \in \mathbb{R}$. Verify \textit{Pascal's Law}:
+\begin{align*}
+	\begin{pmatrix} n \\ k \end{pmatrix} + \begin{pmatrix} n \\ k+1 \end{pmatrix} = \begin{pmatrix}n+1 \\ k+1 \end{pmatrix}
+\end{align*}
+Using it, prove inductively that $\big(\begin{smallmatrix} n \\ k\end{smallmatrix} \big)$ is always a natural number. Then, establish inductively the \textit{binomial theorem}: for elements $a,b$ of any field $F$ and any natural number $n$,
+\begin{align*}
+	(a+b)^n = \sum_{k=0}^n \binom{n}{k} a^k b^{n-k}.
+\end{align*}
+\end{ex}
+\begin{ex}[13]
+\\
+Show by induction that if $x_1 = x_2 = \cdots = x_n = x$, then
+\begin{align*}
+	\sum_{k=1}^n x_k = nx \;\; \text{and}\;\; \prod_{k=1}^n = x^n\;\; \text{(where $x$ is in any field).}  
+\end{align*} 	
+\end{ex}
+\begin{ex}[14]
+\\
+Show by induction that in any field
+\begin{align*}
+	\sum_{k=1}^{n}(x_k-x_{k-1}) =x_n -x_0
+\end{align*}	
+Deduce from it the formulae of Problem 10 directly.
+\end{ex}
+\begin{ex}[15]
+\\
+Show by induction that every \textit{finite} sequence $x_1, x_2, \ldots, x_n$ of elements of an ordered field contains a largest and a smallest term (which need not be $x_n$ and $x_1$ since the sequence is not necessarily monotonic). Show by examples that the theorem fails for infinite sequences. Infer that the set of all natural numbers $1,2,3, \ldots$ is infinite.
+\end{ex}
+\begin{ex}[16]
+\\
+Prove by induction that two ordered $n$-tuples
+\begin{align*}
+	(x_1,\ldots, x_n)\;\; \text{and} \;\; (y_1, \ldots, y_n)
+\end{align*}
+are equal iff $x_1 = y_1, x_2= y_2, \ldots, x_n=y_n$. Assume this is known for $n=2$. 	
+\end{ex}
+\begin{ex}[17]
+\\
+Show that if the sets $A$ and $B$ are finite, so are $A \cup B$ and $A \times B$. By induction, prove this for $n$ sets.  	
+\end{ex}
+\begin{ex}[18]
+\\
+	
+\end{ex}
+\begin{ex}[19]
+\\
+Show by induction that if the finite sets $A$ and $B$ have $m$ and $n$ elements, respectively, then
+\begin{enumerate}[label = (\roman*)]
+	\item $A \times B$ has $mn$ elements;
+	\item $A$ has $2^m$ subsets;
+	\item If further $A \cap B = \varnothing$, then $A \cup B$ has $m+n$ elements.
+\end{enumerate} 	
+\end{ex}
+\begin{ex}[20]
+\\
+Prove the \textit{division theorem}: Let $\N' = \N \cup \{0\}$be the set consisting of $0$ and all naturals $(\N)$ in an ordered field. Then for any $m,n \in \N'$ $(n>0)$, there is a unique pair $(q,r) \in \N' \times \N'$ such that
+\begin{align*}
+	m=nq +r\;\; \text{and} \;\; 0 \leq r <n
+\end{align*}
+($q$ and $r$ are called, respectively, the \textit{quotient} and \textit{remainder} from the division of $m$ by $n$). If $r= 0$, we say $n$ \textit{divides} $m$ and write $n|m$.
+\end{ex}
+
+% --------------------------------------------------------------
+%     End of solutions
+% --------------------------------------------------------------
+
+
+
+
+
+
+
+% --------------------------------------------------------------
+%     Problems of natural numbers/ induction
+% --------------------------------------------------------------
+
+
+% --------------------------------------------------------------
+%     End of Problems of natural numbers/ induction
+% --------------------------------------------------------------
+
+
+% --------------------------------------------------------------
+%     Real Numbers end
+% --------------------------------------------------------------
+
+\chapter{Sequences}
+
+% --------------------------------------------------------------
+%     Limit Start
+% --------------------------------------------------------------
+
+
+\section{Limits of Sequences}
+
+\begin{definition}[\textbf{Limit of a sequence}]
+\label{formal_def_limit}
+	Given a sequence of real numbers $\{a_n\}$, we say $\lim\limits_{n\to \infty} a_n = L$ if the following holds:
+\begin{align*}
+\forall \epsilon >0, \exists N>0 \text{ such that if } n> N, \text{then } |a_n -L| < \epsilon	
+\end{align*}
+We say the \textbf{Limit Exists} for the sequence $\{a_n\}$, or $\{a_n\}$ \textbf{converges}, if there exists $L \in \mathbb{R}$ such that $a_n \to L$
+\end{definition}
+
+
+\subsection{Arithmetic Properties of Limits }
+
+We start with the arithmetic properties of Limits and prove them with the formal definition of limits given above(\ref{formal_def_limit})
+
+
+
+% --------------------------------------------------------------
+%     Arithmetic properties of Limit
+% --------------------------------------------------------------
+\begin{prop} We Have:
+
+\begin{enumerate}
+\item $\lim\limits_{n \to \infty}{c} = c$ where $c$ is a constant %1
+\item $\lim\limits_{n\to \infty} \dfrac{1}{n^p} = 0$ where $p > 0$ \text{is a fixed positive number} % 2
+\item If $\lim\limits_{n \to \infty}{a_n}=  L$ and $\lim\limits_{n \to \infty}{b_n}=  M$ where L and M are finite numbers, then: %3
+ \begin{enumerate}
+ \item $\lim_{n \to \infty}{(a_n \pm b_n )} = L \pm M$ % 3 (a)
+ \item  $\lim_{n \to \infty}{a_nb_n}=  LM$ % 3 (b)
+ \item Suppose that $M \neq 0$, then $ \lim\limits_{n \to \infty}{\dfrac{a_n}{b_n} = \dfrac{L}{M}} $ % 3 (c)
+ \end{enumerate}
+\item If $\lim\limits_{n \to \infty}{a_n}=  L$, and $a_n$ is a sequence of positive numbers and $p,q \in \mathbb{N}$ then: % 4
+\begin{enumerate}
+\item $\lim_{n \to \infty}a_n^p = L^p$ % % 4 (a)
+\item $\lim_{n \to \infty}a_n^{\frac{p}{q}} = L^{\frac{p}{q}}$
+\end{enumerate}
+\item If $\lim\limits_{n \to \infty}{a_n}=  L$, $\lim\limits_{n \to \infty}{|a_n|}=  |L|$
+\end{enumerate}
+
+	
+\end{prop}
+
+% --------------------------------------------------------------
+%     End Arithmetic properties of Limit
+% --------------------------------------------------------------
+
+% --------------------------------------------------------------
+%     Proof of 4 (a)
+% --------------------------------------------------------------
+
+\subsubsection{Proof of 4 (a)}
+\label{proof_seq_power_limit}
+\textbf{Statement:}
+
+\noindent
+If $\{a_n\}$ is a sequence of positive numbers such that $\lim\limits_{n \to \infty}a_n =L$, we need to prove using $\epsilon, N$ definition that
+\begin{align*}
+\lim\limits_{n \to \infty}a_n^p = L^p
+\end{align*} Where $p \in \mathbb{N}$
+
+\begin{sol}
+	
+
+
+
+We need to show that for any $\epsilon >0$ there exists some $N \in \mathbb{N}$ such that if $n>N$ 
+\begin{align*}
+|a_n^p-L^p| < \epsilon
+\end{align*}
+\noindent
+\textbf{observations:}
+
+\noindent
+Using the identity
+
+\begin{align*}
+x^p-y^p = (x-y)(x^{p-1}+x^{p-2}y+...+xy^{p-2}+y^{p-1})
+\end{align*}
+
+\noindent 
+we have
+\begin{align*}
+	|a_n^p -L^p| = |a_n-L||a_n^{p-1}+a_n^{p-2}L+...+a_nL^{p-2}+L^{p-1}|\\
+\implies |a_n^p -L^p| \leq |a_n-L|||a_n^{p-1}|+|a_n^{p-2}L|+...+|a_nL^{p-2}|+|L^{p-1}||
+\end{align*}
+
+\noindent 
+We need to bound $|a_n^kL^m|$ where $k,m \in \mathbb{N}$ and $0\leq k,m \leq p-1$ with $k+m =p-1$.
+\begin{align*}
+|a_n-L| <1 &\implies -1 < a_n-L<1 \implies L-1<a_n<L+1\\
+&\implies |a_n| < |L|+1 \qquad \text{ for some } n > N_1\\
+&\implies |a_n|^k |L|^m <(|L|+1)^k|L|^m
+\end{align*}
+for elegance, let
+\begin{align*}
+	M = \max\{|L|^{p-1},(|L|+1)^1|L|^{p-2},...,(|L|+1)^{p-2}|L|^{1},(|L|+1)^{p-1}\}\\
+	\implies 
+|a_n^p -L^p| < |a_n-L|pM
+\end{align*}
+Hence we bound $|a_n^p-L^p|$ above by $\epsilon$ by requiring that:
+\begin{align*}
+|a_n-L| < \frac{\epsilon}{pM}
+\end{align*}
+for some $p \in \mathbb{N}$.
+
+\begin{proof}
+
+
+
+
+Now, we can complete the proof. Because $a_n \to L$, $\exists N_1 \in \mathbb{N}$ such that if $n > N_0$ then for $\epsilon_0 = 1$,
+\begin{align*}
+|a_n-L| <1 &\implies |a_n| < |L|+1 \\
+&\implies |a_n|^k |L|^m <(|L|+1)^k|L|^m
+\end{align*}
+For $k,m \in \mathbb{N}$ and $0\leq k,m \leq p-1$ with $k+m =p-1$. 
+
+
+Again, using the fact that $a_n \to L$, $\exists N_1 \in \mathbb{N}$  such that if $n > N_1$ then for $p \in \mathbb{N}$ and some $\epsilon_1$,
+\begin{align*}
+|a_n-L|  < \epsilon_1 = \frac{\epsilon}{pM}
+\end{align*}
+Then, for any arbitrary $\epsilon > 0$, there exists $N = max\{N_0, N_1\}$ such that if $n > N$, both the previous inequalities hold:
+\begin{align*}
+|a_n^p -L^p| = |a_n-L||a_n^{p-1}+a_n^{p-2}L+...+a_nL^{p-2}+L^{p-1}| \\
+\implies |a_n^p -L^p| \leq |a_n-L|\left||a_n^{p-1}|+|a_n^{p-2}L|+...+|a_nL^{p-2}|+|L^{p-1}|\right|\\
+\implies |a_n^p -L^p| < |a_n-L|pM\\ 
+\implies |a_n^p -L^p| < \frac{\epsilon}{pM} * pM = \epsilon
+\end{align*}
+Hence, if $a_n\to L$, $a_n^p \to L^p$ for positive sequences of $a_n$ and $p \in \mathbb{N}$ 
+\end{proof}
+\end{sol}
+
+% --------------------------------------------------------------
+%     End Proof of 4 (a)
+% --------------------------------------------------------------
+
+
+
+% --------------------------------------------------------------
+%     Proof of 4 (b)
+% --------------------------------------------------------------
+
+\subsubsection{Proof of 4 (b)}
+
+\textbf{Statement:}
+
+\noindent
+If $\{a_n\}$ is a sequence of positive numbers such that $\lim\limits_{n \to \infty} a_n = L$, then 
+\begin{align*}
+\lim\limits_{n\to \infty} a_n^{\frac{p}{q}} = L^{\frac{p}{q}}
+\end{align*}
+
+\noindent
+Or equivalently, for any $\epsilon >0$, $\exists N \in \mathbb{N}$ such that for all $n>N$ we have: 
+\begin{align*}
+	|a_n^{\frac{p}{q}} - L^{\frac{p}{q}}| &< \epsilon\\
+	|a_n^{\frac{p}{q}} - L^{\frac{p}{q}}| &= |(a_n^p)^{\frac{1}{q}}-(L^p)^{\frac{1}{q}}|\\
+	\implies |a_n^{\frac{p}{q}} - L^{\frac{p}{q}}| &= \frac{|a_n^p -L^p|}{|(L^p)^{\frac{q-1}{q}}+ (a_n^p)^{\frac{1}{q}}(L^p)^{\frac{q-2}{q}}+...+(a_n^p)^{\frac{q-2}{q}}(L^p)^{\frac{1}{q}}+(a_n^p)^{\frac{q-1}{q}}|} \leq \frac{|a_n^p -L^p|}{|(L^p)^{\frac{q-1}{q}}|}
+\end{align*}
+Hence we must show that:
+\begin{align*}
+\frac{|a_n^p -L^p|}{|(L^p)^{\frac{q-1}{q}}|} < \epsilon \\
+\implies |a_n^p -L^p| < |(L^p)^{\frac{q-1}{q}}|\epsilon
+\end{align*}
+From \textbf{4 (a)} we know that for positive sequence $\{a_n\}$ that has a limit $L$, $a_n^p \to L^p$. Hence we can start the proof.
+
+
+\begin{proof}
+Given that $a_n \to L$ and $a_n$ is positive,  
+\begin{gather*}
+a_n^p\to L^p \\
+\therefore 	\forall \epsilon_1 > 0 \quad \exists N_1 \in \mathbb{N} \text{ s.t for } n > N_1  \\
+|a_n^p - L^p| < \epsilon_1
+\end{gather*}
+Hence, choosing $\epsilon_1 = |(L^p)^{\frac{q-1}{q}}|\epsilon$, where $\epsilon$ is some arbitrary positive value, we can complete the proof.
+By taking $N = N_1$ so that when $n> N$,
+\begin{align*}
+|a_n^{\frac{p}{q}} - L^{\frac{p}{q}}| \leq \frac{|a_n^p -L^p|}{|(L^p)^{\frac{q-1}{q}}|} = \frac{\epsilon}{|(L^p)^{\frac{q-1}{q}}|} \times |(L^p)^{\frac{q-1}{q}}| = \epsilon 
+\end{align*}
+Hence, $a_n^{\frac{p}{q}} \to L^{\frac{p}{q}}$ 
+\end{proof}  
+
+
+% --------------------------------------------------------------
+%     End of Proof of 4 (b)
+% --------------------------------------------------------------
+
+
+
+% --------------------------------------------------------------
+%     Proof of 5
+% --------------------------------------------------------------
+
+\subsubsection{Proof of 5}
+
+\textbf{Statement:}
+
+\noindent
+If $\{a_n\}$ is a sequence of real numbers such that $\lim\limits_{n \to \infty}a_n =L $, $\lim\limits_{n \to \infty}|a_n| =|L| $.
+
+\noindent
+\\
+\\
+We need to prove that for any $\epsilon >0$, $\exists N \in \mathbb{N}$ such that for $n > N$
+\begin{align*}
+||a_n|-|L|| < \epsilon	
+\end{align*}
+Note that, by the reverse triangle inequality (\ref{rev_triangle_inequality_thm})
+\begin{gather*}
+||a_n|-|L|| \leq |a_n-L|
+\end{gather*}
+But, because $a_n \to L$, it is indeed the case for any arbitrary $\epsilon >0$, $\exists N \in \mathbb{N}$ such that for all $n >N$
+\begin{align*}
+|a_n -L| < \epsilon	\\
+||a_n|-|L|| \leq |a_n-L| < \epsilon\\
+\implies ||a_n|-|L|| < \epsilon
+\end{align*}
+
+
+\subsection{Exercises}
+% --------------------------------------------------------------
+%     End Proof of 5
+% --------------------------------------------------------------
+
+\begin{ex}{1.2}
+Let $P(x)$ and $Q(x)$ be two polynomials of equal degree (say $ k \in \mathbb{N})$ show that:
+\begin{align*}
+\lim_{n \to \infty} \dfrac{p(n)}{q(n)} = \dfrac{a_k}{b_k}
+\end{align*}
+
+Where $a_k$ and $b_k$ are the leading coefficients of $p(x)$ and $q(x)$ respectively. 
+
+\end{ex}
+
+\begin{sol}
+
+\begingroup
+\addtolength{\jot}{1em}
+\begin{align*}
+	\lim_{n \to \infty} \dfrac{p(n)}{q(n)} & = \lim_{n \to \infty}  \dfrac{a_kn^k+a_{k-1}n^{k-1}+ ...  + a_1n+a_0}{b_kn^k+b_{k-1}n^{k-1}+ ...  + b_1n+b_0}\\
+	& =   \lim_{n \to \infty}  \dfrac{ \dfrac{a_kn^k+a_{k-1}n^{k-1}+ ...  + a_1n+a_0}{n^k}}{\dfrac{b_kn^k+b_{k-1}n^{k-1}+ ...  + b_1n+b_0}{n^k}} \\
+	&=  \lim_{n \to \infty} \dfrac{a_k+\frac{a_{k-1}}{n}+ ...  + \frac{a_1}{n^{k-1}}+\frac{a_0}{n^k}}{b_k+\frac{b_{k-1}}{n}+ ...  + \frac{b_1}{n^{k-1}}+\frac{b_0}{n^k}}
+\end{align*}
+\endgroup
+
+since $\lim\limits_{n \to \infty}\dfrac{1}{n^p} =0$ for $p >0$
+
+\end{sol}
+% --------------------------------------------------------------
+%     Squeeze Theorem
+% --------------------------------------------------------------
+
+
+\section{Squeeze Theorem}
+
+\begin{definition}[\textbf{Squeeze Theorem}]
+\label{formal_def_squeze_thm}
+If there exists $N >0$ such that $a_n \leq b_n \leq c_n$ for any $n\geq N$, and
+\begin{align*}
+\lim\limits_{n \to \infty}	a_n = \lim\limits_{n \to \infty} c_n = L
+\end{align*}
+ Where $L \in \mathbb{R}$ (i.e. finite), then $\{b_n\}$ also has a limit and $\lim\limits_{n \to \infty}b_n =L$
+	
+\end{definition}
+
+\begin{proof}
+Given that $\lim\limits_{n\to \infty} a_n = \lim\limits_{n\to \infty} c_n = L$ and there exists some $N > 0$ such that for all $n>N$, $a_n \leq b_n \leq c_n$.
+\\
+\\
+Because $a_n \to L$, for any $\epsilon >0$, $\exists N_1 > 0$ such for $n>N_1$
+\begin{align*}
+|a_n-L| < \epsilon \\
+\implies -\epsilon <a_n-L< \epsilon\\
+\implies L - \epsilon < a_n < L +\epsilon
+\end{align*}
+Similarly, because, $c_n \to L$, for the same $\epsilon$ as above, $\exists N_2 \in \mathbb{N}$, so that for $n>N_2$
+\begin{align*}
+|c_n-L| < \epsilon\\
+\implies L-\epsilon < c_n < L+ \epsilon	
+\end{align*}
+Because $\exists N > 0$ such that $a_n\leq b_n \leq c_n$ for any $n \geq N$, choose $N' = \max\{N_1,N_2,N\}$, then for $n> N'$, all the three conditions hold, and choose some arbitrary $\epsilon$
+\begin{gather*}
+	a_n\leq b_n \leq c_n \\
+	L-\epsilon < a_n \leq b_n \leq c_n < L + \epsilon\\
+	\implies -\epsilon <b_n -L < \epsilon \\
+	\implies |b_n -L| < \epsilon
+\end{gather*}
+Hence for any arbitrary $\epsilon$, when the above conditions hold, $b_n \to L$ as well
+
+\end{proof}
+
+
+
+
+\subsection{Exercises}
+
+% --------------------------------------------------------------
+%     Squeeze Theorem Exercises
+% --------------------------------------------------------------
+
+\begin{ex}{1.12} 
+Prove that for any $a > 1$ and any polynomial $p(x)$, we have:
+\begin{align*}
+\lim\limits_{n \to \infty} \dfrac{p(n)}{a^n} =0	
+\end{align*}
+\end{ex}
+
+
+\begin{sol}
+
+We need to show that
+\begingroup
+\addtolength{\jot}{1em}
+\begin{align*}
+c_n	\leq \dfrac{p(n)}{a^n} \leq b_n \\
+\text{where} \lim\limits_{n \to \infty}c_n =0 \text{ and }\lim\limits_{n \to \infty}b_n =0
+\end{align*}
+\endgroup
+\noindent
+consider $p(n)$ of some degree $k \in \mathbb{N}$:
+\begin{align*}
+p(n) = b_kn^k + b_{k-1}n^{k-1}+ ... + b_1n+b_0 	
+\end{align*}
+\noindent
+For a polynomial $p(n)$ of some degree $k \in \mathbb{N}$ and some $a >1$:
+\begin{align*}
+ \lim\limits_{n \to \infty}\dfrac{p(n)}{a^n} &=  \lim\limits_{n \to \infty}\dfrac{b_kn^k + b_{k-1}n^{k-1}+ ... + b_1n+b_0}{a^n}\\
+ &=  \lim\limits_{n \to \infty} \left[ \dfrac{b_k}{a^n}n^k +\dfrac{b_{k-1}}{a^n}n^{k-1} +...+\dfrac{b_1}{a^n}n+\dfrac{b_0}{a^n} \right]
+\end{align*}
+consider any index $j \in [0,k]$
+\begin{align*}
+	b_j\dfrac{1}{a^n}n^j = b_j\left(\dfrac{1}{a}\right)^nn^j \qquad \because a>1 \implies \frac{1}{a} <1 \text{ and } \frac{1}{a} \in (-1,1)\\
+	\implies \text{from the lemma}\end{align*}
+from the lemma:
+\begin{gather*}
+	 \lim\limits_{n \to \infty}  b_j\left(\dfrac{1}{a}\right)^nn^j = \lim\limits_{n \to \infty}b_j \lim\limits_{n \to \infty} \left(\dfrac{1}{a}\right)^nn^j = \lim\limits_{n \to \infty}b_j \times 0 =0\\
+	\lim\limits_{n \to \infty} \left[ \dfrac{b_k}{a^n}n^k +\dfrac{b_{k-1}}{a^n}n^{k-1} +...+\dfrac{b_1}{a^n}n+\dfrac{b_0}{a^n} \right] =0+0+...+0+0\\
+	\lim\limits_{n \to \infty}\dfrac{p(n)}{a^n} =0
+\end{gather*}
+
+
+\end{sol}
+
+
+
+\begin{ex}{1.13}
+	Suppose $p(x)$ is a polynomial such that $p(n) \geq 1$ for any $n \in \mathbb{N}$. Prove that
+\begin{align*}
+\lim\limits_{n \to \infty} p(n)^{\frac{1}{n}} = 1
+\end{align*}
+ 
+\end{ex}
+
+\begin{sol}
+
+The goal is to prove that:
+\begin{align*}
+b_n \leq p(n)^{\frac{1}{n}} \leq c_n	 \qquad \text{for } n > N, \text{ for some }N\in \mathbb{N} 
+\end{align*} 
+where $b_n, c_n \to 1$ as $n \to \infty$\\
+\\
+Let:
+\begin{align*}
+	p(n)^{\frac{1}{n}} -1 = x_n\\
+x_n\geq 0
+\end{align*}
+We need to bound $x_n$. Note that
+\begin{align*}
+(1+x_n)^n = p(n)\\
+\implies 1+nx_n+C_2^nx_n^2+...+nx_n^{n-1} +x_n^n	 = p(n)
+\end{align*}
+WLOG, assume $p(n)$ has a degree of $k$ and that $n>k$, using the general form of polynomials:
+\begin{align*}
+p(n) = a_kn^k + a_{k-1}n^{k-1}+...+a_1n+a_0\\	
+\end{align*}
+For convenience, set $M = \max\{|a_k|,|a_{k-1}|,...,|a_0|\}$, hence, for large $n$
+\begin{align*}
+p(n) \leq Mn^{k+1}	
+\end{align*}
+Now,
+\begin{align*}
+1+nx_n+C_2^nx_n^2+...+nx_n^{n-1} +x_n^n	\leq Mn^{k+1} \\
+C^n_{k+2}x_n \leq 	1+nx_n+C_2^nx_n^2+...+nx_n^{n-1} +x_n^n \leq Mn^{k+1}
+\end{align*}
+Hence,
+\begin{align*}
+	0\leq x_n \leq \frac{Mn^{k+1}}{C^n_{k+2}}\\
+	\frac{Mn^{k+1}}{C^n_{k+2}} = \frac{M(k+2)!}{n\left( 1-\frac{1}{n}\right)...\left( 1-\frac{k+1}{n}\right)}
+\end{align*}
+Clearly
+\begin{align*}
+	\lim_{n\to \infty}\frac{M(k+2)!}{n\left( 1-\frac{1}{n}\right)...\left( 1-\frac{k+1}{n}\right)} = 0
+\end{align*}
+Hence, by the squeeze theorem, $x_n\to 0$, hence $p(n)^{\frac{1}{n}}\to 1$
+
+	
+\end{sol}
+
+% --------------------------------------------------------------
+%     End of Squeeze Theorem Exercises
+% --------------------------------------------------------------
+% --------------------------------------------------------------
+%     End of Squeeze Theorem
+% --------------------------------------------------------------
+
+% --------------------------------------------------------------
+%     Comparison Rules
+% --------------------------------------------------------------
+
+\section{Comparison Rules}
+
+\begin{prop}{Comparison Rules.}
+\noindent
+Suppose $\lim_{n \to \infty} a_n $ and $\lim_{n \to \infty} b_n$ exist, then the following implications hold:
+\begin{enumerate}[label=(\alph*)]
+	\item If $\lim_{n \to \infty} a_n < \lim_{n \to \infty} b_n $, then $\exists N >0$ such that $a_n <b_n$ for all $n>N$.
+	\item If there exist infinitely many $n$'s such that $a_n\geq b_n$, then $\lim_{n \to \infty}a_n \geq \lim_{n \to \infty}b_n$
+\end{enumerate}
+\end{prop}
+\subsection{Proof of Comparison Rules}
+We first prove (a). Let $\lim_{n \to \infty} a_n = L$ and $\lim_{n \to \infty} b_n = M$. Given that sequences $a_n, b_n$ have a finite limit and $L<M$. The key idea is to bound $a_n$ and $b_n$ in two disjoint intervals: $(L-\epsilon, L + \epsilon)$ and $(M-\epsilon, M+\epsilon)$. Picking $\epsilon = \frac{M-L}{2} >0$, we start the formal proof
+\begin{proof}
+\begin{gather*}
+		\because a_n \to L, \forall \epsilon >0, \exists N_1>0 \text{ s.t } \forall n > N_1\\
+		|a_n-L| < \epsilon\\
+		\implies L- \epsilon <a_n<L+\epsilon
+\end{gather*}
+Similarly,
+\begin{gather*}
+	\because b_n \to L, \forall \epsilon >0, \exists N_2>0 \text{ s.t } \forall n > N_2\\
+	|b_n-M| <\epsilon\\
+	\implies M -\epsilon<b_n<M+\epsilon
+\end{gather*}
+Note that $M-\frac{M-L}{2}=L+\frac{M-L}{2} = \frac{M+L}{2}$. Combining both results, for $n > \max\{N_1,N_2\}$,
+\begin{align*}
+a_n < 	\frac{M+L}{2} < b_n
+\end{align*}
+Hence, (a) is proven. Now, (b) is simply just the contrapositive statement of (a), we have to show that (b) is indeed the contrapositive of (a). 
+\begin{gather*}
+\neg(\exists N>0 \text{ s.t } a_n < b_n  \forall n>N)\\
+\iff \forall N>0, \exists n >N \text{ s.t } a_n \geq b_n
+\end{gather*}
+The statement is equivalent to there being infinitely many $n$ such that $a_n\geq b_n$. Naturally, the statement $\lim_{n \to \infty}a_n \geq \lim_{n \to \infty}b_n$ is the negation of the statement $\lim_{n \to \infty} a_n < \lim_{n \to \infty} b_n $. Hence (b) is indeed a contrapositive.
+
+\end{proof}
+% --------------------------------------------------------------
+%     Ratio Test Sequences
+% --------------------------------------------------------------
+
+\subsection{Ratio Test}
+
+\begin{theorem}[Ratio Test for sequences]
+\label{seq_ratio_test_thm}
+Suppose $\{a_n\}$ is a sequence of positive numbers such that
+\begin{align*}
+	\lim_{n\to \infty} \frac{a_{n+1}}{a_n} = L
+\end{align*}
+Where $0\leq L < 1$, then $\lim_{n \to \infty}a_n =0$ 
+\end{theorem}
+\begin{proof}
+Here, we need to use comparison proposition (a) to prove this theorem. Because $0 \leq L<\frac{L+1}{2}<1$,
+\begin{align*}
+\lim_{n\to \infty}\frac{a_{n+1}}{a_n} = L < \frac{L+1}{2}\\	
+\implies \exists N > 0 \text{ s.t } \frac{a_{n+1}}{a_n} < \frac{L+1}{2} \forall n>N
+\end{align*}
+Note that for $n>N$, 
+\begin{align*}
+a_n = \frac{a_n}{a_{n-1}}\cdot \frac{a_{n-1}}{a_{n-2}}\cdot... \frac{a_{N+2}}{a_{N+1}}\cdot a_{N+1}
+\end{align*}
+Each fraction above is less than $\frac{L+1}{2}$, and counting carefully, we have 
+\begin{align*}
+	a_n < \left(\frac{L+1}{2}\right)^{n-N-1}a_{N+1} = \left(\frac{L+1}{2}\right)^n\left(\frac{L+1}{2}\right)^{-(N+1)}a_{N+1}
+\end{align*} 
+Because, $\left(\frac{L+1}{2}\right)^n \to 0$ and $0\leq a_n$, by the squeeze theorem, $a_n \to 0$
+
+\end{proof}
+% --------------------------------------------------------------
+%     End of Ratio Test Sequences
+% --------------------------------------------------------------
+% --------------------------------------------------------------
+%     Root Test Sequences
+% --------------------------------------------------------------
+
+\subsection{Root Test}
+
+\begin{theorem}[Root Test for sequences]
+\label{seq_root_test_thm}
+Suppose $\{a_n\}$ is a sequence of real numbers such that
+\begin{align*}
+\lim_{n \to \infty} \sqrt[n]{|a_n|} = L	
+\end{align*}
+Where $0\leq L < 1$, then $\lim\limits_{n \to \infty}a_n =0$.
+\end{theorem}
+\begin{proof}
+Again, using the fact
+\begin{align*}
+0\leq L < \frac{L+1}{2} < 1	
+\end{align*}
+and comparison of limits proposition (a),
+\begin{align*}
+\because \lim_{n \to \infty} \sqrt[n]{|a_n|} = L	 < 	\frac{L+1}{2}\\
+\exists N>0 \text{ s.t. } \forall n >N \quad \sqrt[n]{|a_n|} < \frac{L+1}{2} \\
+\implies |a_n| < \left( \frac{L+1}{2}\right)^n
+\end{align*}
+Naturally, $0 \leq |a_n|$, and by the fact that $\left( \frac{L+1}{2}\right)^n \to 0$, the squeeze theorem applies and $|a_n| \to 0$, and $a_n \to 0$ well:
+\begin{align*}
+\because -|a_n| \leq a_n \leq |a_n|	
+\end{align*}
+If $|a_n|$ converges to 0, $-|a_n|$ also converges to 0, hence by the squeeze theorem, $a_n \to 0$
+	
+\end{proof}
+
+
+% --------------------------------------------------------------
+%     End of Root Test Sequences
+% --------------------------------------------------------------
+
+% --------------------------------------------------------------
+%     Interesting Propositions
+% --------------------------------------------------------------
+
+\subsection{Propositions}
+
+\begin{prop}
+Any polynomial $p(n)$ with a positive leading term, is positive for sufficiently large $n$     	
+\end{prop}
+
+\begin{proof}
+Let the polynomial be of degree $k$. Then we have
+\begin{align*}
+p(n) = a_kn^k + a_{k-1}n^{k-1}+...+a_1n + a_0	
+\end{align*}
+With $a_k >0$. Dividing by $n^k$, we have:
+\begin{align*}
+\frac{p(n)}{n^k} = a_k + \frac{a_{k-1}}{n} + ... + \frac{a_1}{n^{k-1}}	+ \frac{a_0}{n^k} \\
+\implies \lim_{n \to \infty}\frac{p(n)}{n^k} = a_k > 0\\
+\implies \exists N > 0 \text{ s.t } \frac{p(n)}{n^k} > 0 \quad \forall n >N 
+\end{align*}
+From this we get the result that $p(n)>0$ for all $n$ greater than some $N$. 
+
+\end{proof}
+\begin{prop}
+Given two sequences $\{x_n\}$ and $\{y_n\}$ of positive terms, and there exists some $N \in \mathbb{N}$ such that whenever $n\geq N$, we have
+\begin{align*}
+	\frac{x_{n+1}}{x_n} \leq \frac{y_{n+1}}{y_n}
+\end{align*}
+Then, if $\lim\limits_{n \to \infty} y_n =0$, we also have $x_n \to 0$.
+\end{prop}
+\begin{proof}
+If we have 	$\frac{x_{n+1}}{x_n} \leq \frac{y_{n+1}}{y_n}$ for an infinite number of terms, then we have:
+\begin{align*}
+\lim_{n \to \infty}\frac{x_{n+1}}{x_n} \leq \lim_{n \to \infty}\frac{y_{n+1}}{y_n}	
+\end{align*}
+By the comparison rules, assuming that these limits exist. For simplicity,
+\begin{gather*}
+	L \coloneqq \lim_{n \to \infty}\frac{x_{n+1}}{x_n}, M \coloneqq \lim_{n \to \infty}\frac{y_{n+1}}{y_n}\\
+	L \leq M
+\end{gather*}
+Then, setting $0\leq M <1$, by the ratio test, $y_n \to 0$, because $\{x_n\}$ is positive, we have, $0 \leq L <1 $ as well, which again by the ratio test, implies $x_n \to 0$
+  
+\end{proof}
+
+% --------------------------------------------------------------
+%     End of Interesting Propositions
+% --------------------------------------------------------------
+
+% --------------------------------------------------------------
+%     Comparison Rules Exercises
+% --------------------------------------------------------------
+
+\subsection{Exercises}
+
+\begin{ex}{2.16}
+Prove that $\lim\limits_{n\to \infty} \dfrac{a^n}{n!} =0$, where $a\in \mathbb{R}$, in two different ways:
+\begin{enumerate}[label=(\alph*)]
+	\item Using only Squeeze theorem. Hint: prove that there exists a constant $C >0$ such that:
+	\begin{align*}
+		\left|\frac{a^n}{n!}\right| \leq \frac{C}{n}
+	\end{align*}
+	for sufficiently large $n$.
+	\item Using the Ratio Test for Sequences. 
+\end{enumerate}	
+\end{ex}
+\begin{sol}
+\textbf{(a)} Note that, for simplicity considering, $n>|a|$, $a \in \mathbb{Z}$ and $|a|>1$
+\begin{align*}
+	\left|\frac{a^n}{n!}\right| = \left|\frac{a}{n}\right|\cdot \left|\frac{a}{n-1}\right| ... \left|\frac{a}{n-(n-|a|)}\right| ... \left|\frac{a}{1}\right|
+\end{align*}
+We can partition the terms in the expression above into 3 categories: 
+\begin{enumerate}[label=(\roman*)]
+	\item terms with denominators greater than $a$.
+	\item term with denominator equal to $a$.
+	\item expressions with denominator less than $a$.
+\end{enumerate}
+Assuming $n>a$, counting carefully, we would have have $n-a$ terms of type (i), $1$ term of type (ii), and $n-(n-a)-1=a-1$ terms of type (iii).
+Now, we can consider the behaviour of the type (i) terms as the number of type (i) terms dominates as $n\to \infty$. Now, we have:
+\begin{align*}
+	\left|\frac{a^n}{n!}\right| = \left|\frac{a}{n}\right|\cdot \left|\frac{a}{n-1}\right| \cdot ... \cdot 1 \cdot \left| \frac{|a|^{|a|-1}}{(|a|-1)!}\right|
+\end{align*}
+For, $a \in \mathbb{R}-\mathbb{Z}$ and $|a|>1$, we would have $n - \lfloor |a| \rfloor$ terms of type (i), and $\left\lfloor |a| \right\rfloor$ terms of type (iii), and no terms of type (ii)
+\begin{align*}
+	\left|\frac{a^n}{n!}\right| = \left|\frac{a}{n}\right|\cdot \left|\frac{a}{n-1}\right| \cdot ... \cdot  \left| \frac{|a|^{\lfloor |a| \rfloor}}{(\lfloor |a| \rfloor)!}\right|
+\end{align*}
+Hence, for any $|a|>1$ and $a \in \mathbb{R}$, and WLOG, $n>|a|$ the following inequality holds true:
+\begin{align*}
+	\left|\frac{a^n}{n!}\right| < \left| \frac{a}{n} \right|\cdot \left| \frac{a}{a} \right|^{n -\lfloor |a| \rfloor-1} \cdot \left| \frac{|a|^{\lfloor |a| \rfloor}}{(\lfloor |a| \rfloor)!}\right|
+\end{align*}
+This is because $a< n-k$ for all terms of type (i), with this, we have:
+\begin{align*}
+	\left|\frac{a^n}{n!}\right| < \left| \frac{a}{n} \right|\cdot 1^{n -\lfloor |a| \rfloor-1} \cdot \left| \frac{|a|^{\lfloor |a| \rfloor}}{(\lfloor |a| \rfloor)!}\right| =  \frac{C}{n}
+\end{align*}
+Where $C = |a| \cdot  \left| \frac{|a|^{\lfloor |a| \rfloor}}{(\lfloor |a| \rfloor)!}\right|$, hence the sequence is bounded by $\frac{C}{n}$ when $|a|>1$. For the case where $|a|\leq 1$, for any $n \in \mathbb{N}$
+\begin{align*}
+	\left|\frac{a^n}{n!}\right| \leq \frac{1^n}{n!}  \leq \frac{1}{n}
+\end{align*}
+Hence, in this case as well the sequence is bounded as well, with $C=1$ as a potential value of the constant.
+Combining both cases, and the trivial condition of $0\leq |a|$ we have:
+\begin{align*}
+	0 \leq \left|\frac{a^n}{n!}\right| \leq \frac{C}{n}
+\end{align*}    
+Because $\frac{C}{n} \to 0$, by the squeeze theorem,  $\left|\frac{a^n}{n!}\right| \to 0$. Then, we can also conclude $\frac{a^n}{n!} \to 0$.\\
+\textbf{(b)} Defining the sequence $b_n = \frac{a^n}{n!}$ for simplicity, then 
+computing the ratio of consecutive terms, we have:
+\begin{align*}
+\frac{b_{n+1}}{b_n} = \frac{a^{n+1}}{(n+1)!}\cdot \frac{n!}{a^n}= \frac{a}{(n+1)}\\
+\lim_{n\to \infty} \frac{b_{n+1}}{b_n} = \lim_{n\to \infty} \frac{a}{(n+1)} = L =0
+\end{align*}
+Because $0\leq L <1$, the sequence $b_n$ converges to $0$, by the sequence ratio test. 
+
+\end{sol}
+
+\begin{ex}{2.18}
+	Show that if $a_n$ is a sequence of positive numbers such that $a_n \to L$ where $L >0$, then $a_n^{\frac{1}{n}} \to 1$.
+\end{ex}
+\begin{sol}
+For this, we can use the comparison rules again, noting that:
+\begin{align*}
+\frac{L}{2}<L < \frac{3L}{2}	\\
+\because a_n \to L, \exists N >0 \text{ s.t } \forall n > N\\
+0<\frac{L}{2}<a_n < \frac{3L}{2} \\
+\implies \left(\frac{L}{2} \right)^\frac{1}{n} < a_n^{\frac{1}{n}} < \left(\frac{3L}{2} \right)^\frac{1}{n}
+\end{align*}
+Hence, by the squeeze theorem, $a_n^{\frac{1}{n}} \to 1$, as any $a \in \mathbb{R}, a>0$ $a^{\frac{1}{n}} \to 1$.
+
+\end{sol}
+
+
+\begin{ex}{2.19} Let $a_n = \dfrac{(2n)!}{(n!)^24^n}$. Compute the following limit:
+\begin{align*}
+\lim_{n \to \infty} n \left[ \frac{a_{n+1}}{a_n} - \sqrt[3]{\frac{n}{n+1} } \right]	
+\end{align*}
+Hence, show that $a_n \to 0$.
+\end{ex}
+
+\begin{sol}
+First, doing minor computation:
+\begin{align*}
+\frac{a_{n+1}}{a_n}= \frac{n+1/2}{n+1}\\
+\implies 	\lim_{n \to \infty} n \left[ \frac{a_{n+1}}{a_n} - \sqrt[3]{\frac{n}{n+1} } \right]	 = \lim_{n \to \infty}n\left[ \frac{n+1/2}{n+1} + \sqrt[3]{\frac{n}{n+1} }\right]
+\end{align*}
+After, extensive manipulation, we get:
+\begin{align*}
+	\lim_{n \to \infty} n \left[ \frac{a_{n+1}}{a_n} - \sqrt[3]{\frac{n}{n+1} } \right] = -\frac{1}{6}
+\end{align*}
+This implies $\exists N \in \mathbb{N}$ such that $\forall n > N$:
+\begin{align*}
+	n \left[ \frac{a_{n+1}}{a_n} - \sqrt[3]{\frac{n}{n+1} } \right] <0 \\
+	\implies \frac{a_{n+1}}{a_n} < \sqrt[3]{\frac{n}{n+1}} \\
+	\because \lim_{n \to \infty} \sqrt[3]{\frac{n}{n+1}} = 1 \implies \lim_{n \to \infty} \frac{a_{n+1}}{a_n} <  
+\end{align*} 
+\end{sol}
+
+% --------------------------------------------------------------
+%     End of Comparison Rules Exercises
+% --------------------------------------------------------------
+
+
+\begin{ex}{pitfalls of comparison}
+Suppose $ \lim_{n\to \infty} a_n$ exists and equals $L \in \mathbb{R}$. Which of the following are true?
+\begin{enumerate}[label=(\alph*)]
+	\item If $a_n >1$ for some $n \in \mathbb{N}$, then $L>1$. \textbf{(False)}
+	\item If $a_n>1$ for all $n \in \mathbb{N}$, then $L>1$. \textbf{(False)}
+	\item If $a_n>1$ for some $n \in \mathbb{N}$, then $L\geq 1$. \textbf{(False)}
+	\item If $a_n>1$ for all $n \in \mathbb{N}$, then $L\geq 1$.  \textbf{(True)}
+	\item If $a_n \geq 1$ for some $n \in \mathbb{N}$, then $L>1$.  \textbf{(False)}
+	\item If $a_n \geq 1$ for all $n \in \mathbb{N}$, then $L>1$.  \textbf{(False)}
+	\item If $a_n \geq 1$ for some $n \in \mathbb{N}$, then $L\geq 1$. \textbf{(False)}
+	\item If $a_n \geq 1$ for all $n \in \mathbb{N}$, then $L \geq 1$. \textbf{(True)}
+\end{enumerate}
+\end{ex}
+
+% --------------------------------------------------------------
+%     End  of Comparison Rules
+% --------------------------------------------------------------
+
+% --------------------------------------------------------------
+%     Subsequences
+% --------------------------------------------------------------
+
+\section{Subsequences}
+
+\begin{definition}[Subsequence]
+	Let $\{a_n\}_{n=1}^{\infty}$ be a sequence of real numbers. A subsequence of $\{a_n\}_{n=1}^{\infty}$ is in the form of $\{a_{n_k}\}_{k=1}^{\infty}$, where $n_k \in \mathbb{N}$, and 
+	\begin{align*}
+	n_1<n_2<n_3< ...	
+	\end{align*}
+
+\end{definition}
+
+\noindent
+The Following proposition and corollary are important for showing non-existence of the limit for some sequences.
+\begin{prop}
+\label{seq_subseq_prop}
+	If $\{a_n\}_{n=1}^{\infty}$ is a sequence of real numbers such that $\lim\limits_{n \to \infty}a_n =L$, where $L \in \mathbb{R}$, then any of its subsequences $\{a_{n_k}\}_{k=1}^{\infty}$ would also have
+	\begin{align*}
+	\lim_{k\to \infty} a_{n_k} = L	
+	\end{align*}
+\end{prop} 
+\begin{corollary}
+	Given a sequence $\{a_n\}_{n=1}^{\infty}$ of real numbers, if any of the following holds:
+	\begin{itemize}
+		\item There exist two subsequences $\{a_{n_k}\}_{k=1}^{\infty}$ and $\{a_{m_j}\}_{j=1}^{\infty}$ with \textbf{different} limits 
+		\item There exists a subsequence $\{a_{n_k}\}_{k=1}^{\infty}$ whose limit does not exist
+	\end{itemize}
+	Then, the limit of $\{a_n\}_{n=1}^{\infty}$ does not exist.
+\end{corollary}
+\noindent
+Now, we prove Proposition \ref{seq_subseq_prop}.
+\begin{proof}
+Because, $a_n \to L$, and the fact that $n_k \geq k$, we have
+\begin{align*}
+\forall \epsilon >0, \exists N>0 \text{ s.t } \forall n >N, |a_n - L| < \epsilon\\
+\because n_k \geq k, \forall k > N,  n_k > N\\
+\implies |a_{n_k} - L| <\epsilon     	
+\end{align*}
+Hence $a_{n_k} \to L$. The Corollary is the contrapositive of the proposition, hence directly follows. 
+
+
+\end{proof} 
+
+
+% --------------------------------------------------------------
+%     End of Subsequences
+% --------------------------------------------------------------
+
+% --------------------------------------------------------------
+%     Monotone Sequences
+% --------------------------------------------------------------
+
+\section{Monotone Sequences}
+
+We need to show if sequences converge without knowing the actual limit. 
+
+% --------------------------------------------------------------
+%     End of Monotone Sequences
+% --------------------------------------------------------------
+\section{Appendix}
+
+% --------------------------------------------------------------
+%     General difference of power Lemma
+% --------------------------------------------------------------
+
+\noindent\rule{\textwidth}{1pt}
+\begin{lemma}[\textbf{General difference of power}]
+\label{lem_gen_diff_power}
+for any $x,y \geq 0$ and $n \in \mathbb{N}$
+\begin{align*}
+x-y = (x^{\frac{1}{n}}-y^{\frac{1}{n}})\sum_{j=0}^{n-1}x^{\frac{j}{n}}y^{\frac{n - j -1}{n}}	
+\end{align*}
+\begin{proof}
+For $x = y =0$, the result is trivial. For $y=0$:
+\begin{align*}
+x - 0 =(x^{\frac{1}{n}} -0)(x^{\frac{n-1}{n}}+0+...+0) = x	
+\end{align*}
+The same reasoning holds for the case where $y=0$. For the case where $x,y > 0$. We need observe that:
+\begin{align*}
+x-y =y\left(\frac{x}{y}-1\right) = 	y\left[\left(\frac{x^{\frac{1}{n}}}{y^{\frac{1}{n}}}\right)^{n}-1\right]
+\end{align*}
+This expression is similar to the result of a geometric series:
+
+\begingroup
+\addtolength{\jot}{1em}
+\begin{align*}
+S_n =1+	\left(\frac{x^{\frac{1}{n}}}{y^{\frac{1}{n}}}\right)^{1} + \left(\frac{x^{\frac{1}{n}}}{y^{\frac{1}{n}}}\right)^{2}+ ...+ \left(\frac{x^{\frac{1}{n}}}{y^{\frac{1}{n}}}\right)^{n-1} \\
+	S_n\left(\frac{x^{\frac{1}{n}}}{y^{\frac{1}{n}}}\right) = \left(\frac{x^{\frac{1}{n}}}{y^{\frac{1}{n}}}\right)^{1} + \left(\frac{x^{\frac{1}{n}}}{y^{\frac{1}{n}}}\right)^{2}+ ...+ \left(\frac{x^{\frac{1}{n}}}{y^{\frac{1}{n}}}\right)^{n}\\
+	\implies S_n\left(\frac{x^{\frac{1}{n}}}{y^{\frac{1}{n}}}\right) - S_n = \left(\frac{x^{\frac{1}{n}}}{y^{\frac{1}{n}}}\right)^{n} -1\\
+	\implies S_n= \dfrac{\left(\frac{x^{\frac{1}{n}}}{y^{\frac{1}{n}}}\right)^{n} -1}{\left(\frac{x^{\frac{1}{n}}}{y^{\frac{1}{n}}}\right) -1}
+\end{align*}
+\endgroup
+Hence,
+
+\begingroup
+\addtolength{\jot}{1em}
+\begin{align*}
+	x-y =y\left(\frac{x}{y}-1\right) = 	y\left[\left(\frac{x^{\frac{1}{n}}}{y^{\frac{1}{n}}}\right)^{n}-1\right] = y\times S_n \left[ \left(\frac{x^{\frac{1}{n}}}{y^{\frac{1}{n}}}\right) -1 \right] \\
+	\implies x-y = y\left[ \left(\frac{x^{\frac{1}{n}}}{y^{\frac{1}{n}}}\right) -1 \right]\left[ 1+	\left(\frac{x^{\frac{1}{n}}}{y^{\frac{1}{n}}}\right)^{1} + \left(\frac{x^{\frac{1}{n}}}{y^{\frac{1}{n}}}\right)^{2}+ ...+ \left(\frac{x^{\frac{1}{n}}}{y^{\frac{1}{n}}}\right)^{n-1}  \right] \\
+	\implies x-y = y^{\frac{n-1}{n}}\left[x^{\frac{1}{n}} - y^{\frac{1}{n}} \right]\left[ y^{\frac{n-1}{n}} + x^{\frac{1}{n}y^{\frac{n-1 -1}{n}}}+... + x^{\frac{n-1}{n}}\right] \times \frac{1}{y^{\frac{n-1}{n}}}\\
+	\implies x-y = \left[x^{\frac{1}{n}} - y^{\frac{1}{n}} \right]\left[ y^{\frac{n-1}{n}} + x^{\frac{1}{n}y^{\frac{n-1 -1}{n}}}+... + x^{\frac{n-1}{n}}\right]
+\end{align*}
+\endgroup
+Now, this is equivalent to: 
+\begin{align*}
+	x-y = (x^{\frac{1}{n}}-y^{\frac{1}{n}})\sum_{j=0}^{n-1}x^{\frac{j}{n}}y^{\frac{n - j -1}{n}}	
+\end{align*}
+Hence, for any $x,y \geq 0$ the above holds true
+\end{proof}
+	
+\end{lemma}
+\noindent\rule{\textwidth}{1pt}
+
+
+% --------------------------------------------------------------
+%    end of General difference of power Lemma
+% --------------------------------------------------------------
+
+% --------------------------------------------------------------
+%    begin of Lemma 2
+% --------------------------------------------------------------
+
+
+\begin{lemma}
+For any $a \in (-1,1)$ and $k,n \in \mathbb{N}$ we have:
+\begin{align*}
+\lim\limits_{n \to \infty} n^ka^n =0
+\end{align*}
+\end{lemma}
+\begin{proof}
+	when $a=0$, the result is trivial. consider $0<a<1$. Write:
+\begin{align*}
+	a = \dfrac{1}{\frac{1}{a}} = \frac{1}{1+b}	
+\end{align*}
+ Where $\dfrac{1}{a} > 1$ and $b = \dfrac{1}{a} - 1 > 0$. Using the binomial theorem:
+ 
+\begingroup
+\addtolength{\jot}{1em}
+\begin{align*}
+a^n &= \dfrac{1}{(1+b)^n} = \dfrac{1}{1 + nb + C^n_2 b^2+...+C^n_{n-1}b^{n-1} +b^n} \\
+n^ka^n &= \dfrac{n^k}{1 + nb + C^n_2 b^2+...+C^n_{n-1}b^{n-1} +b^n}	
+\end{align*}
+\endgroup
+WLOG assume $n>k$ hence we have:
+\begin{align*}
+	n^ka^n &= \dfrac{n^k}{1 + nb + C^n_2 b^2+...+C^n_{k+1}b^{k+1}+...+C^n_{n-1}b^{n-1} +b^n}	
+\end{align*}
+Observe that:
+\begin{align*}
+	C^n_{k+1} &= \dfrac{n!}{(n-k -1)!(k+1)!} = \dfrac{n(n-1)(n-2)...(n-k)}{(k+1)!}\\ 
+	\implies \dfrac{n^k}{C^n_{k+1}} &= \dfrac{(k+1)!}{n(1-\frac{1}{n})(1-\frac{2}{n})...(1-\frac{k}{n})}
+\end{align*}
+ Now because:
+ \begin{align*}
+ C^n_{k+1}b^{k+1} \leq 	1 + nb + C^n_2 b^2+...+C^n_{k+1}b^{k+1}+...+C^n_{n-1}b^{n-1} +b^n 
+ \end{align*}
+We have:
+\begingroup
+\addtolength{\jot}{1em}
+\begin{align*}
+	n^ka^n = \dfrac{n^k}{1 + nb + C^n_2 b^2+...+C^n_{n-1}b^{n-1} +b^n}	\leq \dfrac{n^k}{C^n_{k+1}} = \dfrac{(k+1)!}{n(1-\frac{1}{n})(1-\frac{2}{n})...(1-\frac{k}{n})}\\
+	\lim\limits_{n \to \infty }\dfrac{(k+1)!}{n(1-\frac{1}{n})(1-\frac{2}{n})...(1-\frac{k}{n})} = \dfrac{\lim\limits_{n\to \infty}\frac{(k+1)!}{n}}{\lim\limits_{n\to \infty}(1-\frac{1}{n})\lim\limits_{n\to \infty}(1-\frac{2}{n})...\lim\limits_{n\to \infty}(1-\frac{k}{n})}
+\end{align*}
+\endgroup
+Because $\lim\limits_{n\to \infty}\dfrac{k}{n} =0$ for any constant $k \in \mathbb{N}$:
+\begin{align*}
+	 \dfrac{\lim\limits_{n\to \infty}\frac{(k+1)!}{n}}{\lim\limits_{n\to \infty}(1-\frac{1}{n})\lim\limits_{n\to \infty}(1-\frac{2}{n})...\lim\limits_{n\to \infty}(1-\frac{k}{n})} = \dfrac{(k+1)! \times 0}{(1-0)(1-0)...(1-0)} =0
+\end{align*}
+Hence, we can indeed bound $n^ka^n$ above and below. $n^ka^n$ has a trivial lower bound of $0$, as here we consider $0<a<1$:
+\begin{gather*}
+0\leq 	n^ka^n \leq \dfrac{n^k}{C^n_{k+1}} \\
+\lim\limits_{n \to \infty}0 =0 ,\lim\limits_{n \to \infty}\dfrac{n^k}{C^n_{k+1}} =0\\
+\implies \lim\limits_{n \to \infty} n^ka^n =0 \text{ by squeeze theorem for } a \in (0,1)
+\end{gather*}
+For the negative case where $a \in (-1,0)$ consider:
+\begin{align*}
+-|n^ka^n| \leq n^ka^n \leq |n^ka^n| = n^k|a^n| =n^k|a|^n
+\end{align*}
+Because we have already proved that for $a \in (0,1)$, $\lim\limits_{n \to \infty}n^ka^n =0$:
+\begin{align*}
+\lim\limits_{n \to \infty} n^k|a|^n &=0 \\
+\implies \lim\limits_{n \to \infty}-|n^ka^n| &=0	 \\
+\text{by the squeeze theorem, } \lim\limits_{n \to \infty} n^ka^n &=0 \qquad \text{for } \quad a \in (-1,0)
+\end{align*}
+Hence, for any $a \in (-1,1)$ and $k \in \mathbb{N}$ we have:
+\begin{align*}
+\lim\limits_{n \to \infty} n^ka^n =0
+\end{align*} 
+\end{proof}
+
+
+\end{document}
