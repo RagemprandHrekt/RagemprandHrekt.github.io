@@ -36,7 +36,7 @@ Using induction, prove the following:
 class="enumerate-enumitem">\(1^n=1\) in any field;
       </dd><dt class="enumerate-enumitem">
  (ii) </dt><dd 
-class="enumerate-enumitem">\((\forall n \in \N )\) \(2^n\geq 2\) in any ordered field; Specify the proposition \(P(n)\).</dd></dl>
+class="enumerate-enumitem">\((\forall n \in \mathbb {N})\) \(2^n\geq 2\) in any ordered field; Specify the proposition \(P(n)\).</dd></dl>
    <div  
 class="centerline">                                 <span 
 class="cmbx-12">Answer of exercise</span><span 
@@ -60,7 +60,9 @@ class="newline" />   For (ii), we can set the induction proposition \(P(n)\) mea
   (i)\('\) </dt><dd 
 class="enumerate-enumitem">\(P(1)\) <span 
 class="cmti-12">is true</span>; by the definition of natural powers, \(2^1=2 \geq 2\). Thus, \(P(1)\) holds.
+                                                                         
 
+                                                                         
       </dd><dt class="enumerate-enumitem">
  (ii)\('\) </dt><dd 
 class="enumerate-enumitem">\(P(m)\implies P(m+1)\); If we assume \(P(n)\) holds for some \(n=m\), then we have \(2^m \geq 2\), because \(2&gt;1\) (straight
@@ -68,7 +70,7 @@ class="enumerate-enumitem">\(P(m)\implies P(m+1)\); If we assume \(P(n)\) holds 
       “2”), by the monotonicity of multiplication, we have \(2^m \cdot 2 \geq 2 \cdot 1\), by the definition
       of natural powers, and the properties of neutral elements, \(2^{m+1}\geq 2\). Thus, \(P(m+1)\)
       holds if \(P(m)\) holds.</dd></dl>
-<!--l. 28--><p class="noindent" >Hence, by induction, we have \(2^n\geq 2\) for all \(n \in \N \).
+<!--l. 28--><p class="noindent" >Hence, by induction, we have \(2^n\geq 2\) for all \(n \in \mathbb {N}\).
 <a 
  id="x10-8009r6"></a>
 </p>
@@ -84,20 +86,20 @@ Prove that if \(x_1,\ldots , x_n\) are natural elements of a field, so are \begi
 class="centerline">                                 <span 
 class="cmbx-12">Answer of exercise</span><span 
 class="cmbx-12"> 6</span>                             </div>
-<!--l. 41--><p class="indent" >   We have shown in Example (A), that if \(x_1,x_2 \in \N \) then, \(x_1+x_2 \in \N \) along with \(x_1x_2 \in \N \). We can let \(P(n)\) mean
-that \(\sum _{k=1}^n x_k \in \N \). For sums, we have:
+<!--l. 41--><p class="indent" >   We have shown in Example (A), that if \(x_1,x_2 \in \mathbb {N}\) then, \(x_1+x_2 \in \mathbb {N}\) along with \(x_1x_2 \in \mathbb {N}\). We can let \(P(n)\) mean
+that \(\sum _{k=1}^n x_k \in \mathbb {N}\). For sums, we have:
       </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
   (i) </dt><dd 
 class="enumerate-enumitem">\(P(2)\) <span 
-class="cmti-12">is true</span>; By definition of sums, we have \(\sum _{k=1}^2 x_k = \sum _{k=1}^1x_k+x_2= x_1+x_2\); Because \(x_1, x_2 \in \N \), by Example (A),
-      \(x_1+x_2 \in \N \). Thus \(P(2)\) holds.
+class="cmti-12">is true</span>; By definition of sums, we have \(\sum _{k=1}^2 x_k = \sum _{k=1}^1x_k+x_2= x_1+x_2\); Because \(x_1, x_2 \in \mathbb {N}\), by Example (A),
+      \(x_1+x_2 \in \mathbb {N}\). Thus \(P(2)\) holds.
       </dd><dt class="enumerate-enumitem">
  (ii) </dt><dd 
-class="enumerate-enumitem">\(P(m)\implies P(m+1)\); Assuming \(P(m)\) holds implies that \(\sum _{k=1}^m x_k \in \N \). By the definition of sum, \(\sum _{k=1}^{m+1} x_k = \sum _{k=1}^m x_k +x_{m+1}\). Because
-      of the inductive hypothesis, \(\sum _{k=1}^m x_k \in \N \) and from our assumption, \(x_{m+1} \in \N \), thus \(\sum _{k=1}^{m+1} x_k\) is also
+class="enumerate-enumitem">\(P(m)\implies P(m+1)\); Assuming \(P(m)\) holds implies that \(\sum _{k=1}^m x_k \in \mathbb {N}\). By the definition of sum, \(\sum _{k=1}^{m+1} x_k = \sum _{k=1}^m x_k +x_{m+1}\). Because
+      of the inductive hypothesis, \(\sum _{k=1}^m x_k \in \mathbb {N}\) and from our assumption, \(x_{m+1} \in \mathbb {N}\), thus \(\sum _{k=1}^{m+1} x_k\) is also
       a natural element of the field by Example (A). Thus \(P(m+1)\) is true when \(P(m)\) is
       true.</dd></dl>
-<!--l. 46--><p class="noindent" >Similarly, for products of natural elements, Let \(P'(n)\) mean that \(\prod _{k=1}^{n}x_k \in \N \). with this we
+<!--l. 46--><p class="noindent" >Similarly, for products of natural elements, Let \(P'(n)\) mean that \(\prod _{k=1}^{n}x_k \in \mathbb {N}\). with this we
 have:
       </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
   (i)\('\) </dt><dd 
@@ -106,10 +108,12 @@ class="cmti-12">is true</span>; Again by the definition of products, we have \(\
       Example (A), is also a natural element of the field.
       </dd><dt class="enumerate-enumitem">
  (ii)\('\) </dt><dd 
-class="enumerate-enumitem">\(P'(m)\implies P'(m+1)\); Assuming \(P'(m)\) holds, we have \(\prod _{k=1}^{m}x_k \in \N \) and by definition of products, we have \(\prod _{k=1}^{m+1}x_k = (\prod _{k=1}^{m}x_k )\cdot x_{m+1}\),
-      then from the inductive hypothesis and Example (A), we have \(\prod _{k=1}^{m+1}x_k \in \N \). Thus,
+class="enumerate-enumitem">\(P'(m)\implies P'(m+1)\); Assuming \(P'(m)\) holds, we have \(\prod _{k=1}^{m}x_k \in \mathbb {N}\) and by definition of products, we have \(\prod _{k=1}^{m+1}x_k = (\prod _{k=1}^{m}x_k )\cdot x_{m+1}\),
+      then from the inductive hypothesis and Example (A), we have \(\prod _{k=1}^{m+1}x_k \in \mathbb {N}\). Thus,
       \(P'(m+1)\) is true when \(P'(m)\) is true.</dd></dl>
+                                                                         
 
+                                                                         
 <a 
  id="x10-8015r7"></a>
    <div  
@@ -167,7 +171,9 @@ class="cmbx-12"> 8</span>                             </div>Because
 it is not known if the field is ordered, we can only use the general field axioms
 and theories. By Corollary 5, we have \(x\cdot 0 =0\cdot x=0\), thus, using this property, we can define
 the proposition \(P(n)\) to mean that \(\prod _{k=1}^n x_k \neq 0\).
+                                                                         
 
+                                                                         
       <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
   (i) </dt><dd 
 class="enumerate-enumitem">\(P(2)\) <span 
@@ -207,7 +213,9 @@ completed the proof. Now we have these two true equations: \begin {align*}  \lef
 </p><!--l. 126--><p class="indent" >   because of our earlier proof that the product is not zero, by the cancellation
 of the same element (Cancellation Corollary), we finally have: \begin {align*}  \left (\prod _{k=1}^n x_k \right )^{-1} = \left (\prod _{k=1}^{n} x_k^{-1}\right )  \end {align*}
 </p><!--l. 130--><p class="indent" >   for any non zero \(n\) elements \(x_1,\ldots , x_n\) of a field (both ordered and unordered).
+                                                                         
 
+                                                                         
 <a 
  id="x10-8027r9"></a>
 </p>
@@ -265,7 +273,9 @@ class="enumerate-enumitem">\(P(2)\) <span
 class="cmti-12">is true</span>; Again, by the definition of sums, we have \(| \sum _{k=1}^2 x_k |= |x_1+x_2|\), and by the triangle
       inequality, we have, \(|x_1+x_2| \leq |x_1|+|x_2|\). This, again by the definition of sums, is just \(\sum _{k=1}^2 |x_k|\).
       Thus, \(P(2)\) is true.
+                                                                         
 
+                                                                         
       </dd><dt class="enumerate-enumitem">
  (ii) </dt><dd 
 class="enumerate-enumitem">\(P(m)\implies P(m+1)\); Assuming \(P(m)\) holds means that \(| \sum _{k=1}^m x_k | \leq \sum _{k=1}^m |x_k|\), for the \(m+1\) case we have, by definition of sums
@@ -286,7 +296,7 @@ class="cmbx-12">Answer of exercise</span><span
 class="cmbx-12"> 11</span>                            </div>First,
 to prove that \(a&lt;b\) iff \(a^n&lt;b^n\), we need to prove both directions of the statement: \(a&lt;b \implies a^n &lt;b^n\) and \(a^n &lt; b^n \implies a&lt;b\).
 Thus, we can define two propositions: \begin {align*}  P(n) := a&lt;b \implies a^n&lt;b^n \\ P'(n) := a^n&lt;b^n \implies a&lt;b  \end {align*}
-<!--l. 182--><p class="indent" >   given that \(a,b \geq 0\) for all \(n\in \N \). Now, we prove \(P(n)\):
+<!--l. 182--><p class="indent" >   given that \(a,b \geq 0\) for all \(n\in \mathbb {N}\). Now, we prove \(P(n)\):
       </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
   (i) </dt><dd 
 class="enumerate-enumitem">\(P(1)\) <span 
@@ -312,7 +322,9 @@ class="enumerate-enumitem">\(P'(1), \ldots , P'(m-1) \implies P'(m)\); by assumi
 <!--l. 197--><p class="noindent" >Hence, by the principle of induction, given \(a,b\geq 0\), for any natural element \(n\) of an ordered
 field, \(a^n&lt;b^n\) implies \(a&lt;b\).<br 
 class="newline" />We now have shown that, given \(a,b \geq 0\), for any natural \(n\) of a field: \begin {align*}  a&lt;b \iff a^n&lt;b^n  \end {align*}
+                                                                         
 
+                                                                         
 </p><!--l. 202--><p class="indent" >   if \(a&lt;1\), we have \(a^n&lt;1^n\), which from Problem 1. we know that \(1^n=1\), thus, \(a^n&lt;1\), the same
 reasoning holds for the \(a&gt;1\) case, giving \(a^n&gt;1^n=1\).<br 
 class="newline" /><br 
@@ -326,14 +338,14 @@ class="centerline">                                      <span
 class="cmbx-12x-x-120">Exercise</span><span 
 class="cmbx-12x-x-120"> 12</span>                            </div><a 
  id="x10-8044"></a>
-Use Induction over \(n\) to prove that for any element \(\e \) of an ordered field
+Use Induction over \(n\) to prove that for any element \(\epsilon \) of an ordered field
 \(F\),
       <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
   (i) </dt><dd 
-class="enumerate-enumitem">\((1+\e )^n \geq 1 +n\e \) if \(\e &gt;-1\)
+class="enumerate-enumitem">\((1+\epsilon )^n \geq 1 +n\epsilon \) if \(\epsilon &gt;-1\)
       </dd><dt class="enumerate-enumitem">
  (ii) </dt><dd 
-class="enumerate-enumitem">\((1-\e )^n \geq 1 -n\e \) if \(\e &lt;1\)</dd></dl>
+class="enumerate-enumitem">\((1-\epsilon )^n \geq 1 -n\epsilon \) if \(\epsilon &lt;1\)</dd></dl>
 <!--l. 212--><p class="noindent" >These are <span 
 class="cmti-12">Bernoulli Inequalities</span>. Infer that \(2^n &gt;n\), \(n=1,2,\ldots ,\) in \(\mathbb {R}\).
 </p>
@@ -341,18 +353,18 @@ class="cmti-12">Bernoulli Inequalities</span>. Infer that \(2^n &gt;n\), \(n=1,2
 class="centerline">                                <span 
 class="cmbx-12">Answer of exercise</span><span 
 class="cmbx-12"> 12</span>                            </div>For
-this, we set \(P(n)\) be true when \((1+\e )^n \geq 1 +n\e \), given \(\e &gt;-1\).
+this, we set \(P(n)\) be true when \((1+\epsilon )^n \geq 1 +n\epsilon \), given \(\epsilon &gt;-1\).
       <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
   (i) </dt><dd 
 class="enumerate-enumitem">\(P(1)\) <span 
-class="cmti-12">is true</span>; we have by the definition of natural powers, \((1+\e )^1=1+\e \), this trivially
+class="cmti-12">is true</span>; we have by the definition of natural powers, \((1+\epsilon )^1=1+\epsilon \), this trivially
       shows that \(P(1)\) is true.
       </dd><dt class="enumerate-enumitem">
  (ii) </dt><dd 
-class="enumerate-enumitem">\(P(m)\implies P(m+1)\); if \(P(m)\), then \((1+\e )^m \geq 1 +m\e \), because we assume that \(\e &gt;-1\), we have \(\e -1&gt;0\), thus by the monotonicity
-      of  multiplication,  \((1+\e )^m(1+\e ) \geq (1+m\e )(1+\e )\).  Hence,  we  have  \((1+\e )^{m+1} \geq 1+m\e +\e +m\e ^2 &gt; 1+(m+1)\e \).  Thus,  we  have  shown  that  \(P(m+1)\)
+class="enumerate-enumitem">\(P(m)\implies P(m+1)\); if \(P(m)\), then \((1+\epsilon )^m \geq 1 +m\e \), because we assume that \(\epsilon &gt;-1\), we have \(\epsilon -1&gt;0\), thus by the monotonicity
+      of  multiplication,  \((1+\epsilon )^m(1+\epsilon ) \geq (1+m\epsilon )(1+\epsilon )\).  Hence,  we  have  \((1+\epsilon )^{m+1} \geq 1+m\epsilon +\epsilon +m\epsilon ^2 &gt; 1+(m+1)\epsilon \).  Thus,  we  have  shown  that  \(P(m+1)\)
       whenever \(P(m)\) is true.</dd></dl>
-<!--l. 220--><p class="noindent" >By similar reasoning, we can also show (ii). Thus, when \(\e =1\), \((1+1)^n \geq 1+n \implies 2^n\geq 1+n&gt;n\).
+<!--l. 220--><p class="noindent" >By similar reasoning, we can also show (ii). Thus, when \(\epsilon =1\), \((1+1)^n \geq 1+n \implies 2^n\geq 1+n&gt;n\).
 <a 
  id="x10-8049r13"></a>
 </p>
@@ -368,7 +380,9 @@ class="cmbx-12">Answer of exercise</span><span
 class="cmbx-12"> 13</span>                            </div>Here,
 we need to show that the above identity holds for all naturals \(n\) in any field, so we
 set the inductive proposition as the above identity itself.
+                                                                         
 
+                                                                         
       <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
   (i) </dt><dd 
 class="enumerate-enumitem">\(P(1)\) <span 
@@ -420,7 +434,9 @@ class="centerline">                                      <span
 class="cmbx-12x-x-120">Exercise</span><span 
 class="cmbx-12x-x-120"> 15</span>                            </div><a 
  id="x10-8062"></a>
+                                                                         
 
+                                                                         
 For any field elements \(a,b\) and natural numbers \(m,n \in \mathbb {R}\), prove the following:
    <div class="columns-3">
 <!--l. 264--><p class="indent" >
@@ -462,7 +478,9 @@ class="centerline">                                <span
 class="cmbx-12">Answer of exercise</span><span 
 class="cmbx-12"> 15</span>                            </div>For
 (I), we have fix \(m\) to be some natural and \(P(n)\) is true when \(a^ma^n = a^{m+n}\).
+                                                                         
 
+                                                                         
       <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
   (i) </dt><dd 
 class="enumerate-enumitem">\(P(1)\) <span 
@@ -504,7 +522,9 @@ class="cmti-12">is true</span>; \(\dfrac {a^1}{a^m}=a^1\cdot a^{-m}\) by the def
 class="enumerate-enumitem">\(P(k)\implies P(k+1)\); Given \(\dfrac {a^k}{a^m}=a^{k-m}\), for \(n=k+1\), we have \(\dfrac {a^{k+1}}{a^m}=\dfrac {a^k}{a^m}\cdot a^1\), then by the inductive hypothesis, we have \(\dfrac {a^k}{a^m}\cdot a^1 = a^{k-m}a^1\),
       which by definition is \(a^{(k+1)-m}\). Thus, \(P(k+1)\) holds if \(P(k)\) holds.</dd></dl>
 <!--l. 310--><p class="noindent" >For (V), we have \(P(n)\) being true when \(\left (\dfrac {b}{a}\right )^n = \dfrac {b^n}{a^n}\).
+                                                                         
 
+                                                                         
       </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
   (i) </dt><dd 
 class="enumerate-enumitem">\(P(1)\) <span 
@@ -545,7 +565,9 @@ class="enumerate-enumitem">\(P(m)\implies P(m+1)\);  Given  \(m(a\pm b)=ma \pm m
       the inductive hypothesis, is \((ma\pm mb)+(a\pm b)\), by associativity and commutativity, we
       have \((ma+a)\pm (mb+b)\), for which applying the definition of natural multiplies, we get
       \((m+1)a \pm (m+1)b\), showing that \(P(m+1)\) holds when \(P(m)\) holds.</dd></dl>
+                                                                         
 
+                                                                         
 <a 
  id="x10-8087r16"></a>
    <div  
@@ -554,9 +576,9 @@ class="cmbx-12x-x-120">Exercise</span><span
 class="cmbx-12x-x-120"> 16</span>                            </div><a 
  id="x10-8088"></a>
 Show by induction that each natural element \(x\) of an ordered field \(F\) can be
-uniquely represented as \(x=n\cdot 1^{\prime }\), where \(n\) is the natural number in \(\mathbb {R}\) and \(1'\) is the unity in \(F\);
-that is, \(x\) is the sum of \(n\) unities. Conversely, show that each such \(n\cdot 1'\) is a natural
-element of \(F\). Finally, show that, for \(m,n \in \N \), we have \begin {align*}  m&lt;n\;\; \text {iff}\;\; mx&lt;nx,  \end {align*}
+uniquely represented as \(x=n\cdot 1_F\), where \(n\) is the natural number in \(\mathbb {N}_{\mathbb {R}}\) and \(1_F\) is the unity in \(F\);
+that is, \(x\) is the sum of \(n\) unities. Conversely, show that each such \(n\cdot 1_F\) is a natural
+element of \(F\). Finally, show that, for \(m,n \in \mathbb {N}_{\mathbb {R}}\), we have \begin {align*}  m&lt;n\;\; \text {iff}\;\; mx&lt;nx,  \end {align*}
 <!--l. 337--><p class="indent" >   Provided \(x&gt;0\).
 </p>
    <div  
@@ -567,140 +589,156 @@ down the problem, we need to first show that <span
 class="cmti-12">each natural element</span> \(x\) of an
 <span 
 class="cmti-12">ordered field</span> \(F\) can be <span 
-class="cmti-12">uniquely represented </span>as \(x=n\cdot 1'\), where \(n\) is some <span 
-class="cmti-12">natural number </span>in \(\mathbb {R}\)
-and \(1'\) is the unity in \(F\).
+class="cmti-12">uniquely represented </span>as \(x=n\cdot 1_F\), where \(n\) is some <span 
+class="cmti-12">natural number </span>in \(\mathbb {N}_{\mathbb {R}}\)
+and \(1_F\) is the unity in \(F\).
 <!--l. 342--><p class="indent" >   Note that, for any ordered field \(F\), \(1_F&gt;0_F\), along with the fact each natural of \(F\) is
 \(\geq 1_F\).
 </p><!--l. 344--><p class="indent" >   To create a sound inductive proposition \(P(n)\) we need to make sure that, it
 includes these conditions:
       </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
    1. </dt><dd 
-class="enumerate-enumitem">Existence: for each \(x \in \mathbb {N}_F\), we have some \(n \in \mathbb {N}_\mathbb {R}\), such that \(x=n\cdot 1' \in \mathbb {N}_F\). Call the \(x\), \(x_n\), i.e., \(x_n :=n\cdot 1'\).
+class="enumerate-enumitem">Existence: for each \(x \in \mathbb {N}_F\), we have some \(n \in \mathbb {N}_\mathbb {R}\), such that \(x=n\cdot 1_F \in \mathbb {N}_F\). Call the \(x\), \(x_n\), i.e., \(x_n :=n\cdot 1_F\).
       </dd><dt class="enumerate-enumitem">
    2. </dt><dd 
 class="enumerate-enumitem">Uniqueness: this representation of \(x\) is unique, i.e., If \(m\) is some natural
-      number of \(\mathbb {N}_\mathbb {R}\), then, \(m\cdot 1' = n\cdot 1' \implies m=n\). In other words, if \(x_n=x_m \implies n=m\).</dd></dl>
+      number of \(\mathbb {N}_\mathbb {R}\), then, \(m\cdot 1_F = n\cdot 1_F \implies m=n\). In other words, if \(x_n=x_m \implies n=m\).</dd></dl>
 <!--l. 349--><p class="noindent" >Thus, we have:<br 
 class="newline" /><br 
 class="newline" />Base Case (\(P(1)\)):
       </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
     \(\bullet \) </dt><dd 
-class="enumerate-enumitem">Existence:   \(x_1 = 1\cdot 1' =1'\),   by   the   definition   of   natural   multiplies,   and   by
-      construction, \(1' \in \mathbb {N}_F\), thus \(x_1\) exists. Coming from the other direction, \(1'\) is the
+class="enumerate-enumitem">Existence:   \(x_1 = 1\cdot 1_F =1_F\),   by   the   definition   of   natural   multiplies,   and   by
+      construction, \(1_F \in \mathbb {N}_F\), thus \(x_1\) exists. Coming from the other direction, \(1_F\) is the
       smallest natural of element of \(F\), by the definition of natural multiplies,
-      \(1'=1\cdot 1'= x_1\), thus the smallest natural element of \(F\), can be represented by this
+      \(1_F=1\cdot 1_F= x_1\), thus the smallest natural element of \(F\), can be represented by this
       form.
       </dd><dt class="enumerate-enumitem">
     \(\bullet \) </dt><dd 
-class="enumerate-enumitem">Uniqueness: We need to show that there is no \(m \in \mathbb {N}_\mathbb {R}\) such that \(m\neq 1\), and \(m\cdot 1'=1'\). From
+class="enumerate-enumitem">Uniqueness: We need to show that there is no \(m \in \mathbb {N}_\mathbb {R}\) such that \(m\neq 1\), and \(m\cdot 1_F=1_F\). From
       the properties of naturals, \(m\geq 1\), but from the condition \(m\neq 1\), \(m\) would have to
       be \(&gt;1\). We will show, by induction, that for all \(m&gt;1\), it is never the case that
-      \(m\cdot 1'=1'\).
+      \(m\cdot 1_F=1_F\).
+                                                                         
 
+                                                                         
       <!--l. 356--><p class="noindent" >Taking advantage of the order of \(F\), we can set the inductive proposition, \(U(n)\),
-      to be true when \(n\cdot 1' &gt;1'\), given \(n \in \mathbb {N}_{\mathbb {R}}\) and \(n&gt;1\)
+      to be true when \(n\cdot 1_F &gt;1_F\), given \(n \in \mathbb {N}_{\mathbb {R}}\) and \(n&gt;1\)
            </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
        (i) </dt><dd 
 class="enumerate-enumitem">\(U(2)\) <span 
-class="cmti-12">is true</span>; for \(n=2\), we have, \(2\cdot 1'= 1' +1'\), by the definition of natural multiplies.
-           But, because \(1'&gt;0\), \(2\cdot 1'= 1'+1'&gt; 1'\), by the monotonicity of addition in an ordered
-           field. Thus, \(2\cdot 1'&gt;1'\).
+class="cmti-12">is true</span>; for \(n=2\), we have, \(2\cdot 1_F= 1_F +1_F\), by the definition of natural multiplies.
+           But, because \(1_F&gt;0\), \(2\cdot 1_F= 1_F+1_F&gt; 1_F\), by the monotonicity of addition in an ordered
+           field. Thus, \(2\cdot 1_F&gt;1_F\).
            </dd><dt class="enumerate-enumitem">
       (ii) </dt><dd 
-class="enumerate-enumitem">\(U(k)\implies U(k+1)\); Given that \(U(n)\) holds for \(n=k\), we have \(k\cdot 1'&gt;1'\), again, by the monotonicity of
-           addition in an ordered field, we have \(k\cdot 1'+1'&gt;1'+1'\), by the definition of natural
-           multiplies, we have \((k+1)\cdot 1'&gt;2\cdot 1'\), but we have already shown that \(2\cdot 1' &gt; 1'\), thus, by
-           the transitive property of \(F\), \((k+1)\cdot 1'&gt;1'\).</dd></dl>
+class="enumerate-enumitem">\(U(k)\implies U(k+1)\); Given that \(U(n)\) holds for \(n=k\), we have \(k\cdot 1_F&gt;1_F\), again, by the monotonicity of
+           addition in an ordered field, we have \(k\cdot 1_F+1_F&gt;1_F+1_F\), by the definition of natural
+           multiplies, we have \((k+1)\cdot 1_F&gt;2\cdot 1_F\), but we have already shown that \(2\cdot 1_F &gt; 1_F\), thus, by
+           the transitive property of \(F\), \((k+1)\cdot 1_F&gt;1_F\).</dd></dl>
       <!--l. 361--><p class="noindent" >Hence, by induction, we can conclude that there does not exist \(m\neq 1\), such that
-      \(m\cdot 1'=1'\). Thus, We have shown the Uniqueness.</p></dd></dl>
+      \(m\cdot 1_F=1_F\). Thus, We have shown the Uniqueness.</p></dd></dl>
 <!--l. 363--><p class="noindent" >Inductive Step (\(P(k)\implies P(k+1)\)):<br 
 class="newline" /><br 
-class="newline" />Given \(P(k)\) holds, \(x_k = k\cdot 1' \in \mathbb {N}_F\), and \(k\cdot 1'\) is a unique representation.
+class="newline" />Given \(P(k)\) holds, \(x_k = k\cdot 1_F \in \mathbb {N}_F\), and \(k\cdot 1_F\) is a unique representation.
       </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
     \(\bullet \) </dt><dd 
-class="enumerate-enumitem">Existence: because, \(x_k = k\cdot 1' \in \mathbb {N}_{F}\), by the property of any natural element, \(x_k+1'\) is also
-      a natural of \(F\), hence \(k\cdot 1'+1' \in \mathbb {N}_F\). By the definition of natural multiplies, \(k\cdot 1'+1' = (k+1)\cdot 1' = x_{k+1} \in \mathbb {N}_F\). Thus,
+class="enumerate-enumitem">Existence: because, \(x_k = k\cdot 1_F \in \mathbb {N}_{F}\), by the property of any natural element, \(x_k+1_F\) is also
+      a natural of \(F\), hence \(k\cdot 1_F+1_F \in \mathbb {N}_F\). By the definition of natural multiplies, \(k\cdot 1_F+1_F = (k+1)\cdot 1_F = x_{k+1} \in \mathbb {N}_F\). Thus,
       we have shown that \(x_{k+1}\) is also a natural of \(F\) if \(x_k\) is.
       </dd><dt class="enumerate-enumitem">
     \(\bullet \) </dt><dd 
-class="enumerate-enumitem">Uniqueness: given \(n=k\), for any \(m\in \mathbb {N}_{\mathbb {R}}\), \(m\cdot 1' = k\cdot 1' \implies m=k\). Adding \(1'\), to both sides of the inductive
-      hypothesis’s conditional: \begin {align*}  k\cdot 1' +1' &amp;= m\cdot 1' +1'\\ (k+1)\cdot 1' &amp;= (m+1)\cdot 1'  \end {align*}
+class="enumerate-enumitem">Uniqueness: given \(n=k\), for any \(m\in \mathbb {N}_{\mathbb {R}}\), \(m\cdot 1_F = k\cdot 1_F \implies m=k\). Adding \(1_F\), to both sides of the inductive
+      hypothesis’s conditional: \begin {align*}  k\cdot 1_F +1_F &amp;= m\cdot 1_F +1_F\\ (k+1)\cdot 1_F &amp;= (m+1)\cdot 1_F  \end {align*}
       <!--l. 373--><p class="noindent" >by the definition of natural multiples. Note that the conditional of the
       inductive hypothesis still holds, hence, as does the implication, that is \(k=m\),
-      then, adding \(1\) to both sides, \(k+1= m+1\). because \(m\) is arbitrary, we have \((k+1)\cdot 1' = m'\cdot 1' \implies k+1=m'\). Hence, \(x_{k+1}=(k+1)\cdot 1'\) is
+      then, adding \(1\) to both sides, \(k+1= m+1\). because \(m\) is arbitrary, we have \((k+1)\cdot 1_F = m_F\cdot 1_F \implies k+1=m_F\). Hence, \(x_{k+1}=(k+1)\cdot 1_F\) is
       unique if \(x_k\) is unique.</p></dd></dl>
 <!--l. 375--><p class="noindent" >Thus, by the principle of mathematical induction, each natural \(x\) of \(\mathbb {N}_F\) has a unique
-representation of the form \(x=n\cdot 1'\), where \(n \in \mathbb {N}_{\mathbb {R}} \) and \(1'\) is the unity of \(F\). We have also shown the
-existence of each \(x_n = n\cdot 1'\) in \(F\) as its natural elements.<br 
+representation of the form \(x=n\cdot 1_F\), where \(n \in \mathbb {N}_{\mathbb {R}} \) and \(1_F\) is the unity of \(F\). We have also shown the
+existence of each \(x_n = n\cdot 1_F\) in \(F\) as its natural elements.<br 
+class="newline" />
+</p><!--l. 377--><p class="indent" >   Note that, for any \(x \in F\), and any \(n \in \mathbb {N}_{\mathbb {R}}\), \(nx \in F\). We can easily show that this holds
+for all \(n\) by induction. The Base case, by definition of natural multiples,
+                                                                         
+
+                                                                         
+holds. If the proposition holds for some \(n=k\), \(kx \in F\). Then by the definition of
+natural multiplies, \((k+1)x = kx+x\). Because \(kx \in F\) and \(x \in F\), by the closure property of all fields,
+\(kx+x \in F\).<br 
 class="newline" /><br 
 class="newline" />Now, we need to show that, for \(m,n \in \mathbb {N}_{\mathbb {R}}\), we have \(m&lt;n \iff mx&lt;nx\). First, showing that \(m&lt;n \implies mx &lt; nx\).<br 
 class="newline" />
-
-</p><!--l. 379--><p class="indent" >   We can construct an inductive proposition in such a way that it applies for
-all \(n \in \mathbb {N}_{\mathbb {R}}\). Fixing \(m\), define \(Q(n)\) to be true when, either:
-      </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
-   <span 
-class="tcrm-1200">•</span> </dt><dd 
-class="enumerate-enumitem">\(n\leq m\), or
-      </dd><dt class="enumerate-enumitem">
-   <span 
-class="tcrm-1200">•</span> </dt><dd 
-class="enumerate-enumitem">\(mx &lt;nx\)</dd></dl>
-<!--l. 384--><p class="noindent" >Thus, we have:
+</p><!--l. 382--><p class="indent" >   Fixing \(m\), we can define, the inductive proposition, \(Q(n)\) to be true when either \(n\leq m\) or \(mx &lt; nx\),
+for some \(x&gt;0_F\) of \(F\). Note that we have constructed the inductive proposition in such a
+way that it applies for all natural \(n\). Thus, we have:
       </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
   (i) </dt><dd 
 class="enumerate-enumitem">\(Q(1)\) <span 
-class="cmti-12">is true</span>; Because, \(m\) is a natural number, we have \(m\geq 1\), hence \(n=1 \leq m\) and \(Q(1)\) holds.
+class="cmti-12">is true</span>; From the properties of natural numbers, \(m \geq 1\). Hence, \(n=1 \leq m\), thus \(Q(1)\)
+      holds.
       </dd><dt class="enumerate-enumitem">
  (ii) </dt><dd 
 class="enumerate-enumitem">\(Q(k) \implies Q(k+1)\); We have either, \(k \leq m\) or \(mx&lt;kx\).
            <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
        (a) </dt><dd 
-class="enumerate-enumitem">if \(k \leq m\), either \(k=m\) or \(k&lt;m\).</dd></dl>
+class="enumerate-enumitem">if \(k \leq m\), either \(k=m\) or \(k&lt;m\). If \(k&lt;m\), then \(k+1\leq m\). If \(k=m\), then \(kx=mx\), given that \(0_F&lt;x\), by the monotonicity
+           of addition, \(mx&lt; x+mx = x+kx\). By the definition of natural multiplies, \(mx &lt; (k+1)x\). Thus, \(Q(k+1)\)
+           holds when \(k \leq m\).
+           </dd><dt class="enumerate-enumitem">
+      (b) </dt><dd 
+class="enumerate-enumitem">if \(mx&lt;kx\), adding \(x\) to both sides of the equation, by the monotonicity
+           of addition, \(mx+x&lt;kx+x\). Because, \(mx&lt;mx+x\), we have \(mx&lt;mx+x &lt; kx+x\), by the definition of natural
+           multiplies, we have \(mx&lt;(k+1)x\). Thus \(Q(k+1)\) holds when \(mx&lt;kx\)</dd></dl>
       </dd></dl>
+<!--l. 391--><p class="noindent" >We have shown that \(m&lt;n\) implies that \(mx&lt;nx\). To show the converse, \(mx&lt;nx \implies m&lt;n\), is true, can consider the
+contrapositive of the converse (i.e., the inverse), which is \(m\geq n \implies mx \geq nx\). We can apply very
+similar reasoning as above to prove this.
 <a 
- id="x10-8102r17"></a>
+ id="x10-8101r17"></a>
+</p>
    <div  
 class="centerline">                                      <span 
 class="cmbx-12x-x-120">Exercise</span><span 
 class="cmbx-12x-x-120"> 17</span>                            </div><a 
- id="x10-8103"></a>
+ id="x10-8102"></a>
 Define the <span 
 class="cmti-12">Binomial Coefficient </span>\begin {align*}  \begin {pmatrix} n \\ k \end {pmatrix} = \frac {n!}{k!(n-k)!}  \end {align*}
 <!--l. 401--><p class="indent" >   For nonnegative integers \(n,k\;\; (k \leq n) \in \mathbb {R}\). Verify <span 
-class="cmti-12">Pascal’s Law</span>: \begin {align*}  \begin {pmatrix} n \\ k \end {pmatrix} + \begin {pmatrix} n \\ k+1 \end {pmatrix} = \begin {pmatrix}n+1 \\ k+1 \end {pmatrix}  \end {align*}
+class="cmti-12">Pascal’s Law</span>: \begin {align*}  \binom {n}{k} + \begin {pmatrix} n \\ k+1 \end {pmatrix} = \begin {pmatrix}n+1 \\ k+1 \end {pmatrix}  \end {align*}
 </p><!--l. 405--><p class="indent" >   Using it, prove inductively that \(\big (\begin {smallmatrix} n \\ k\end {smallmatrix} \big )\) is always a natural number. Then, establish
 inductively the <span 
 class="cmti-12">binomial theorem</span>: for elements \(a,b\) of any field \(F\) and any natural
 number \(n\), \begin {align*}  (a+b)^n = \sum _{k=0}^n \binom {n}{k} a^k b^{n-k}.  \end {align*}
+                                                                         
+
+                                                                         
 <a 
- id="x10-8104r18"></a>
+ id="x10-8103r18"></a>
 </p>
    <div  
 class="centerline">                                      <span 
 class="cmbx-12x-x-120">Exercise</span><span 
 class="cmbx-12x-x-120"> 18</span>                            </div><a 
- id="x10-8105"></a>
+ id="x10-8104"></a>
 Show by induction that if \(x_1 = x_2 = \cdots = x_n = x\), then \begin {align*}  \sum _{k=1}^n x_k = nx \;\; \text {and}\;\; \prod _{k=1}^n = x^n\;\; \text {(where $x$ is in any field).}  \end {align*}
 <a 
- id="x10-8106r19"></a>
+ id="x10-8105r19"></a>
    <div  
 class="centerline">                                      <span 
 class="cmbx-12x-x-120">Exercise</span><span 
 class="cmbx-12x-x-120"> 19</span>                            </div><a 
- id="x10-8107"></a>
+ id="x10-8106"></a>
 Show by induction that in any field \begin {align*}  \sum _{k=1}^{n}(x_k-x_{k-1}) =x_n -x_0  \end {align*}
 <!--l. 421--><p class="indent" >   Deduce from it the formulae of Problem 10 directly.
-
 <a 
- id="x10-8108r20"></a>
+ id="x10-8107r20"></a>
 </p>
    <div  
 class="centerline">                                      <span 
 class="cmbx-12x-x-120">Exercise</span><span 
 class="cmbx-12x-x-120"> 20</span>                            </div><a 
- id="x10-8109"></a>
+ id="x10-8108"></a>
 Show by induction that every <span 
 class="cmti-12">finite </span>sequence \(x_1, x_2, \ldots , x_n\) of elements of an ordered field
 contains a largest and a smallest term (which need not be \(x_n\) and \(x_1\) since the
@@ -708,43 +746,46 @@ sequence is not necessarily monotonic). Show by examples that the theorem
 fails for infinite sequences. Infer that the set of all natural numbers \(1,2,3, \ldots \) is
 infinite.
 <a 
- id="x10-8110r21"></a>
+ id="x10-8109r21"></a>
    <div  
 class="centerline">                                      <span 
 class="cmbx-12x-x-120">Exercise</span><span 
 class="cmbx-12x-x-120"> 21</span>                            </div><a 
- id="x10-8111"></a>
+ id="x10-8110"></a>
 Prove by induction that two ordered \(n\)-tuples \begin {align*}  (x_1,\ldots , x_n)\;\; \text {and} \;\; (y_1, \ldots , y_n)  \end {align*}
 <!--l. 431--><p class="indent" >   are equal iff \(x_1 = y_1, x_2= y_2, \ldots , x_n=y_n\). Assume this is known for \(n=2\).
 <a 
- id="x10-8112r22"></a>
+ id="x10-8111r22"></a>
 </p>
    <div  
 class="centerline">                                      <span 
 class="cmbx-12x-x-120">Exercise</span><span 
 class="cmbx-12x-x-120"> 22</span>                            </div><a 
- id="x10-8113"></a>
+ id="x10-8112"></a>
 Show that if the sets \(A\) and \(B\) are finite, so are \(A \cup B\) and \(A \times B\). By induction, prove this for \(n\)
 sets.
 <a 
- id="x10-8114r23"></a>
+ id="x10-8113r23"></a>
    <div  
 class="centerline">                                      <span 
 class="cmbx-12x-x-120">Exercise</span><span 
 class="cmbx-12x-x-120"> 23</span>                            </div><a 
- id="x10-8115"></a>
+ id="x10-8114"></a>
 <a 
- id="x10-8116r24"></a>
+ id="x10-8115r24"></a>
    <div  
 class="centerline">                            <span 
 class="cmbx-12x-x-120">Exercise</span><span 
 class="cmbx-12x-x-120"> 24</span>                            </div><a 
- id="x10-8117"></a>
+ id="x10-8116"></a>
 Show by induction that if the finite sets \(A\) and \(B\) have \(m\) and \(n\) elements, respectively,
 then
       <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
   (i) </dt><dd 
 class="enumerate-enumitem">\(A \times B\) has \(mn\) elements;
+                                                                         
+
+                                                                         
       </dd><dt class="enumerate-enumitem">
  (ii) </dt><dd 
 class="enumerate-enumitem">\(A\) has \(2^m\) subsets;
@@ -752,23 +793,24 @@ class="enumerate-enumitem">\(A\) has \(2^m\) subsets;
  (iii) </dt><dd 
 class="enumerate-enumitem">If further \(A \cap B = \varnothing \), then \(A \cup B\) has \(m+n\) elements.</dd></dl>
 <a 
- id="x10-8121r25"></a>
+ id="x10-8120r25"></a>
    <div  
 class="centerline">                                      <span 
 class="cmbx-12x-x-120">Exercise</span><span 
 class="cmbx-12x-x-120"> 25</span>                            </div><a 
- id="x10-8122"></a>
-
+ id="x10-8121"></a>
 Prove the <span 
-class="cmti-12">division theorem</span>: Let \(\N ' = \N \cup \{0\}\)be the set consisting of \(0\) and all naturals \((\N )\)
-in an ordered field. Then for any \(m,n \in \N '\) \((n&gt;0)\), there is a unique pair \((q,r) \in \N ' \times \N '\) such that
+class="cmti-12">division theorem</span>: Let \(\mathbb {N}' = \mathbb {N} \cup \{0\}\)be the set consisting of \(0\) and all naturals \((\mathbb {N})\)
+in an ordered field. Then for any \(m,n \in \mathbb {N}'\) \((n&gt;0)\), there is a unique pair \((q,r) \in \mathbb {N}' \times \mathbb {N}'\) such that
 \begin {align*}  m=nq +r\;\; \text {and} \;\; 0 \leq r &lt;n  \end {align*}
 <!--l. 452--><p class="indent" >   (\(q\) and \(r\) are called, respectively, the <span 
 class="cmti-12">quotient </span>and <span 
 class="cmti-12">remainder </span>from the division
 of \(m\) by \(n\)). If \(r= 0\), we say \(n\) <span 
 class="cmti-12">divides</span> \(m\) and write \(n|m\).
+                                                                         
 
+                                                                         
 </p>
    <!--l. 2--><div class="crosslinks"><p class="noindent">[<a 
 href="Limitsse5.html" >prev</a>] [<a 
