@@ -157,23 +157,9 @@ html {
     margin: 0 0.8em 0.2em -1.6em;
     vertical-align: middle;
   }
-ol.roman-list {
-    list-style-type: none; /* Remove default list styling */
-    counter-reset: list-item; /* Reset counter for custom numbering */
-    padding-left: 0; /* Remove default padding */
-}
-
-ol.roman-list li {
-    counter-increment: list-item; /* Increment counter for each list item */
-    margin-bottom: 10px; /* Spacing between items */
-    position: relative; /* Positioning for pseudo-elements */
-    padding-left: 2em; /* Space for parentheses */
-}
-
-/* Custom Numbering with Parentheses */
-ol.roman-list li::before {
-    content: "(" counter(list-item, upper-roman) ") "; /* Roman numerals with parentheses */
-    position: absolute; /* Absolute positioning */
-    left: 0; /* Align left */
-    font-weight: bold; /* Optional: make the number bold */
+footer {
+  text-align: center;
+  padding: 5px;
+  background-color: #abbaba;
+  color: #000;
 }
